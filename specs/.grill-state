@@ -1,0 +1,14 @@
+{
+  "skill": "grill-me",
+  "project": "grounded_web",
+  "date": "2026-07-16",
+  "status": "complete",
+  "rounds": 3,
+  "questions_asked": 12,
+  "auto_resolved": 2,
+  "user_decisions": 12,
+  "deferred": 5,
+  "deferred_task_ids": ["t_380cdb9e", "t_807942b3", "t_3006aef4", "t_431579cd", "t_18b035a6"],
+  "artifacts": ["decisions.md", "decision-tree.md"],
+  "notes": "Auto-resolved: org plan (Team → private Pages OK), brand asset inventory (PNG mark set exists, no SVG). Offering brief supplied in round 3 supersedes deck-era positioning for site copy."
+}
