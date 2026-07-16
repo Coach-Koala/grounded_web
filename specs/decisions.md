@@ -99,6 +99,16 @@ white-on-dark only). Mark assets: existing PNG set
 (`hippo-health/src/priv/static/images/logo/`); SVG refinement deferred
 (task `t_431579cd`).
 
+**Superseded 2026-07-16 (owner review):** the April 2026 guide's teal palette
+is stale. The live design system in hippo-health (`brand.html` +
+`design-system.css`, committed 2026-06-19, after the guide) uses the same
+token names with moss-green values: Deep Spruce `#355726` (primary), Sage
+`#90BD53`, Chart Sage `#A9C56D`, Ink `#1A1A18`, Bone `#F6F3EE`, Mist
+`#ECE7DD`, Savings `#16A34A`, Attention `#D97706`, Overpay `#DC2626`. The
+site now uses this palette; the teal-to-bone hero wash is replaced by a flat
+Deep Spruce hero. Typography and mark rules unchanged. Reconciling the guide
+document itself is tracked on the forge board.
+
 ## D10 — Pricing
 
 **Decision:** No dollar amounts on the site. Tier framing only: free

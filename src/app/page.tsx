@@ -41,7 +41,7 @@ const WHY = [
 export default function HomePage() {
   return (
     <>
-      <section className="hero-wash">
+      <section className="bg-spruce">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <p className="eyebrow mb-4 text-white">For self-insured employers</p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white uppercase md:text-6xl">
@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="mt-10">
             <Link
               href="/#scorecard"
-              className="bg-white text-teal hover:bg-cream inline-block rounded-md px-8 py-4 text-lg font-semibold"
+              className="bg-white text-spruce hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
               Get your free scorecard
             </Link>
@@ -82,7 +82,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Why Grounded" title="An auditor on your side of the table." tone="teal">
+      <Section eyebrow="Why Grounded" title="An auditor on your side of the table." tone="spruce">
         <div className="grid gap-8 md:grid-cols-3">
           {WHY.map((item) => (
             <div key={item.name}>

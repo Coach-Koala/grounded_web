@@ -14,21 +14,30 @@ export default function Header() {
           </span>
         </Link>
         <nav className="flex items-center gap-6">
-          <Link href="/employers/" className="text-ink hover:text-teal hidden font-medium sm:block">
+          <Link
+            href="/employers/"
+            className="text-ink hover:text-spruce hidden font-medium sm:block"
+          >
             Employers
           </Link>
-          <Link href="/advisors/" className="text-ink hover:text-teal hidden font-medium sm:block">
+          <Link
+            href="/advisors/"
+            className="text-ink hover:text-spruce hidden font-medium sm:block"
+          >
             Advisors
           </Link>
-          <Link href="/insights/" className="text-ink hover:text-teal hidden font-medium sm:block">
+          <Link
+            href="/insights/"
+            className="text-ink hover:text-spruce hidden font-medium sm:block"
+          >
             Insights
           </Link>
-          <a href={appUrl} className="text-teal hover:text-spruce font-semibold">
+          <a href={appUrl} className="text-spruce hover:text-spruce font-semibold">
             Log in
           </a>
           <Link
             href="/#scorecard"
-            className="bg-teal hover:bg-spruce rounded-md px-4 py-2 font-semibold text-white"
+            className="bg-spruce hover:bg-spruce rounded-md px-4 py-2 font-semibold text-white"
           >
             Get your free scorecard
           </Link>

@@ -17,7 +17,7 @@ export default function InsightsPage() {
           <p className="text-ink text-lg font-semibold">Nothing published yet.</p>
           <p className="text-ink/80 mt-2">
             We&apos;re writing. In the meantime,{" "}
-            <Link href="/#scorecard" className="text-teal font-semibold hover:underline">
+            <Link href="/#scorecard" className="text-spruce font-semibold hover:underline">
               get your free scorecard
             </Link>{" "}
             — it&apos;s more useful than a blog post anyway.
@@ -27,9 +27,9 @@ export default function InsightsPage() {
         <ul className="max-w-3xl space-y-8">
           {insights.map((insight) => (
             <li key={insight.slug} className="border-sage border-b pb-8">
-              <p className="eyebrow text-teal">{insight.date}</p>
+              <p className="eyebrow text-spruce">{insight.date}</p>
               <Link href={`/insights/${insight.slug}/`}>
-                <h3 className="text-ink hover:text-teal mt-1 text-2xl font-bold">
+                <h3 className="text-ink hover:text-spruce mt-1 text-2xl font-bold">
                   {insight.title}
                 </h3>
               </Link>
