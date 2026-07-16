@@ -1,0 +1,37 @@
+/*
+ * Grounded Health brand tokens — the ONLY file where color hex values may
+ * appear (enforced by scripts/content-gates.sh). Source of truth:
+ * hippo-health/positioning_docs/Hippo Health - Branding Guide.md §§5–6.
+ */
+
+@theme {
+  /* Primary palette */
+  --color-teal: #145e63; /* Hippo Teal — CTAs, section labels, accents */
+  --color-ink: #0e1f24; /* Hippo Ink — primary text, big-number stats */
+  --color-bone: #f5efe4; /* default surface (~70% of real estate) */
+  --color-mist: #e7ede9; /* alternate surface — panels, table rows */
+  --color-white: #ffffff;
+
+  /* Secondary palette */
+  --color-sage: #7fa89b; /* borders, rules, quiet dividers, data accents */
+  --color-spruce: #0b3b3f; /* hover states, headings-on-teal, print darks */
+  --color-cream: #fbf7ee; /* overlay cards, subtle depth on Bone */
+
+  /* Functional / data palette */
+  --color-positive: #3a8f6b;
+  --color-amber: #c48b2e;
+  --color-critical: #b85447;
+  --color-chart-sage: #9cb9ae;
+
+  /* Typography — Inter (display/body) + JetBrains Mono (eyebrows/labels) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+/*
+ * The teal-to-bone surface wash — the ONLY sanctioned gradient. Heroes and
+ * major section openers only, white text only (brand guide §5).
+ */
+.hero-wash {
+  background: linear-gradient(160deg, #145e63 0%, #2f7f79 35%, #c6d5ce 72%, #f5efe4 100%);
+}

@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import LeadForm from "@/components/LeadForm";
+import { Section } from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "For employers",
+  description:
+    "Independent visibility into your health plan — claims, vendors, and contracts — with almost nothing required from your team.",
+};
+
+const DELIVERABLES = [
+  {
+    name: "Reporting that comes to you",
+    body: "Findings land in your inbox or Slack. No new dashboard, no new login, no weekly meeting.",
+  },
+  {
+    name: "Vendor accountability",
+    body: "Care navigation, second-opinion services, point solutions — are they engaging your members and delivering the savings they promised? We check.",
+  },
+  {
+    name: "Contract review",
+    body: "We read the language nobody else does and flag terms that cost you money — before renewal, when you can still do something about it.",
+  },
+  {
+    name: "Recovery, not reports",
+    body: "The Claims X-Ray targets recoverable dollars. Our fee is a percentage of what you verifiably get back.",
+  },
+] as const;
+
+export default function EmployersPage() {
+  return (
+    <>
+      <Section
+        eyebrow="For employers"
+        title="Your plan, independently checked. Your team, barely lifted."
+        tone="bone"
+      >
+        <p className="text-ink max-w-2xl text-lg">
+          HR teams are stretched. You don&apos;t need another platform to run — you need someone on
+          your side of the table telling you what&apos;s working, what&apos;s leaking, and what to
+          do about it.
+        </p>
+      </Section>
+
+      <Section eyebrow="What you get" tone="mist">
+        <div className="grid gap-8 md:grid-cols-2">
+          {DELIVERABLES.map((item) => (
+            <div key={item.name} className="bg-white rounded-lg p-8 shadow-sm">
+              <h3 className="text-ink text-xl font-bold">{item.name}</h3>
+              <p className="text-ink/90 mt-2">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="scorecard" eyebrow="Start here" title="Get your free scorecard." tone="bone">
+        <div className="max-w-2xl">
+          <LeadForm defaultAudience="employer" />
+        </div>
+      </Section>
+    </>
+  );
+}

@@ -42,10 +42,10 @@ flowchart TD
 
 ## Deferred decisions (tracked)
 
-| Item | Task | Blocks |
-|---|---|---|
+| Item                               | Task         | Blocks                             |
+| ---------------------------------- | ------------ | ---------------------------------- |
 | hippo-health `/api/leads` endpoint | `t_807942b3` | live form submissions (not launch) |
-| App → `demo.` subdomain | `t_380cdb9e` | endpoint URL stability |
-| 5500 → `analytics.` subdomain | `t_3006aef4` | nothing in grounded_web |
-| SVG hippo mark | `t_431579cd` | nothing (PNG set suffices) |
-| Final pricing copy | `t_18b035a6` | pricing numbers on site |
+| App → `demo.` subdomain            | `t_380cdb9e` | endpoint URL stability             |
+| 5500 → `analytics.` subdomain      | `t_3006aef4` | nothing in grounded_web            |
+| SVG hippo mark                     | `t_431579cd` | nothing (PNG set suffices)         |
+| Final pricing copy                 | `t_18b035a6` | pricing numbers on site            |

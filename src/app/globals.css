@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+body {
+  @apply bg-bone text-ink font-sans antialiased;
+}
+
+/* Eyebrow labels: mono, all-caps, letterspaced (brand guide §6) */
+.eyebrow {
+  @apply font-mono text-sm font-medium uppercase tracking-[0.08em];
+}

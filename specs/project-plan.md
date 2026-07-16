@@ -71,8 +71,8 @@ default), all CI gates green, form error path demonstrated against a stub.
 
 ## Cross-repo dependencies (forge board)
 
-| Task | Repo | Gates |
-|---|---|---|
-| `t_807942b3` `/api/leads` | hippo-health | live form submissions |
-| `t_380cdb9e` demo subdomain | hippo-health | stable endpoint URL |
-| `t_3006aef4` analytics subdomain | 5500-explorer | nothing here |
+| Task                             | Repo          | Gates                 |
+| -------------------------------- | ------------- | --------------------- |
+| `t_807942b3` `/api/leads`        | hippo-health  | live form submissions |
+| `t_380cdb9e` demo subdomain      | hippo-health  | stable endpoint URL   |
+| `t_3006aef4` analytics subdomain | 5500-explorer | nothing here          |

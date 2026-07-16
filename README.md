@@ -24,21 +24,21 @@ Start with `specs/compiled-project-plan.md` for the execution batches.
 
 ## Domain map
 
-| Host | Serves |
-|---|---|
-| apex + `www` | this site (GitHub Pages) |
-| `demo` | hippo-health app (Fly.io) |
-| `analytics` | 5500-explorer scorecard (Vercel) |
+| Host         | Serves                           |
+| ------------ | -------------------------------- |
+| apex + `www` | this site (GitHub Pages)         |
+| `demo`       | hippo-health app (Fly.io)        |
+| `analytics`  | 5500-explorer scorecard (Vercel) |
 
 ## Specs
 
-| File | Contents |
-|---|---|
-| `specs/decisions.md` | Phase 0 decision records (D1–D12) |
-| `specs/decision-tree.md` | dependency-ordered decision map |
-| `specs/overview.md` | architecture, IA, data flow, DNS records |
-| `specs/threat-model.md` | STRIDE findings T1–T9 |
-| `specs/fmea.md` | failure modes F1–F10 + generated test cases |
-| `specs/test-specification.md` | 7-layer test plan with traceability |
-| `specs/project-plan.md` | three sprints to launch |
-| `specs/compiled-project-plan.md` | agent-executable batches |
+| File                             | Contents                                    |
+| -------------------------------- | ------------------------------------------- |
+| `specs/decisions.md`             | Phase 0 decision records (D1–D12)           |
+| `specs/decision-tree.md`         | dependency-ordered decision map             |
+| `specs/overview.md`              | architecture, IA, data flow, DNS records    |
+| `specs/threat-model.md`          | STRIDE findings T1–T9                       |
+| `specs/fmea.md`                  | failure modes F1–F10 + generated test cases |
+| `specs/test-specification.md`    | 7-layer test plan with traceability         |
+| `specs/project-plan.md`          | three sprints to launch                     |
+| `specs/compiled-project-plan.md` | agent-executable batches                    |
