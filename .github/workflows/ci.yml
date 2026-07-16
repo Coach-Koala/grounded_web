@@ -56,10 +56,13 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: ""
+      # No --include-fragments: lychee cannot resolve fragments through
+      # directory indexes (/#scorecard -> out/index.html), false-failing
+      # every anchor link. Whole-file link checking still applies.
       - name: Internal link check
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
-          args: --offline --root-dir "${{ github.workspace }}/out" --include-fragments "out/**/*.html"
+          args: --offline --root-dir "${{ github.workspace }}/out" "out/**/*.html"
           fail: true
       - name: Lighthouse CI (a11y >= 0.95, perf >= 0.90)
         uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # v12
