@@ -87,6 +87,16 @@ outcomes, not methodology:
 - Voice rules from the brand guide apply (lead with the number, short
   sentences, "you", cite sources, no middle-man language).
 
+**Amended 2026-07-16 (owner review):** Grounded is **not** a payment
+integrity provider and must not read as one — it helps employers _manage_
+their payment integrity provider along with every other vendor. Remove
+recovery-fee ("% of verified recovery") framing from the site. Copy targets
+the CFO: healthcare ≈ 30% of direct employee cost, people costs can be 70%
+of total costs, recovered waste is contribution margin / EPS. Offer ladder
+is now Free Scorecard → Spend X-Ray → Continuous Management. The site shows
+real platform screenshots (employer dashboard + KPI bands) and the team
+(Kearns, Simpson Rochwerger, Shangle, Vertrees) with LinkedIn links.
+
 ## D9 — Brand system
 
 **Decision:** Apply the Grounded Health brand guide

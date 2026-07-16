@@ -15,15 +15,15 @@ const DELIVERABLES = [
   },
   {
     name: "Vendor accountability",
-    body: "Care navigation, second-opinion services, point solutions — are they engaging your members and delivering the savings they promised? We check.",
+    body: "Care navigation, point solutions, your payment integrity provider — everyone who promised savings gets scored on what they actually delivered. We don't replace your vendors; we make sure they perform.",
   },
   {
     name: "Contract review",
     body: "We read the language nobody else does and flag terms that cost you money — before renewal, when you can still do something about it.",
   },
   {
-    name: "Recovery, not reports",
-    body: "The Claims X-Ray targets recoverable dollars. Our fee is a percentage of what you verifiably get back.",
+    name: "Margin, tracked to the dollar",
+    body: "Flagged spend, open findings, and recovered dollars are tracked continuously — so what comes back shows up in your operating income, not just in a vendor's slide deck.",
   },
 ] as const;
 
@@ -38,7 +38,7 @@ export default function EmployersPage() {
         <p className="text-ink max-w-2xl text-lg">
           HR teams are stretched. You don&apos;t need another platform to run — you need someone on
           your side of the table telling you what&apos;s working, what&apos;s leaking, and what to
-          do about it.
+          do about it. Your CFO gets a managed cost center; your team gets their time back.
         </p>
       </Section>
 
