@@ -20,7 +20,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   const insight = getInsight(slug);
   return (
     <Section eyebrow={insight.date} title={insight.title} tone="bone">
-      <article className="prose-headings:text-ink prose-a:text-teal max-w-3xl space-y-4 text-lg">
+      <article className="prose-headings:text-ink prose-a:text-spruce max-w-3xl space-y-4 text-lg">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{insight.content}</ReactMarkdown>
       </article>
     </Section>

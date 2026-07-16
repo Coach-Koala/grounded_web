@@ -65,13 +65,13 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
       {status === "error" ? (
-        <div role="alert" className="border-critical bg-cream rounded-md border-2 p-4">
+        <div role="alert" className="border-critical bg-white rounded-md border-2 p-4">
           <p className="text-ink font-semibold">
             Something went wrong on our end — your request was not sent.
           </p>
           <p className="text-ink mt-1 text-sm">
             Email us directly instead:{" "}
-            <a href={mailto} className="text-teal font-semibold underline">
+            <a href={mailto} className="text-spruce font-semibold underline">
               {contactEmail}
             </a>
           </p>
@@ -80,43 +80,43 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="eyebrow text-teal">Name</span>
+          <span className="eyebrow text-spruce">Name</span>
           <input
             name="name"
             type="text"
             required
             autoComplete="name"
-            className="border-sage focus:border-teal mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           />
         </label>
         <label className="block">
-          <span className="eyebrow text-teal">Work email</span>
+          <span className="eyebrow text-spruce">Work email</span>
           <input
             name="email"
             type="email"
             required
             autoComplete="email"
-            className="border-sage focus:border-teal mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           />
         </label>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="eyebrow text-teal">Company</span>
+          <span className="eyebrow text-spruce">Company</span>
           <input
             name="company"
             type="text"
             required
             autoComplete="organization"
-            className="border-sage focus:border-teal mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           />
         </label>
         <label className="block">
-          <span className="eyebrow text-teal">I am</span>
+          <span className="eyebrow text-spruce">I am</span>
           <select
             name="audience"
             defaultValue={defaultAudience}
-            className="border-sage focus:border-teal mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           >
             <option value="employer">A self-insured employer</option>
             <option value="advisor">A benefits advisor</option>
@@ -124,11 +124,11 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
         </label>
       </div>
       <label className="block">
-        <span className="eyebrow text-teal">Anything specific? (optional)</span>
+        <span className="eyebrow text-spruce">Anything specific? (optional)</span>
         <textarea
           name="message"
           rows={3}
-          className="border-sage focus:border-teal mt-1 w-full rounded-md border bg-white p-3 outline-none"
+          className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
         />
       </label>
 
@@ -141,7 +141,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="bg-teal hover:bg-spruce w-full rounded-md px-6 py-3 text-lg font-semibold text-white disabled:opacity-60 sm:w-auto"
+        className="bg-spruce hover:bg-spruce w-full rounded-md px-6 py-3 text-lg font-semibold text-white disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Sending…" : "Get your free scorecard"}
       </button>
