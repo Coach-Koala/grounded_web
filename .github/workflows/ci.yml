@@ -36,11 +36,6 @@ jobs:
       - run: npm run build
       - name: Content gates (pricing, naming, CNAME, source maps, hex literals)
         run: scripts/content-gates.sh out
-      - name: Internal link check
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
-        with:
-          args: --offline --root-dir "${{ github.workspace }}/out" --include-fragments "out/**/*.html"
-          fail: true
       - name: Upload pages artifact
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
@@ -56,10 +51,16 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Lighthouse serves out/ at the root, so build without a base path.
+      # Lighthouse and lychee serve/resolve out/ at the root, so build
+      # without a base path (links are root-relative in this build).
       - run: npm run build
         env:
           BASE_PATH: ""
+      - name: Internal link check
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          args: --offline --root-dir "${{ github.workspace }}/out" --include-fragments "out/**/*.html"
+          fail: true
       - name: Lighthouse CI (a11y >= 0.95, perf >= 0.90)
         uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # v12
         with:
