@@ -50,6 +50,14 @@ export default function Footer() {
                 Get your free scorecard
               </Link>
             </li>
+            <li>
+              <a
+                href={process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}
+                className="hover:text-sage"
+              >
+                Log in
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -18,6 +18,7 @@ env:
   BASE_PATH: /grounded_web
   NEXT_PUBLIC_LEADS_ENDPOINT: https://demo.getgroundedhealth.com/api/leads
   NEXT_PUBLIC_CONTACT_EMAIL: hello@getgroundedhealth.com
+  NEXT_PUBLIC_APP_URL: https://demo.getgroundedhealth.com
 
 jobs:
   build:

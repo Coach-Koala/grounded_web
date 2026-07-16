@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com";
+
 export default function Header() {
   return (
     <header className="border-sage/40 bg-bone sticky top-0 z-10 border-b">
@@ -21,6 +23,9 @@ export default function Header() {
           <Link href="/insights/" className="text-ink hover:text-teal hidden font-medium sm:block">
             Insights
           </Link>
+          <a href={appUrl} className="text-teal hover:text-spruce font-semibold">
+            Log in
+          </a>
           <Link
             href="/#scorecard"
             className="bg-teal hover:bg-spruce rounded-md px-4 py-2 font-semibold text-white"
