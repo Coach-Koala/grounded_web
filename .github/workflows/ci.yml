@@ -1,0 +1,86 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# All actions pinned to commit SHAs (threat model T3).
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  # Flip to "" when the custom domain (getgroundedhealth.com) goes live (Batch 5).
+  BASE_PATH: /grounded_web
+  NEXT_PUBLIC_LEADS_ENDPOINT: https://demo.getgroundedhealth.com/api/leads
+  NEXT_PUBLIC_CONTACT_EMAIL: hello@getgroundedhealth.com
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+      - name: Content gates (pricing, naming, CNAME, source maps, hex literals)
+        run: scripts/content-gates.sh out
+      - name: Upload pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: out
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Lighthouse and lychee serve/resolve out/ at the root, so build
+      # without a base path (links are root-relative in this build).
+      - run: npm run build
+        env:
+          BASE_PATH: ""
+      # No --include-fragments: lychee cannot resolve fragments through
+      # directory indexes (/#scorecard -> out/index.html), false-failing
+      # every anchor link. Whole-file link checking still applies.
+      - name: Internal link check
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          args: --offline --root-dir "${{ github.workspace }}/out" "out/**/*.html"
+          fail: true
+      - name: Lighthouse CI (a11y >= 0.95, perf >= 0.90)
+        uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: [build, lighthouse]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

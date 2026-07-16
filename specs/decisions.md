@@ -30,11 +30,11 @@ Acceptable: public output is the purpose of a marketing site.
 **Decision:** Subdomain plan for `getgroundedhealth.com` (DNS at GoDaddy, owner
 updates records):
 
-| Host | Serves | Platform |
-|---|---|---|
-| apex + `www` | grounded_web marketing site | GitHub Pages |
-| `demo` | hippo-health app | Fly.io (task `t_380cdb9e`) |
-| `analytics` | 5500-explorer public scorecard | Vercel (task `t_3006aef4`) |
+| Host         | Serves                         | Platform                   |
+| ------------ | ------------------------------ | -------------------------- |
+| apex + `www` | grounded_web marketing site    | GitHub Pages               |
+| `demo`       | hippo-health app               | Fly.io (task `t_380cdb9e`) |
+| `analytics`  | 5500-explorer public scorecard | Vercel (task `t_3006aef4`) |
 
 Supersedes `hippo/specs/overview.md`, which mapped the apex to the Fly app.
 
