@@ -4,18 +4,18 @@ const OFFERS = [
   {
     step: "01",
     name: "Free Scorecard",
-    body: "See how your health plan compares. Surface critical findings and get a fast read on potential savings — before you spend a dollar.",
+    body: "Built entirely from your plan's own public filings — broker pay, carrier rates, funding structure. See how your costs stack up against companies like yours. Two minutes, no claims data required.",
     cta: { label: "Get your free scorecard", href: "/#scorecard" },
   },
   {
     step: "02",
-    name: "Claims X-Ray",
-    body: "A deep review of your paid medical and pharmacy claims. We find recoverable billing errors, contract violations, and fraud. Our fee is a percentage of what you verifiably recover — we get paid when you do.",
+    name: "Spend X-Ray",
+    body: "A full independent view of where your healthcare dollars actually go: claims and pharmacy spend, contract terms and fees, rates versus your market, and what every vendor is delivering for what you pay.",
   },
   {
     step: "03",
-    name: "Continuous Monitoring",
-    body: "Ongoing oversight across claims, vendors, and contracts. Issues get caught before they compound, and savings stay visible year after year.",
+    name: "Continuous Management",
+    body: "Grounded runs alongside your plan year-round. Billing issues get flagged, contracts are tracked to renewal, and every vendor — including your payment integrity provider — is scored on what it actually returns.",
   },
 ] as const;
 

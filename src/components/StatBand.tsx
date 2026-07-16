@@ -1,15 +1,15 @@
 const STATS = [
   {
-    value: "20–40%",
-    label: "Typical overpayment on employer health spend",
+    value: "30%",
+    label: "of your direct employee cost is healthcare — usually the least-managed line on the P&L",
   },
   {
-    value: "$0",
-    label: "Cost of your scorecard — and no data lift for your team",
+    value: "70%",
+    label: "of total costs can be people costs. Managing the health plan moves the whole number",
   },
   {
     value: "100%",
-    label: "Independent — our only client is you",
+    label: "of recovered waste is contribution margin — straight to operating income",
   },
 ] as const;
 
