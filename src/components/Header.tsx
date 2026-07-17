@@ -20,7 +20,7 @@ export default function Header() {
           <Link href="/about/" className="text-ink hover:text-spruce hidden font-medium sm:block">
             About
           </Link>
-          <a href={appUrl} className="text-spruce hover:text-spruce font-semibold">
+          <a href={`${appUrl}/login`} className="text-spruce hover:text-spruce font-semibold">
             Log in
           </a>
           <Link

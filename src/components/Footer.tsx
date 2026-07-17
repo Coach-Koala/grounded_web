@@ -57,7 +57,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href={process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}
+                href={`${process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}/login`}
                 className="hover:text-sage"
               >
                 Log in

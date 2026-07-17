@@ -172,6 +172,24 @@ const RHV_EPISODES = [
   },
 ] as const;
 
+const RESOURCES = [
+  {
+    name: "KFF — 2025 Employer Health Benefits Survey",
+    desc: "The definitive annual data on what employers pay for coverage.",
+    href: "https://www.kff.org/health-costs/2025-employer-health-benefits-survey/",
+  },
+  {
+    name: "Health Transformation Alliance",
+    desc: "A coalition of large employers pooling data and buying power to fix healthcare.",
+    href: "https://www.htahealth.com",
+  },
+  {
+    name: "Relentless Health Value",
+    desc: "The full podcast archive — start anywhere.",
+    href: "https://relentlesshealthvalue.com",
+  },
+] as const;
+
 export default function ProofPage() {
   return (
     <>
@@ -292,7 +310,7 @@ export default function ProofPage() {
       </Section>
 
       <Section
-        eyebrow="Recommended listening"
+        eyebrow="Recommended resources"
         title="The playbook, in the words of the people who wrote it."
         tone="bone"
       >
@@ -327,6 +345,27 @@ export default function ProofPage() {
               </div>
               <span className="text-spruce text-sm font-semibold group-hover:underline">
                 Listen →
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <p className="eyebrow text-ink/50 mt-10 mb-4">Also worth your time</p>
+        <div className="border-sage/30 divide-sage/30 divide-y overflow-hidden rounded-lg border bg-white">
+          {RESOURCES.map((r) => (
+            <a
+              key={r.name}
+              href={r.href}
+              target="_blank"
+              rel="noopener"
+              className="group grid gap-1 p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
+            >
+              <div>
+                <p className="text-ink group-hover:text-spruce font-semibold">{r.name}</p>
+                <p className="text-ink/70 mt-0.5 text-sm">{r.desc}</p>
+              </div>
+              <span className="text-spruce text-sm font-semibold group-hover:underline">
+                Visit →
               </span>
             </a>
           ))}

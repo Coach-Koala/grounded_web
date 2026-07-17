@@ -11,14 +11,8 @@ export const metadata: Metadata = {
 const BELIEFS = [
   "We do work we're proud to stand behind — ethically, practically, and over time.",
   "We care about outcomes, not optics. If it doesn't create real value, it doesn't matter.",
-  "We hold a high bar — for ourselves, for our partners, and for the work itself.",
-  "We say no to work that doesn't meet that bar, even when it's easier to say yes.",
-  "We believe how something gets built matters as much as what gets built.",
-  "We design for durability — systems, teams, and decisions that hold up beyond the moment.",
   "We believe AI should make people more effective, not more replaceable.",
   "We prioritize clarity over complexity, and honesty over comfort.",
-  "We believe great teams are built on trust, shared standards, and mutual respect.",
-  "We measure success by whether the work leaves the organization — and the people in it — stronger than we found them.",
 ];
 
 export default function AboutPage() {
