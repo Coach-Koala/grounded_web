@@ -202,7 +202,7 @@ export default function FiveActs() {
       {/* column headers, offset to align with the cards beside the rail */}
       <div className="hidden md:flex md:gap-6">
         <div className="w-11 shrink-0" aria-hidden="true" />
-        <div className="text-ink/60 grid flex-1 grid-cols-[280px_260px_1fr] gap-6 px-7">
+        <div className="text-ink/70 grid flex-1 grid-cols-[280px_260px_1fr] gap-6 px-7">
           <span />
           <p className="eyebrow">What we need from you</p>
           <p className="eyebrow">What you get</p>

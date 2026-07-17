@@ -48,10 +48,10 @@ export default function WhoProfitsChart() {
     <div className="border-sage/40 mt-10 rounded-lg border bg-white p-6 md:p-8">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="text-ink/60 text-sm">Total annual plan cost</p>
+          <p className="text-ink/70 text-sm">Total annual plan cost</p>
           <p className="text-ink text-4xl font-bold tracking-tight">{money(spend)}</p>
         </div>
-        <p className="text-ink/50 text-right text-xs leading-relaxed">
+        <p className="text-ink/70 text-right text-xs leading-relaxed">
           self-insured employer
           <br />
           grows with headcount
@@ -81,7 +81,7 @@ export default function WhoProfitsChart() {
           {ticks.map((v) => (
             <span
               key={v}
-              className="text-ink/40 absolute right-2 -translate-y-1/2 text-[11px]"
+              className="text-ink/70 absolute right-2 -translate-y-1/2 text-[11px]"
               style={{ top: `${(1 - v / ymax) * 100}%` }}
             >
               {money(v)}
@@ -112,7 +112,7 @@ export default function WhoProfitsChart() {
                     key={p.name}
                     className="flex h-full flex-1 flex-col items-center justify-end"
                   >
-                    <span className="text-amber mb-1 text-[11px] font-semibold whitespace-nowrap">
+                    <span className="text-ink mb-1 text-[11px] font-semibold whitespace-nowrap">
                       {money(rev)}
                     </span>
                     <div className="bg-amber w-full max-w-[64px] rounded-t" style={{ height: h }} />
@@ -131,7 +131,7 @@ export default function WhoProfitsChart() {
         </div>
       </div>
 
-      <p className="text-ink/50 mt-6 text-xs leading-relaxed">
+      <p className="text-ink/70 mt-6 text-xs leading-relaxed">
         Revenue = covered employees × ~$17k blended plan cost (
         <a
           href="https://www.kff.org/health-costs/2025-employer-health-benefits-survey/"

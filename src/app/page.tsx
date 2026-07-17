@@ -229,7 +229,7 @@ export default function HomePage() {
                       {p.stat}
                     </p>
                     <p className="text-ink/70 mt-1 text-sm">{p.cap}</p>
-                    {p.src ? <p className="text-spruce/70 mt-1 text-xs italic">{p.src}</p> : null}
+                    {p.src ? <p className="text-spruce mt-1 text-xs italic">{p.src}</p> : null}
                   </div>
                 ))}
               </div>

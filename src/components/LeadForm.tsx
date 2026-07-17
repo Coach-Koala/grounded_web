@@ -86,7 +86,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
           placeholder="Acme Corporation, Inc."
           className="border-sage focus:border-spruce mt-2 w-full rounded-md border bg-white p-4 text-base outline-none"
         />
-        <span className="text-ink/50 mt-1.5 block text-xs">
+        <span className="text-ink/70 mt-1.5 block text-xs">
           Your company&apos;s legal name — how it files taxes.
         </span>
       </label>
