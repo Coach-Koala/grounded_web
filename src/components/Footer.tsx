@@ -36,6 +36,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/proof/" className="hover:text-sage">
+                Proof
+              </Link>
+            </li>
+            <li>
               <Link href="/about/" className="hover:text-sage">
                 About
               </Link>
