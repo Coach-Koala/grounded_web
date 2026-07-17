@@ -53,7 +53,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
 
   if (status === "success") {
     return (
-      <div role="status" className="bg-mist rounded-lg p-8">
+      <div role="status" className="bg-positive-soft rounded-xl p-8">
         <p className="text-ink text-xl font-semibold">Request received.</p>
         <p className="text-ink mt-2">
           We&apos;ll be in touch shortly to start your scorecard. No prep needed on your side.
@@ -65,7 +65,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
       {status === "error" ? (
-        <div role="alert" className="border-critical bg-white rounded-md border-2 p-4">
+        <div role="alert" className="bg-critical-soft border-critical/40 rounded-lg border p-4">
           <p className="text-ink font-semibold">
             Something went wrong on our end — your request was not sent.
           </p>
@@ -86,7 +86,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
             type="text"
             required
             autoComplete="name"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-line focus:border-spruce mt-1 w-full rounded-lg border bg-white p-3 outline-none"
           />
         </label>
         <label className="block">
@@ -96,7 +96,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
             type="email"
             required
             autoComplete="email"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-line focus:border-spruce mt-1 w-full rounded-lg border bg-white p-3 outline-none"
           />
         </label>
       </div>
@@ -108,7 +108,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
             type="text"
             required
             autoComplete="organization"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-line focus:border-spruce mt-1 w-full rounded-lg border bg-white p-3 outline-none"
           />
         </label>
         <label className="block">
@@ -116,7 +116,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
           <select
             name="audience"
             defaultValue={defaultAudience}
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
+            className="border-line focus:border-spruce mt-1 w-full rounded-lg border bg-white p-3 outline-none"
           >
             <option value="employer">A self-insured employer</option>
             <option value="advisor">A benefits advisor</option>
@@ -128,7 +128,7 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
         <textarea
           name="message"
           rows={3}
-          className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
+          className="border-line focus:border-spruce mt-1 w-full rounded-lg border bg-white p-3 outline-none"
         />
       </label>
 
@@ -141,11 +141,11 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="bg-spruce hover:bg-spruce w-full rounded-md px-6 py-3 text-lg font-semibold text-white disabled:opacity-60 sm:w-auto"
+        className="bg-spruce hover:bg-spruce w-full rounded-lg px-6 py-3 text-lg font-semibold text-white disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Sending…" : "Get your free scorecard"}
       </button>
-      <p className="text-ink/70 text-xs">
+      <p className="text-muted text-xs">
         No sales sequence. One email to kick off your scorecard, nothing else.
       </p>
     </form>

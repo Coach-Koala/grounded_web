@@ -23,7 +23,7 @@ export default function StatBand() {
       {STATS.map((stat) => (
         <div key={stat.label}>
           <p className="text-ink text-4xl font-bold tracking-tight md:text-5xl">{stat.value}</p>
-          <p className="text-ink/80 mt-2 max-w-xs text-sm">{stat.label}</p>
+          <p className="text-muted mt-2 max-w-xs text-sm">{stat.label}</p>
         </div>
       ))}
     </div>

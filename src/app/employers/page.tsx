@@ -45,9 +45,9 @@ export default function EmployersPage() {
       <Section eyebrow="What you get" tone="mist">
         <div className="grid gap-8 md:grid-cols-2">
           {DELIVERABLES.map((item) => (
-            <div key={item.name} className="bg-white rounded-lg p-8 shadow-sm">
+            <div key={item.name} className="bg-white rounded-xl p-8 shadow-sm">
               <h3 className="text-ink text-xl font-bold">{item.name}</h3>
-              <p className="text-ink/90 mt-2">{item.body}</p>
+              <p className="text-ink mt-2">{item.body}</p>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ const ACTS = [
   {
     badge: "Component 1",
     name: "Health Plan Scorecard",
-    chips: [{ label: "Free", solid: true }, { label: "Same day" }],
+    chips: [{ label: "Free", variant: "success" }, { label: "Same day" }],
     meter: 1,
     needTitle: "Nothing — public data only",
     needBody: "Your filings and price-transparency data. We build it before we ever meet.",
@@ -14,7 +14,7 @@ const ACTS = [
   {
     badge: "Component 2 · Start here",
     name: "Health Plan X-ray",
-    chips: [{ label: "Flat fee", solid: true }, { label: "Findings in 2–3 wks" }],
+    chips: [{ label: "Flat fee", variant: "info" }, { label: "Findings in 2–3 wks" }],
     meter: 3,
     needTitle: "Your documents — no PHI",
     needBody:
@@ -28,7 +28,7 @@ const ACTS = [
     badge: "Component 3",
     name: "Recovery",
     chips: [
-      { label: "Partner's contingency — we take $0", outline: true },
+      { label: "Partner's contingency — we take $0", variant: "success" },
       { label: "60–120 days" },
     ],
     meter: 3,
@@ -43,7 +43,7 @@ const ACTS = [
   {
     badge: "Component 4",
     name: "Assurance",
-    chips: [{ label: "Flat annual", solid: true }, { label: "Continuous" }],
+    chips: [{ label: "Flat annual", variant: "info" }, { label: "Continuous" }],
     meter: 4,
     needTitle: "Ongoing feed",
     needBody:
@@ -56,7 +56,7 @@ const ACTS = [
   {
     badge: "Component 5",
     name: "Care Quality Verification",
-    chips: [{ label: "Assurance add-on", solid: true }, { label: "Continuous" }],
+    chips: [{ label: "Assurance add-on", variant: "info" }, { label: "Continuous" }],
     meter: 5,
     needTitle: "Claims + clinical signals",
     needBody:
@@ -74,7 +74,7 @@ function Meter({ level }: { level: number }) {
       {[1, 2, 3, 4, 5].map((step) => (
         <i
           key={step}
-          className={`h-2 w-6 rounded-sm ${step <= level ? "bg-spruce" : "bg-mist border-sage/40 border"}`}
+          className={`h-2 w-6 rounded-sm ${step <= level ? "bg-spruce" : "bg-mist border-line border"}`}
         />
       ))}
     </div>
@@ -84,7 +84,7 @@ function Meter({ level }: { level: number }) {
 export default function FiveActs() {
   return (
     <div className="mt-4 space-y-4">
-      <div className="text-ink/60 hidden grid-cols-[280px_260px_1fr] gap-6 px-7 md:grid">
+      <div className="text-subtle hidden grid-cols-[280px_260px_1fr] gap-6 px-7 md:grid">
         <p className="eyebrow">The offer</p>
         <p className="eyebrow">What we need from you</p>
         <p className="eyebrow">What you get</p>
@@ -92,8 +92,8 @@ export default function FiveActs() {
       {ACTS.map((act) => (
         <div
           key={act.badge}
-          className={`bg-white grid gap-4 rounded-lg p-7 shadow-sm md:grid-cols-[280px_260px_1fr] md:gap-6 ${
-            act.featured ? "border-spruce border-2" : "border-sage/30 border"
+          className={`bg-white grid gap-4 rounded-xl p-7 shadow-sm md:grid-cols-[280px_260px_1fr] md:gap-6 ${
+            act.featured ? "border-spruce border-2" : "border-line border"
           }`}
         >
           <div>
@@ -104,11 +104,11 @@ export default function FiveActs() {
                 <span
                   key={chip.label}
                   className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                    "solid" in chip && chip.solid
-                      ? "bg-spruce text-white"
-                      : "outline" in chip && chip.outline
-                        ? "border-spruce text-spruce bg-white border"
-                        : "bg-mist text-ink/70"
+                    "variant" in chip && chip.variant === "success"
+                      ? "bg-positive-soft text-positive"
+                      : "variant" in chip && chip.variant === "info"
+                        ? "bg-spruce-soft text-spruce"
+                        : "bg-mist text-muted"
                   }`}
                 >
                   {chip.label}
@@ -119,14 +119,14 @@ export default function FiveActs() {
           <div>
             <Meter level={act.meter} />
             <p className="text-ink text-sm font-semibold">{act.needTitle}</p>
-            <p className="text-ink/70 mt-1 text-sm">{act.needBody}</p>
+            <p className="text-muted mt-1 text-sm">{act.needBody}</p>
           </div>
-          <p className="text-ink/80 text-sm md:self-center">
+          <p className="text-muted text-sm md:self-center">
             <b className="text-ink">{act.getLead}</b> {act.getBody}
           </p>
         </div>
       ))}
-      <p className="text-ink/60 px-7 text-sm">
+      <p className="text-subtle px-7 text-sm">
         The meter shows how much data each component uses: public data → documents → claims (in your
         cloud) → ongoing feed → clinical. It only moves right once the previous component has earned
         it.

@@ -23,37 +23,37 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <p className="eyebrow text-sage mb-4">Company</p>
+          <p className="eyebrow text-white/60 mb-4">Company</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/employers/" className="hover:text-sage">
+              <Link href="/employers/" className="hover:text-white">
                 For employers
               </Link>
             </li>
             <li>
-              <Link href="/advisors/" className="hover:text-sage">
+              <Link href="/advisors/" className="hover:text-white">
                 For advisors
               </Link>
             </li>
             <li>
-              <Link href="/insights/" className="hover:text-sage">
+              <Link href="/insights/" className="hover:text-white">
                 Insights
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="eyebrow text-sage mb-4">Start</p>
+          <p className="eyebrow text-white/60 mb-4">Start</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/#scorecard" className="hover:text-sage">
+              <Link href="/#scorecard" className="hover:text-white">
                 Get your free scorecard
               </Link>
             </li>
             <li>
               <a
                 href={process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}
-                className="hover:text-sage"
+                className="hover:text-white"
               >
                 Log in
               </a>
@@ -61,8 +61,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-spruce border-t">
-        <p className="text-chart-sage mx-auto max-w-6xl px-6 py-6 text-xs">
+      <div className="border-white/15 border-t">
+        <p className="text-white/50 mx-auto max-w-6xl px-6 py-6 text-xs">
           © {new Date().getFullYear()} Grounded Health · A public benefit corporation. All rights
           reserved.
         </p>
