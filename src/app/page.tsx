@@ -45,47 +45,60 @@ const REINVEST = [
   },
 ] as const;
 
-const FINDINGS = [
-  {
-    name: "Fees nobody itemized",
-    body: "One employer was paying $2,700 per employee per year in broker fees alone. Another found $800K in annual commissions it didn't know existed — in its own filings.",
-  },
-  {
-    name: "Billing that doesn't match the contract",
-    body: "Duplicate billing, out-of-network claims paid as in-network, procedures billed above contracted rates, upcoding patterns that quietly compound year over year.",
-  },
-  {
-    name: "Vendors not delivering",
-    body: "Point solutions paid on promised engagement and savings that nobody independently verified. We check the contract against reality before your renewal, so the negotiation is yours.",
-  },
-] as const;
+type Proof = { stat: string; cap: string; src?: string };
+type Question = { q: string; also: string; proofs: Proof[] };
 
-const CARE_FINDINGS = [
+const QUESTIONS: Question[] = [
   {
-    name: "Acute early warning",
-    body: "“Three members are trending toward catastrophic-cost episodes, and your stop-loss notice deadlines hit in six weeks.” The CFO avoids the year-end surprise; HR gets case management engaged while it can still change the outcome — for the budget and the family.",
+    q: "Am I paying market rates — or is my competitor paying less?",
+    also: "The fees nobody itemized, sitting in your own filings — broker commissions, admin loads, spread you never agreed to.",
+    proofs: [
+      {
+        stat: "$2,700 / employee",
+        cap: "One employer's annual broker fees alone — before anything else.",
+      },
+    ],
   },
   {
-    name: "Chronic care gaps",
-    body: "“128 pre-diabetic members aren't enrolled in the diabetes program you already pay for.” Close the gap now, or pay for the diabetes — and the vendor — later. This is how a benefits program proves it works.",
+    q: "Were we actually billed correctly?",
+    also: "Out-of-network claims paid as in-network. Duplicate and above-contract charges. And the deeper one: did the care I paid for in claims actually get delivered?",
+    proofs: [
+      {
+        stat: "4% → 12.3%",
+        cap: "Postpartum-hemorrhage diagnoses jumped while transfusion rates stayed flat. Care billed, not delivered.",
+        src: "BHI / BCBSA, 2026",
+      },
+    ],
   },
   {
-    name: "Billed vs. delivered",
-    body: "“Postpartum-hemorrhage diagnoses jumped from 4% to 12.3% of maternity admissions while transfusion rates stayed flat.” Mothers didn't change; the billing did — care billed, not delivered. We flag where the clinical record and the invoice tell different stories. (Blue Health Intelligence / BCBSA, 2026)",
+    q: "The vendors promising to save me money — are they actually doing it?",
+    also: "Is anyone even using the point solution you pay for? Are they closing the gaps they were hired to close, or grading their own homework?",
+    proofs: [
+      {
+        stat: "128 members",
+        cap: "Pre-diabetic and not enrolled in the diabetes program you already pay for.",
+      },
+    ],
   },
   {
-    name: "Provider quality in your network",
-    body: "“The surgical group your employees use most has a repeat-procedure rate double the regional benchmark.” In-network doesn't mean good. Your people deserve the care you think you're buying — we verify they're getting it.",
+    q: "Is the care any good — and did my people actually get better?",
+    also: "Are there better providers I should be steering my team to? The deepest check nobody runs.",
+    proofs: [
+      {
+        stat: "2× the benchmark",
+        cap: "The surgical group your employees use most has a repeat-procedure rate double the regional norm.",
+      },
+      {
+        stat: "40% above peers",
+        cap: "MSK spend runs 40% above peers — with no PT-first pathway. Build the plan around who your people actually are.",
+      },
+      {
+        stat: "22 points below",
+        cap: "Cancer-screening completion below benchmark — the rare fix that's the right thing and the cheap thing.",
+      },
+    ],
   },
-  {
-    name: "Your population vs. national norms",
-    body: "“Your musculoskeletal spend runs 40% above industry peers — consistent with your workforce — but you're the only peer without a PT-first pathway.” Know how your people differ, and build the plan around who they actually are.",
-  },
-  {
-    name: "Prevention & screening",
-    body: "“Cancer-screening completion is 22 points below benchmark.” Stage-one is treatable and affordable; stage-three is neither. Catching this early is the rare finding that's simultaneously the right thing and the cheap thing.",
-  },
-] as const;
+];
 
 export default function HomePage() {
   return (
@@ -192,35 +205,40 @@ export default function HomePage() {
         <FiveActs />
       </Section>
 
-      <Section eyebrow="What we find" title="Real money, hiding in plain sight." tone="bone">
-        <div className="grid gap-6 md:grid-cols-3">
-          {FINDINGS.map((finding) => (
-            <div
-              key={finding.name}
-              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
-            >
-              <h3 className="text-spruce text-xl font-bold">{finding.name}</h3>
-              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section eyebrow="Component 4, up close" title="Is the care itself any good?" tone="mist">
-        <p className="text-ink/80 max-w-3xl text-lg">
-          The deepest check nobody runs: matching what you paid for against the clinical picture of
-          what actually happened. Aggregate, de-identified, and in near real time — agents watching
-          continuously, so you see issues while you can still act on them, not in a broker deck 14
-          months later.
+      <Section
+        eyebrow="The questions we answer"
+        title="Four questions about your plan. Nobody answers them. We do."
+        tone="bone"
+      >
+        <p className="text-ink/70 max-w-xl text-lg">
+          Not a list of features — the things you&apos;d actually want to know if you could see
+          inside your own health plan.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {CARE_FINDINGS.map((finding) => (
+        <div className="border-sage/30 mt-12 border-t">
+          {QUESTIONS.map((item) => (
             <div
-              key={finding.name}
-              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
+              key={item.q}
+              className="border-sage/30 grid gap-5 border-b py-8 md:grid-cols-[1fr_300px] md:gap-12"
             >
-              <h3 className="text-spruce text-lg font-bold">{finding.name}</h3>
-              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
+              <div>
+                <h3 className="text-ink text-xl font-bold md:text-2xl">{item.q}</h3>
+                <p className="text-ink/70 mt-2 max-w-md text-sm">{item.also}</p>
+              </div>
+              <div className="flex flex-col gap-4">
+                {item.proofs.map((p) => (
+                  <div key={p.stat} className="border-spruce border-l-2 pl-4">
+                    <p
+                      className={`text-spruce font-bold tracking-tight ${
+                        item.proofs.length > 1 ? "text-lg" : "text-2xl"
+                      }`}
+                    >
+                      {p.stat}
+                    </p>
+                    <p className="text-ink/70 mt-1 text-sm">{p.cap}</p>
+                    {p.src ? <p className="text-spruce/70 mt-1 text-xs italic">{p.src}</p> : null}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
