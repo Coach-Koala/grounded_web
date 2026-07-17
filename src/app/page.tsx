@@ -121,7 +121,7 @@ export default function HomePage() {
       <Section
         id="how"
         eyebrow="How it works"
-        title="Five components, from a free scorecard to continuous assurance."
+        title="Six components, from a free scorecard to continuous assurance."
         tone="mist"
       >
         <FiveActs />
