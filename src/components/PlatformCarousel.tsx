@@ -6,18 +6,52 @@ import { useState } from "react";
 const SLIDES = [
   {
     src: "/screenshots/platform-home.png",
+    width: 1177,
+    height: 969,
     alt: "Employer Home dashboard: actively managing plan quality frees up a $1.81M five-year reinvestment fund, with an actively-managed vs. autopilot trend chart",
     caption: "Your plan, actively managed — $1.81M freed to reinvest.",
   },
   {
+    src: "/screenshots/platform-healthcare-savings.png",
+    width: 1192,
+    height: 1051,
+    alt: "Healthcare Savings view: claims quality, care navigation, and population-health savings, with $304,300 booked year-to-date to reinvest",
+    caption: "Three ways we find money — $304K already booked to reinvest.",
+  },
+  {
+    src: "/screenshots/platform-claims-quality.png",
+    width: 1299,
+    height: 1148,
+    alt: "Claims Quality view: $554,188 in billing errors found across 12,438 claims reviewed, a correction pipeline, and a breakdown by error type",
+    caption: "$554,188 in billing errors found — 100% audit coverage, not sampling.",
+  },
+  {
+    src: "/screenshots/platform-care-navigation.png",
+    width: 1368,
+    height: 962,
+    alt: "Care Navigation outlier view: a high-cost oncology member with an AI health snapshot, clinical timeline, and ranked intervention recommendations with estimated savings",
+    caption: "High-cost cases caught early — the case, the plan, and the savings math.",
+  },
+  {
+    src: "/screenshots/platform-population-health.png",
+    width: 1224,
+    height: 1123,
+    alt: "Population Health view: $162K addressable through targeted care navigation, top care-gap opportunities, and a ranked take-action queue",
+    caption: "$162K in care-gap opportunity, ranked into a take-action queue.",
+  },
+  {
     src: "/screenshots/platform-spend-leverage.png",
+    width: 1172,
+    height: 979,
     alt: "Spend & Leverage view: $2.9M–$4.7M/yr you can return to the plan, fiduciary monitoring scores, and a renewal negotiation window",
     caption: "$2.9M–$4.7M/yr you can return to the plan, with sourced evidence.",
   },
   {
-    src: "/screenshots/platform-healthcare-savings.png",
-    alt: "Healthcare Savings view: claims quality, care navigation, and population-health savings, with $304,300 booked year-to-date to reinvest",
-    caption: "Three ways we find money — $304K already booked to reinvest.",
+    src: "/screenshots/platform-provider-rates.png",
+    width: 1361,
+    height: 957,
+    alt: "Provider Rates view: $118K in provider overpayments versus the SF metro market, with a per-service table of what you pay vs. the market median",
+    caption: "$118K in provider overpayments vs. market — same care, same doctors.",
   },
 ] as const;
 
@@ -46,8 +80,8 @@ export default function PlatformCarousel() {
             key={slide.src}
             src={slide.src}
             alt={slide.alt}
-            width={1192}
-            height={1051}
+            width={slide.width}
+            height={slide.height}
             className="h-full w-full object-cover object-top"
             priority={index === 0}
           />
