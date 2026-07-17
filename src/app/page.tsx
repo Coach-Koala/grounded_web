@@ -103,7 +103,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/#scorecard"
-              className="text-teal-deep bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
+              className="text-spruce bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
               See what you&apos;re overpaying — free
             </Link>

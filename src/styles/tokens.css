@@ -21,10 +21,6 @@
   --color-sage: #90bd53; /* secondary accent, borders, quiet dividers */
   --color-chart-sage: #a9c56d; /* data-viz neutral, secondary series */
 
-  /* Signature band surface — Hippo Teal (see .band-wash below) */
-  --color-teal: #145e63;
-  --color-teal-deep: #0d4548;
-
   /* Functional / data palette */
   --color-positive: #16a34a; /* Savings */
   --color-amber: #d97706; /* Attention */
@@ -36,11 +32,10 @@
 }
 
 /*
- * The signature band surface: the exact Hippo Teal gradient the app's
- * hero/feature bands use (employer_healthcare_savings_live et al.,
- * 2026-06-22). Chrome stays moss (Deep Spruce); bands are teal. White
- * text only on this surface.
+ * The signature band surface: a Deep Spruce (moss) gradient for the
+ * hero/feature bands, consistent with the rest of the brand chrome.
+ * White text only on this surface.
  */
 .band-wash {
-  background: linear-gradient(135deg, #145e63 0%, #0d4548 100%);
+  background: linear-gradient(135deg, #3d6329 0%, #355726 100%);
 }
