@@ -228,7 +228,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Component 5, up close" title="Is the care itself any good?" tone="mist">
+      <Section eyebrow="Component 6, up close" title="Is the care itself any good?" tone="mist">
         <p className="text-ink/80 max-w-3xl text-lg">
           The deepest check nobody runs: matching what you paid for against the clinical picture of
           what actually happened. Aggregate, de-identified, and in near real time — agents watching
