@@ -26,11 +26,8 @@ export default function Header() {
           >
             Advisors
           </Link>
-          <Link
-            href="/insights/"
-            className="text-ink hover:text-spruce hidden font-medium sm:block"
-          >
-            Insights
+          <Link href="/about/" className="text-ink hover:text-spruce hidden font-medium sm:block">
+            About
           </Link>
           <a href={appUrl} className="text-spruce hover:text-spruce font-semibold">
             Log in

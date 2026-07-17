@@ -4,10 +4,47 @@ import IncentiveTable from "@/components/IncentiveTable";
 import LeadForm from "@/components/LeadForm";
 import PlatformShowcase from "@/components/PlatformShowcase";
 import StatBand from "@/components/StatBand";
-import Team from "@/components/Team";
 import { Section } from "@/components/Section";
 
 const CALENDLY_URL = "https://calendly.com/alyssasr";
+
+const MACHINE_STATS = [
+  {
+    value: "$20B+",
+    label: "AI revenue-cycle industry built to bill more — growing 24% a year.",
+    source: "Grand View Research",
+  },
+  {
+    value: "1.7%",
+    label: "of total health spend is now AI upcoding alone.",
+    source: "Garner Health, 2026",
+  },
+  {
+    value: "49%",
+    label: "of plans took a $1M+ claim last year — up from 23%.",
+    source: "Aegis Risk, 2025",
+  },
+  {
+    value: "79%",
+    label: "of one employer's $4.08M claim went to administrators, not care.",
+    source: "U.S. Senate testimony, 2025",
+  },
+] as const;
+
+const REINVEST = [
+  {
+    name: "Give it back",
+    body: "An illness fund for employees facing a serious diagnosis — capital flows straight to the people who need it most.",
+  },
+  {
+    name: "Do better",
+    body: "Richer benefits, lower member cost-share, or raises. Reinvest in the plan and the people on it.",
+  },
+  {
+    name: "Win-win-win",
+    body: "Healthier members, a stronger plan, and a benefits story you're genuinely proud to tell.",
+  },
+] as const;
 
 const FINDINGS = [
   {
@@ -35,7 +72,7 @@ const CARE_FINDINGS = [
   },
   {
     name: "Billed vs. delivered",
-    body: "“One hospital system codes postpartum hemorrhage at three times the national rate.” Mothers didn't change; the billing did. We flag where the clinical record and the invoice tell different stories.",
+    body: "“Postpartum-hemorrhage diagnoses jumped from 4% to 12.3% of maternity admissions while transfusion rates stayed flat.” Mothers didn't change; the billing did — care billed, not delivered. We flag where the clinical record and the invoice tell different stories. (Blue Health Intelligence / BCBSA, 2026)",
   },
   {
     name: "Provider quality in your network",
@@ -56,16 +93,17 @@ export default function HomePage() {
     <>
       <section className="band-wash">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="eyebrow mb-4 text-white">Quality control for the healthcare you buy</p>
+          <p className="eyebrow mb-4 text-white">Quality &amp; accountability in the age of AI</p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white uppercase md:text-6xl">
             Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white md:text-xl">
             Health benefits are your second-biggest expense — and the only one with no independent
-            oversight. Every opinion you get on whether it&apos;s working comes from someone paid
-            out of that spend. Grounded Health is the independent check: a platform whose agents
-            find the overcharges, the errors, the vendors not delivering — and verify that your
-            people are actually getting the good care you&apos;re paying for.
+            oversight. Now AI writes the notes, codes the claims, and prices the care — billing your
+            plan more, at scale. Grounded Health is the quality and accountability layer for
+            self-funded plans: a software and analytics platform, not a broker or carrier, whose
+            agents check every claim, contract, and vendor — and verify your people actually get the
+            good care you&apos;re paying for.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -84,8 +122,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section eyebrow="By the numbers" tone="bone">
+      <Section
+        eyebrow="By the numbers"
+        title="The system is broken — and getting worse."
+        tone="bone"
+      >
         <StatBand />
+      </Section>
+
+      <section className="bg-spruce-dark text-white">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <p className="eyebrow text-amber mb-3">The reality</p>
+          <h2 className="mb-3 max-w-3xl text-3xl font-bold tracking-tight md:text-4xl">
+            The machine you&apos;re up against.
+          </h2>
+          <p className="mb-10 max-w-2xl text-lg text-white/70 italic">
+            AI is already being used to bill your plan more — at scale, and on purpose.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {MACHINE_STATS.map((stat) => (
+              <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 p-6">
+                <p className="text-amber text-4xl font-bold tracking-tight md:text-5xl">
+                  {stat.value}
+                </p>
+                <p className="mt-3 text-sm text-white/85">{stat.label}</p>
+                <p className="mt-3 text-xs text-white/50 italic">{stat.source}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 max-w-3xl text-lg text-white">
+            Hospitals and carriers run AI to maximize billing.{" "}
+            <span className="text-amber font-semibold">
+              Most employers audit it with a spreadsheet.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <Section eyebrow="What leaders miss when they don't see the plan" tone="bone">
+        <div className="bg-ink grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
+          <div>
+            <blockquote className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-snug">
+              One employer had <span className="text-sage">$2,300 less per employee per year</span>,
+              with better benefits. When the acquiring company moved 2,500 employees onto that plan,
+              the change created{" "}
+              <span className="text-sage">more than a quarter billion dollars of equity value</span>{" "}
+              that had not been priced in.
+            </blockquote>
+            <p className="text-mist mt-6 text-sm">Lee Lewis, Health Transformation Alliance</p>
+          </div>
+          <div className="border-spruce/50 self-center rounded-xl border p-6 text-center">
+            <p className="eyebrow text-sage">The math</p>
+            <p className="mt-2 text-4xl font-bold text-white md:text-5xl">$250M+</p>
+            <p className="text-mist mt-3 text-sm">
+              A claims-spend delta can compound into enterprise value when the plan is large enough
+              — and nobody has priced the waste correctly.
+            </p>
+          </div>
+        </div>
       </Section>
 
       <Section
@@ -220,44 +314,26 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Why trust us" title="Independent by structure, not by promise." tone="mist">
-        <div className="border-spruce bg-white rounded-lg border-2 p-8">
-          <h3 className="text-spruce text-xl font-bold">
-            We&apos;re a public benefit corporation — on purpose, in the charter.
-          </h3>
-          <p className="text-ink/80 mt-3">
-            Most vendors promise alignment; we made it legally binding. As a PBC, Grounded Health is
-            chartered to serve the people who depend on employer health plans — not to maximize
-            extraction from them. Our directors are legally obligated to weigh that mission in every
-            decision. Combined with flat-fee pricing and zero ownership by any broker, carrier, TPA,
-            or vendor, independence isn&apos;t our positioning. It&apos;s our corporate structure.
-          </p>
-        </div>
-        <div className="mt-8 grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 className="text-ink text-lg font-bold">Your data never leaves your building</h3>
-            <p className="text-ink/80 mt-2 text-sm">
-              Claims analysis runs inside your own cloud environment. Only aggregated, de-identified
-              results come out. Your security team stays in control, and contracting takes weeks —
-              not quarters.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-ink text-lg font-bold">Value before access</h3>
-            <p className="text-ink/80 mt-2 text-sm">
-              We show you real findings from public data before you sign anything. If the free
-              scorecard isn&apos;t compelling, stop there — no meetings to survive, no sunk cost.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      <Section eyebrow="The team" title="Built by people who've seen the inside." tone="bone">
-        <p className="text-ink/80 mb-8 max-w-3xl">
-          Health-plan leadership, enterprise AI, and decades of data engineering. We know where the
-          numbers hide because we&apos;ve worked where they&apos;re made.
+      <Section
+        eyebrow="The opportunity"
+        title="This isn't about cutting. It's about what you get to reinvest."
+        tone="bone"
+      >
+        <p className="text-ink/80 max-w-3xl text-lg">
+          Every dollar of error and waste we help you avoid is capital you get to put back into your
+          people. That&apos;s the win — and the story worth telling.
         </p>
-        <Team />
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {REINVEST.map((item) => (
+            <div
+              key={item.name}
+              className="border-sage/30 bg-white rounded-lg border p-6 shadow-sm"
+            >
+              <h3 className="text-ink text-lg font-bold">{item.name}</h3>
+              <p className="text-ink/80 mt-2 text-sm">{item.body}</p>
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section id="scorecard" eyebrow="Start here" title="See your scorecard." tone="mist">

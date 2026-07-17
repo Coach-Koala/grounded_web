@@ -36,8 +36,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/insights/" className="hover:text-sage">
-                Insights
+              <Link href="/about/" className="hover:text-sage">
+                About
               </Link>
             </li>
           </ul>

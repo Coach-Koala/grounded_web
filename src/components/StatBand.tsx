@@ -1,29 +1,29 @@
 const STATS = [
   {
-    value: "$2,700",
-    label: "per employee, per year — what one employer was paying in broker fees alone",
+    value: "$26,993",
+    label: "Average family premium in 2025",
+    source: "KFF",
   },
   {
-    value: "$2.1B/yr",
-    label: "in above-benchmark commissions across ~48,000 employers, hiding in public filings",
+    value: "+6.5–10%",
+    label: "Projected 2026 cost increase — steepest in 15 years",
+    source: "Mercer",
   },
   {
-    value: "6–12 mo",
-    label: "how far behind most employers' view of their own spend runs",
-  },
-  {
-    value: "$0",
-    label: "what we earn from your spend, your premiums, or your recoveries",
+    value: "59%",
+    label: "Of employers cutting plan benefits in 2026 (up from 44% in 2024)",
+    source: "Mercer",
   },
 ] as const;
 
 export default function StatBand() {
   return (
-    <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {STATS.map((stat) => (
-        <div key={stat.label}>
-          <p className="text-ink text-4xl font-bold tracking-tight md:text-5xl">{stat.value}</p>
-          <p className="text-ink/80 mt-2 max-w-xs text-sm">{stat.label}</p>
+        <div key={stat.label} className="border-sage/30 rounded-lg border bg-white p-6 shadow-sm">
+          <p className="text-spruce text-4xl font-bold tracking-tight md:text-5xl">{stat.value}</p>
+          <p className="text-ink/80 mt-2 text-sm">{stat.label}</p>
+          <p className="eyebrow text-ink/50 mt-4 text-xs">Source: {stat.source}</p>
         </div>
       ))}
     </div>

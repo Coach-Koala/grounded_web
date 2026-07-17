@@ -2,7 +2,6 @@ type Chip = { label: string; solid?: boolean; outline?: boolean };
 type Need = { icons: IconName[]; title: string; body: string };
 type Get = { lead: string; body: string };
 type Act = {
-  badge: string;
   name: string;
   chips: Chip[];
   meter: number;
@@ -15,9 +14,8 @@ type IconName = "public" | "nda" | "cloud" | "subset" | "lock" | "loop" | "clini
 
 const ACTS: Act[] = [
   {
-    badge: "Component 1",
     name: "Health Plan Scorecard",
-    chips: [{ label: "Free", solid: true }, { label: "Same day" }],
+    chips: [{ label: "Free", solid: true }, { label: "Instant" }],
     meter: 1,
     need: {
       icons: ["public"],
@@ -30,9 +28,8 @@ const ACTS: Act[] = [
     },
   },
   {
-    badge: "Component 2 · Start here",
-    name: "Contract X-ray",
-    chips: [{ label: "Flat fee", solid: true }, { label: "Findings in 2–3 wks" }],
+    name: "Contract Review",
+    chips: [{ label: "Flat fee", solid: true }, { label: "Under a week" }],
     meter: 2,
     need: {
       icons: ["nda"],
@@ -46,9 +43,12 @@ const ACTS: Act[] = [
     featured: true,
   },
   {
-    badge: "Component 3",
     name: "Claims X-ray",
-    chips: [{ label: "Flat fee", solid: true }, { label: "In your cloud" }],
+    chips: [
+      { label: "Flat fee", solid: true },
+      { label: "1 hour in your cloud" },
+      { label: "Every claim, not a 1% sample" },
+    ],
     meter: 3,
     need: {
       icons: ["cloud"],
@@ -61,11 +61,12 @@ const ACTS: Act[] = [
     },
   },
   {
-    badge: "Component 4",
     name: "Overpayment Recovery",
     chips: [
       { label: "Partner's contingency — we take $0", outline: true },
-      { label: "60–120 days" },
+      { label: "Starts immediately" },
+      { label: "First recovery in ~90 days" },
+      { label: "Continuous" },
     ],
     meter: 3,
     need: {
@@ -79,7 +80,6 @@ const ACTS: Act[] = [
     },
   },
   {
-    badge: "Component 5",
     name: "Assurance",
     chips: [{ label: "Flat annual", solid: true }, { label: "Continuous" }],
     meter: 4,
@@ -94,7 +94,6 @@ const ACTS: Act[] = [
     },
   },
   {
-    badge: "Component 6",
     name: "Care Quality Verification",
     chips: [{ label: "Assurance add-on", solid: true }, { label: "Continuous" }],
     meter: 5,
@@ -233,36 +232,65 @@ function GetBlock({ get }: { get: Get }) {
 }
 
 export default function FiveActs() {
+  const last = ACTS.length - 1;
   return (
-    <div className="mt-4 space-y-4">
-      <div className="text-ink/60 hidden grid-cols-[280px_260px_1fr] gap-6 px-7 md:grid">
-        <span />
-        <p className="eyebrow">What we need from you</p>
-        <p className="eyebrow">What you get</p>
+    <div className="mt-4">
+      {/* column headers, offset to align with the cards beside the rail */}
+      <div className="hidden md:flex md:gap-6">
+        <div className="w-11 shrink-0" aria-hidden="true" />
+        <div className="text-ink/60 grid flex-1 grid-cols-[280px_260px_1fr] gap-6 px-7">
+          <span />
+          <p className="eyebrow">What we need from you</p>
+          <p className="eyebrow">What you get</p>
+        </div>
       </div>
-      {ACTS.map((act) => (
-        <div
-          key={act.badge}
-          className={`bg-white rounded-lg p-7 shadow-sm ${
-            act.featured ? "border-spruce border-2" : "border-sage/30 border"
-          }`}
-        >
-          <div className="grid gap-4 md:grid-cols-[280px_260px_1fr] md:gap-6">
-            <div>
-              <p className="eyebrow text-spruce mb-1">{act.badge}</p>
-              <h3 className="text-ink text-lg font-bold">{act.name}</h3>
-              <Chips chips={act.chips} />
+
+      {ACTS.map((act, i) => (
+        <div key={act.name} className="flex gap-4 md:gap-6">
+          {/* progression rail: numbered node on a connecting line */}
+          <div className="flex w-11 shrink-0 flex-col items-center">
+            <div
+              className={`w-0.5 flex-1 ${i === 0 ? "bg-transparent" : "bg-sage/50"}`}
+              aria-hidden="true"
+            />
+            <div className="bg-spruce flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-white shadow-sm">
+              <span className="sr-only">Component </span>
+              {i + 1}
             </div>
-            <NeedBlock need={act.need} meter={act.meter} />
-            <GetBlock get={act.get} />
+            <div
+              className={`w-0.5 flex-1 ${i === last ? "bg-transparent" : "bg-sage/50"}`}
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* card */}
+          <div
+            className={`bg-white my-2 flex-1 rounded-lg p-7 shadow-sm ${
+              act.featured ? "border-spruce border-2" : "border-sage/30 border"
+            }`}
+          >
+            <div className="grid gap-4 md:grid-cols-[280px_260px_1fr] md:gap-6">
+              <div>
+                {act.featured && <p className="eyebrow text-spruce mb-1">Start here</p>}
+                <h3 className="text-ink text-lg font-bold">{act.name}</h3>
+                <Chips chips={act.chips} />
+              </div>
+              <NeedBlock need={act.need} meter={act.meter} />
+              <GetBlock get={act.get} />
+            </div>
           </div>
         </div>
       ))}
-      <p className="text-ink/60 px-7 text-sm">
-        The meter shows how much data each component uses: public data → contracts → claims (in your
-        cloud) → ongoing feed → clinical EHR. It only moves right once the previous component has
-        earned it.
-      </p>
+
+      {/* caption, aligned under the cards */}
+      <div className="flex gap-4 md:gap-6">
+        <div className="w-11 shrink-0" aria-hidden="true" />
+        <p className="text-ink/60 mt-3 flex-1 px-7 text-sm">
+          The meter shows how much data each component uses: public data → contracts → claims (in
+          your cloud) → ongoing feed → clinical EHR. It only moves right once the previous component
+          has earned it.
+        </p>
+      </div>
     </div>
   );
 }
