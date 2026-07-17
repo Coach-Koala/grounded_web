@@ -176,8 +176,7 @@ export default function HomePage() {
           Grounded isn&apos;t a report you commission once a year. It&apos;s a platform: specialized
           agents review every claim as it lands, check bills against contracts, watch your rates
           against the market, track renewals, and score every vendor — 24/7, whether or not
-          anyone&apos;s logged in. The scorecards and findings below are what the platform surfaces;
-          the system that produces them never stops running.
+          anyone&apos;s logged in.
         </p>
         <div className="mt-10">
           <PlatformShowcase />
