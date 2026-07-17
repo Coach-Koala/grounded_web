@@ -76,28 +76,31 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
         </div>
       ) : null}
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="eyebrow text-spruce">Work email</span>
-          <input
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
-          />
-        </label>
-        <label className="block">
-          <span className="eyebrow text-spruce">Company</span>
-          <input
-            name="company"
-            type="text"
-            required
-            autoComplete="organization"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
-          />
-        </label>
-      </div>
+      <label className="block">
+        <span className="text-ink text-base font-semibold">Company name</span>
+        <input
+          name="company"
+          type="text"
+          required
+          autoComplete="organization"
+          placeholder="Acme Corporation, Inc."
+          className="border-sage focus:border-spruce mt-2 w-full rounded-md border bg-white p-4 text-base outline-none"
+        />
+        <span className="text-ink/50 mt-1.5 block text-xs">
+          Your company&apos;s legal name — how it files taxes.
+        </span>
+      </label>
+      <label className="block">
+        <span className="text-ink text-base font-semibold">Work email</span>
+        <input
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+          placeholder="you@company.com"
+          className="border-sage focus:border-spruce mt-2 w-full rounded-md border bg-white p-4 text-base outline-none"
+        />
+      </label>
       <input type="hidden" name="audience" defaultValue={defaultAudience} />
 
       {/* Honeypot — hidden from real users, attractive to bots. */}
@@ -109,9 +112,9 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="bg-spruce hover:bg-spruce w-full rounded-md px-6 py-3 text-lg font-semibold text-white disabled:opacity-60 sm:w-auto"
+        className="bg-spruce hover:bg-spruce-dark w-full rounded-md px-6 py-4 text-lg font-semibold text-white disabled:opacity-60"
       >
-        {status === "submitting" ? "Sending…" : "Get your free scorecard"}
+        {status === "submitting" ? "Sending…" : "Get your free scorecard →"}
       </button>
       <p className="text-ink/70 text-xs">
         No sales junk email or marketing sequence — your scorecard in your inbox in minutes. Nothing

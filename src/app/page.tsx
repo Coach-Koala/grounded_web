@@ -3,7 +3,6 @@ import FiveActs from "@/components/FiveActs";
 import IncentiveTable from "@/components/IncentiveTable";
 import LeadForm from "@/components/LeadForm";
 import PlatformShowcase from "@/components/PlatformShowcase";
-import StatBand from "@/components/StatBand";
 import { Section } from "@/components/Section";
 
 const CALENDLY_URL = "https://calendly.com/alyssasr";
@@ -98,12 +97,8 @@ export default function HomePage() {
             Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white md:text-xl">
-            Health benefits are your second-biggest expense — and the only one with no independent
-            oversight. Now AI writes the notes, codes the claims, and prices the care — billing your
-            plan more, at scale. Grounded Health is the quality and accountability layer for
-            self-funded plans: a software and analytics platform, not a broker or carrier, whose
-            agents check every claim, contract, and vendor — and verify your people actually get the
-            good care you&apos;re paying for.
+            Your second-biggest expense — and the only one nobody independently checks. Grounded
+            Health is the quality and accountability layer for self-funded health plans.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -122,22 +117,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section
-        eyebrow="By the numbers"
-        title="The system is broken — and getting worse."
-        tone="bone"
-      >
-        <StatBand />
-      </Section>
-
       <section className="bg-spruce-dark text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <p className="eyebrow text-amber mb-3">The reality</p>
           <h2 className="mb-3 max-w-3xl text-3xl font-bold tracking-tight md:text-4xl">
-            The machine you&apos;re up against.
+            The system is broken — and getting worse.
           </h2>
-          <p className="mb-10 max-w-2xl text-lg text-white/70 italic">
-            AI is already being used to bill your plan more — at scale, and on purpose.
+          <p className="mb-10 max-w-3xl text-lg text-white/70">
+            Family premiums hit $26,993 this year and are rising 6.5–10% into 2026 — the steepest
+            jump in 15 years. And now AI writes the notes, codes the claims, and prices the care,
+            billing your plan more at scale.
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {MACHINE_STATS.map((stat) => (
@@ -159,8 +148,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section eyebrow="What leaders miss when they don't see the plan" tone="bone">
-        <div className="bg-ink grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
+      <Section
+        eyebrow="The problem"
+        title="Everyone in your health plan is paid more when you spend more."
+        tone="mist"
+      >
+        <p className="text-ink/80 max-w-3xl text-lg">
+          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Every party in
+          the chain earns more when your costs go up. We&apos;re the only one that doesn&apos;t.
+        </p>
+        <IncentiveTable />
+        <p className="text-ink mt-8 max-w-3xl text-xl font-bold">
+          The referee doesn&apos;t bet on the game.{" "}
+          <span className="text-ink/70 text-lg font-normal">
+            Flat fee — no commissions, no percentage of spend, no cut of recoveries. The only
+            structure that lets you trust the numbers.
+          </span>
+        </p>
+
+        <div className="bg-ink mt-12 grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
           <div>
             <blockquote className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-snug">
               One employer had <span className="text-sage">$2,300 less per employee per year</span>,
@@ -180,19 +186,6 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </Section>
-
-      <Section
-        eyebrow="The problem"
-        title="Everyone in your health plan is paid more when you spend more."
-        tone="mist"
-      >
-        <p className="text-ink/80 max-w-3xl text-lg">
-          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Which is why
-          costs rise 9–10% a year, why data arrives months late, and why no one in the chain
-          volunteers to check the bills.
-        </p>
-        <IncentiveTable />
       </Section>
 
       <Section
@@ -219,34 +212,6 @@ export default function HomePage() {
         tone="mist"
       >
         <FiveActs />
-      </Section>
-
-      <Section eyebrow="How we're paid" tone="band">
-        <blockquote className="max-w-3xl text-3xl font-bold tracking-tight text-white md:text-4xl">
-          &ldquo;The referee doesn&apos;t bet on the game.&rdquo;
-        </blockquote>
-        <p className="mt-6 max-w-3xl text-white/90">
-          Grounded Health works for a flat fee. Not a percentage of premiums, not a share of
-          savings, not a commission from any vendor we evaluate. When a recovery partner earns a
-          contingency getting your money back, we don&apos;t touch it. It&apos;s the only fee
-          structure that lets you trust the numbers — and it&apos;s the reason we can put our name
-          on them.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-          {[
-            "Flat fee, agreed up front",
-            "No commissions, ever",
-            "No cut of recoveries",
-            "You keep every dollar found",
-          ].map((rule) => (
-            <p key={rule} className="text-sm font-semibold text-white">
-              <span className="text-sage" aria-hidden="true">
-                ✓{" "}
-              </span>
-              {rule}
-            </p>
-          ))}
-        </div>
       </Section>
 
       <Section eyebrow="What we find" title="Real money, hiding in plain sight." tone="bone">
