@@ -43,48 +43,17 @@ const ACTS: Act[] = [
     featured: true,
   },
   {
-    name: "Claims X-ray",
-    chips: [{ label: "Flat fee", solid: true }, { label: "1 hour in your cloud" }],
-    meter: 3,
-    need: {
-      icons: ["cloud"],
-      title: "De-identified claims data",
-      body: "The claims data runs inside your own cloud; nothing sensitive leaves.",
-    },
-    get: {
-      lead: "The claims diagnostic:",
-      body: "every claim checked, not a 1% sample — providers billing above your contracted rates, duplicate and erroneous charges, out-of-network paid as in-network, plus whether your people are actually using the high-quality providers you're paying for.",
-    },
-  },
-  {
-    name: "Overpayment Recovery",
-    chips: [
-      { label: "Partner's contingency — we take $0", outline: true },
-      { label: "Starts immediately" },
-    ],
-    meter: 3,
-    need: {
-      icons: ["subset", "lock"],
-      title: "Only the flagged claims + selective PHI",
-      body: "The subset of claims where we found overpayments — passed to our recovery partner with just the PHI they need to pursue them. You approve exactly what's exposed.",
-    },
-    get: {
-      lead: "Money back:",
-      body: "a vetted recovery partner works the flagged claims on contingency, with first dollars back in as little as 90 days and reviews running continuously. Their fee is theirs — we don't touch it, so our diagnosis is never inflated by a commission.",
-    },
-  },
-  {
-    name: "Assurance",
-    chips: [{ label: "Flat annual", solid: true }, { label: "Continuous" }],
+    name: "Claims Recovery & Assurance",
+    chips: [{ label: "Flat fee", solid: true }, { label: "Continuous" }],
     meter: 4,
     need: {
-      icons: ["loop"],
-      title: "Ongoing feed",
-      body: "The same in-cloud pipes, kept warm. Only aggregated, de-identified results come out.",
+      icons: ["cloud", "lock"],
+      title: "De-identified claims data",
+      body: "Runs inside your own cloud; nothing sensitive leaves. To recover, only the flagged claims and the PHI our partner needs are shared — you approve exactly what's exposed.",
     },
     get: {
-      lead: "It never drifts back:",
-      body: "agents keep reviewing every claim, contract, and vendor around the clock — real-time spend dashboard, continuous billing checks, vendor accountability scorecards, and the annual fiduciary evidence file your CFO and board can stand behind.",
+      lead: "Money found and recovered:",
+      body: "every claim checked — not a 1% sample — for billing that doesn't match your contract, duplicate and erroneous charges, and above-market rates. A vetted partner recovers the overpayments on contingency (we take $0), and agents keep every vendor accountable so it never drifts back.",
     },
   },
   {
