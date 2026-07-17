@@ -134,6 +134,16 @@ site now uses this palette; the teal-to-bone hero wash is replaced by a flat
 Deep Spruce hero. Typography and mark rules unchanged. Reconciling the guide
 document itself is tracked on the forge board.
 
+**Refined 2026-07-17 (owner: "greens still don't match"):** pixel-sampling
+the running app shows the live brand is a hybrid — moss chrome (Deep Spruce
+`#355726` buttons/accents on Bone `#F6F3EE`) plus a **Hippo Teal signature
+band** for hero/feature surfaces: `linear-gradient(135deg, #145E63 0%,
+#0D4548 100%)` (used by the newest LiveViews, 2026-06-22, newer than
+design-system.css). The site's hero and "How we're paid" band now use the
+exact same gradient (`.band-wash` in tokens.css); buttons and accents stay
+moss. This also makes the site's bands match the teal bands visible inside
+the platform screenshots.
+
 ## D10 — Pricing
 
 **Decision:** No dollar amounts on the site. Tier framing only: free

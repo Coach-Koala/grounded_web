@@ -54,7 +54,7 @@ const CARE_FINDINGS = [
 export default function HomePage() {
   return (
     <>
-      <section className="bg-spruce">
+      <section className="band-wash">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <p className="eyebrow mb-4 text-white">Quality control for the healthcare you buy</p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white uppercase md:text-6xl">
@@ -70,13 +70,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/#scorecard"
-              className="bg-white text-spruce hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
+              className="text-teal-deep bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
               See what you&apos;re overpaying — free
             </Link>
             <Link
               href="/#how"
-              className="hover:bg-spruce-dark inline-block rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white"
+              className="inline-block rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
             >
               How it works
             </Link>
@@ -127,7 +127,7 @@ export default function HomePage() {
         <FiveActs />
       </Section>
 
-      <Section eyebrow="How we're paid" tone="spruce">
+      <Section eyebrow="How we're paid" tone="band">
         <blockquote className="max-w-3xl text-3xl font-bold tracking-tight text-white md:text-4xl">
           &ldquo;The referee doesn&apos;t bet on the game.&rdquo;
         </blockquote>
