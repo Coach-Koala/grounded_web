@@ -165,27 +165,6 @@ export default function HomePage() {
             structure that lets you trust the numbers.
           </span>
         </p>
-
-        <div className="bg-ink mt-12 grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
-          <div>
-            <blockquote className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-snug">
-              One employer had <span className="text-sage">$2,300 less per employee per year</span>,
-              with better benefits. When the acquiring company moved 2,500 employees onto that plan,
-              the change created{" "}
-              <span className="text-sage">more than a quarter billion dollars of equity value</span>{" "}
-              that had not been priced in.
-            </blockquote>
-            <p className="text-mist mt-6 text-sm">Lee Lewis, Health Transformation Alliance</p>
-          </div>
-          <div className="border-spruce/50 self-center rounded-xl border p-6 text-center">
-            <p className="eyebrow text-sage">The math</p>
-            <p className="mt-2 text-4xl font-bold text-white md:text-5xl">$250M+</p>
-            <p className="text-mist mt-3 text-sm">
-              A claims-spend delta can compound into enterprise value when the plan is large enough
-              — and nobody has priced the waste correctly.
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section
@@ -248,11 +227,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section
-        eyebrow="Why it matters to you"
-        title="The answer instead of the apology."
-        tone="bone"
-      >
+      <Section eyebrow="Why it matters" title="The answer instead of the apology." tone="bone">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <h3 className="text-ink text-xl font-bold">If you lead HR or benefits</h3>
@@ -277,27 +252,45 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </Section>
 
-      <Section
-        eyebrow="The opportunity"
-        title="This isn't about cutting. It's about what you get to reinvest."
-        tone="bone"
-      >
-        <p className="text-ink/80 max-w-3xl text-lg">
+        <h3 className="text-ink mt-16 max-w-3xl text-2xl font-bold tracking-tight md:text-3xl">
+          And it isn&apos;t about cutting — it&apos;s about what you get to reinvest.
+        </h3>
+        <p className="text-ink/80 mt-3 max-w-3xl text-lg">
           Every dollar of error and waste we help you avoid is capital you get to put back into your
-          people. That&apos;s the win — and the story worth telling.
+          people — the win, and the story worth telling.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {REINVEST.map((item) => (
             <div
               key={item.name}
               className="border-sage/30 bg-white rounded-lg border p-6 shadow-sm"
             >
-              <h3 className="text-ink text-lg font-bold">{item.name}</h3>
+              <h4 className="text-ink text-lg font-bold">{item.name}</h4>
               <p className="text-ink/80 mt-2 text-sm">{item.body}</p>
             </div>
           ))}
+        </div>
+
+        <div className="bg-ink mt-16 grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
+          <div>
+            <blockquote className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-snug">
+              One employer had <span className="text-sage">$2,300 less per employee per year</span>,
+              with better benefits. When the acquiring company moved 2,500 employees onto that plan,
+              the change created{" "}
+              <span className="text-sage">more than a quarter billion dollars of equity value</span>{" "}
+              that had not been priced in.
+            </blockquote>
+            <p className="text-mist mt-6 text-sm">Lee Lewis, Health Transformation Alliance</p>
+          </div>
+          <div className="border-spruce/50 self-center rounded-xl border p-6 text-center">
+            <p className="eyebrow text-sage">The math</p>
+            <p className="mt-2 text-4xl font-bold text-white md:text-5xl">$250M+</p>
+            <p className="text-mist mt-3 text-sm">
+              A claims-spend delta can compound into enterprise value when the plan is large enough
+              — and nobody has priced the waste correctly.
+            </p>
+          </div>
         </div>
       </Section>
 

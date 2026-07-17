@@ -44,11 +44,7 @@ const ACTS: Act[] = [
   },
   {
     name: "Claims X-ray",
-    chips: [
-      { label: "Flat fee", solid: true },
-      { label: "1 hour in your cloud" },
-      { label: "Every claim, not a 1% sample" },
-    ],
+    chips: [{ label: "Flat fee", solid: true }, { label: "1 hour in your cloud" }],
     meter: 3,
     need: {
       icons: ["cloud"],
@@ -57,7 +53,7 @@ const ACTS: Act[] = [
     },
     get: {
       lead: "The claims diagnostic:",
-      body: "providers billing above your contracted rates, duplicate and erroneous charges, out-of-network paid as in-network — plus which providers your people actually use, and whether they're the high-quality ones you're paying for.",
+      body: "every claim checked, not a 1% sample — providers billing above your contracted rates, duplicate and erroneous charges, out-of-network paid as in-network, plus whether your people are actually using the high-quality providers you're paying for.",
     },
   },
   {
@@ -65,8 +61,6 @@ const ACTS: Act[] = [
     chips: [
       { label: "Partner's contingency — we take $0", outline: true },
       { label: "Starts immediately" },
-      { label: "First recovery in ~90 days" },
-      { label: "Continuous" },
     ],
     meter: 3,
     need: {
@@ -76,7 +70,7 @@ const ACTS: Act[] = [
     },
     get: {
       lead: "Money back:",
-      body: "we introduce you to a vetted recovery partner who works the flagged claims on contingency. Their fee is theirs — we don't touch it, so our diagnosis is never inflated by a commission.",
+      body: "a vetted recovery partner works the flagged claims on contingency, with first dollars back in as little as 90 days and reviews running continuously. Their fee is theirs — we don't touch it, so our diagnosis is never inflated by a commission.",
     },
   },
   {
@@ -281,16 +275,6 @@ export default function FiveActs() {
           </div>
         </div>
       ))}
-
-      {/* caption, aligned under the cards */}
-      <div className="flex gap-4 md:gap-6">
-        <div className="w-11 shrink-0" aria-hidden="true" />
-        <p className="text-ink/60 mt-3 flex-1 px-7 text-sm">
-          The meter shows how much data each component uses: public data → contracts → claims (in
-          your cloud) → ongoing feed → clinical EHR. It only moves right once the previous component
-          has earned it.
-        </p>
-      </div>
     </div>
   );
 }
