@@ -2,7 +2,7 @@ import Link from "next/link";
 import FiveActs from "@/components/FiveActs";
 import IncentiveTable from "@/components/IncentiveTable";
 import LeadForm from "@/components/LeadForm";
-import PlatformShowcase from "@/components/PlatformShowcase";
+import PlatformCarousel from "@/components/PlatformCarousel";
 import { Section } from "@/components/Section";
 
 const CALENDLY_URL = "https://calendly.com/alyssasr";
@@ -179,7 +179,7 @@ export default function HomePage() {
           anyone&apos;s logged in.
         </p>
         <div className="mt-10">
-          <PlatformShowcase />
+          <PlatformCarousel />
         </div>
       </Section>
 
