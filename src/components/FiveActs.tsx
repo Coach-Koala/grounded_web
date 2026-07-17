@@ -127,9 +127,9 @@ export default function FiveActs() {
         </div>
       ))}
       <p className="text-ink/60 px-7 text-sm">
-        The meter shows how much data each component uses: public data → documents → claims (in
-        your cloud) → ongoing feed → clinical. It only moves right once the previous component has
-        earned it.
+        The meter shows how much data each component uses: public data → documents → claims (in your
+        cloud) → ongoing feed → clinical. It only moves right once the previous component has earned
+        it.
       </p>
     </div>
   );
