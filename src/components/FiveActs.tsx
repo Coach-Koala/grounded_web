@@ -8,6 +8,7 @@ type Act = {
   need: Need;
   get: Get;
   featured?: boolean;
+  href?: string;
 };
 
 type IconName = "public" | "nda" | "cloud" | "subset" | "lock" | "loop" | "clinical";
@@ -15,6 +16,7 @@ type IconName = "public" | "nda" | "cloud" | "subset" | "lock" | "loop" | "clini
 const ACTS: Act[] = [
   {
     name: "Health Plan Scorecard",
+    href: "/#scorecard",
     chips: [{ label: "Free", solid: true }, { label: "Instant" }],
     meter: 1,
     need: {
@@ -40,7 +42,6 @@ const ACTS: Act[] = [
       lead: "The contract diagnostic:",
       body: "your PBM contract scored against ten fiduciary-aligned standards — spread pricing and retained rebates, missing audit and data-ownership rights, network steering, hidden admin fees, and clean-exit barriers — plus your CAA 2026 readiness and the model language to close each gap at renewal.",
     },
-    featured: true,
   },
   {
     name: "Claims Recovery & Assurance",
@@ -208,42 +209,49 @@ export default function FiveActs() {
         </div>
       </div>
 
-      {ACTS.map((act, i) => (
-        <div key={act.name} className="flex gap-4 md:gap-6">
-          {/* progression rail: numbered node on a connecting line */}
-          <div className="flex w-11 shrink-0 flex-col items-center">
-            <div
-              className={`w-0.5 flex-1 ${i === 0 ? "bg-transparent" : "bg-sage/50"}`}
-              aria-hidden="true"
-            />
-            <div className="bg-spruce flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-white shadow-sm">
-              <span className="sr-only">Component </span>
-              {i + 1}
+      {ACTS.map((act, i) => {
+        const cardClass = `bg-white my-2 flex-1 rounded-lg border-sage/30 border p-7 shadow-sm`;
+        const inner = (
+          <div className="grid gap-4 md:grid-cols-[280px_260px_1fr] md:gap-6">
+            <div>
+              <h3 className="text-ink text-lg font-bold">{act.name}</h3>
+              <Chips chips={act.chips} />
             </div>
-            <div
-              className={`w-0.5 flex-1 ${i === last ? "bg-transparent" : "bg-sage/50"}`}
-              aria-hidden="true"
-            />
+            <NeedBlock need={act.need} meter={act.meter} />
+            <GetBlock get={act.get} />
           </div>
-
-          {/* card */}
-          <div
-            className={`bg-white my-2 flex-1 rounded-lg p-7 shadow-sm ${
-              act.featured ? "border-spruce border-2" : "border-sage/30 border"
-            }`}
-          >
-            <div className="grid gap-4 md:grid-cols-[280px_260px_1fr] md:gap-6">
-              <div>
-                {act.featured && <p className="eyebrow text-spruce mb-1">Start here</p>}
-                <h3 className="text-ink text-lg font-bold">{act.name}</h3>
-                <Chips chips={act.chips} />
+        );
+        return (
+          <div key={act.name} className="flex gap-4 md:gap-6">
+            {/* progression rail: numbered node on a connecting line */}
+            <div className="flex w-11 shrink-0 flex-col items-center">
+              <div
+                className={`w-0.5 flex-1 ${i === 0 ? "bg-transparent" : "bg-sage/50"}`}
+                aria-hidden="true"
+              />
+              <div className="bg-spruce flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-white shadow-sm">
+                <span className="sr-only">Component </span>
+                {i + 1}
               </div>
-              <NeedBlock need={act.need} meter={act.meter} />
-              <GetBlock get={act.get} />
+              <div
+                className={`w-0.5 flex-1 ${i === last ? "bg-transparent" : "bg-sage/50"}`}
+                aria-hidden="true"
+              />
             </div>
+
+            {act.href ? (
+              <a
+                href={act.href}
+                className={`${cardClass} hover:border-spruce block transition-colors`}
+              >
+                {inner}
+              </a>
+            ) : (
+              <div className={cardClass}>{inner}</div>
+            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
