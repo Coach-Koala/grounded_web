@@ -26,15 +26,16 @@ export default function PlatformShowcase() {
     <div className="space-y-12">
       <figure className="overflow-hidden rounded-lg shadow-md">
         <Image
-          src="/screenshots/platform-healthcare-savings.jpg"
-          alt="Grounded Health employer dashboard: year-to-date spend, end-of-year forecast, variance to budget, fiduciary status, total estimated savings, and where healthcare dollars go"
-          width={1456}
-          height={813}
+          src="/screenshots/platform-home.png"
+          alt="Grounded Health employer home dashboard: actively managing plan quality frees up a $1.81M five-year reinvestment fund, with a trend chart comparing your actively-managed plan against leaving it on autopilot"
+          width={1177}
+          height={969}
           className="w-full"
         />
         <figcaption className="bg-white text-ink/70 px-6 py-4 text-sm">
-          The employer home screen: spend, forecast, variance to budget, fiduciary status, and
-          estimated savings — live, updated as agents process each claim. Not a quarterly deck.
+          The employer home screen: your plan&apos;s trend vs. the market, the reinvestment fund
+          that actively managing quality frees up, and what you could do with it — live, updated as
+          agents process each claim. Not a quarterly deck.
         </figcaption>
       </figure>
       <div className="grid gap-8 md:grid-cols-3">
