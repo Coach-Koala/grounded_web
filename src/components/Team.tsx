@@ -1,17 +1,17 @@
 const TEAM = [
   {
+    name: "Alyssa Simpson Rochwerger",
+    role: "CEO & CPO",
+    blurb: "Builds AI products that survive contact with the real world. Author of Real World AI.",
+    linkedin: "https://www.linkedin.com/in/alyssasr/",
+    initials: "AR",
+  },
+  {
     name: "Benjamin Kearns",
     role: "CTO & Founder",
     blurb: "Applied technologist building 0-to-1 in health tech and data infrastructure.",
     linkedin: "https://www.linkedin.com/in/benjaminkearns/",
     initials: "BK",
-  },
-  {
-    name: "Alyssa Simpson Rochwerger",
-    role: "Chief Product Officer",
-    blurb: "Builds AI products that survive contact with the real world. Author of Real World AI.",
-    linkedin: "https://www.linkedin.com/in/alyssasr/",
-    initials: "AR",
   },
   {
     name: "Eric Shangle",
