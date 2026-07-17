@@ -63,7 +63,8 @@ export default function Footer() {
       </div>
       <div className="border-spruce border-t">
         <p className="text-chart-sage mx-auto max-w-6xl px-6 py-6 text-xs">
-          © {new Date().getFullYear()} Grounded Health. All rights reserved.
+          © {new Date().getFullYear()} Grounded Health · A public benefit corporation. All rights
+          reserved.
         </p>
       </div>
     </footer>
