@@ -97,6 +97,21 @@ is now Free Scorecard → Spend X-Ray → Continuous Management. The site shows
 real platform screenshots (employer dashboard + KPI bands) and the team
 (Kearns, Simpson Rochwerger, Shangle, Vertrees) with LinkedIn links.
 
+**Amended 2026-07-17 (Demo-updates PRD + v1 draft):** Positioning is now
+platform-not-report with a team of agents working continuously (24/7), per
+the owner-supplied draft (`grounded-health-website-v1.html`) and PRD. The
+offer ladder is replaced by the **five acts** with a data-depth meter:
+Act 1 Scorecard (free, public data) → Act 2 Health Plan X-ray (flat fee,
+featured) → Act 3 Recovery (vetted partner's contingency, Grounded takes
+$0) → Act 4 Assurance (flat annual, continuous) → Act 5 Care Quality
+Verification (add-on). Hero: "Your company spent millions on healthcare
+last year. Nobody checked the bills." Stat band uses the draft's concrete
+figures. Owner confirmed publishable: PBC ("in the charter") and flat-fee /
+no-cut-of-recoveries structure (still no specific dollar pricing — D10
+holds). CTA is dual: lead form + Calendly (calendly.com/alyssasr). Branding
+stays the current moss/paper system — the draft's serif/terracotta styling
+was not adopted. Demo-app narrative changes deferred (task `t_c68458c1`).
+
 ## D9 — Brand system
 
 **Decision:** Apply the Grounded Health brand guide

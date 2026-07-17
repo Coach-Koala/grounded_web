@@ -2,20 +2,20 @@ import Image from "next/image";
 
 const FEATURES = [
   {
-    name: "Rate Intelligence",
-    body: "Every hospital publishes the rates it accepts, by law. We compare yours to what comparable employers pay — and turn the gap into a negotiation brief for your TPA.",
+    name: "Rate Intelligence agents",
+    body: "Every hospital publishes the rates it accepts, by law. Agents compare yours to what comparable employers pay — continuously, as new pricing data lands — and turn the gap into a negotiation brief for your TPA.",
     image: "/screenshots/platform-rate-intelligence.jpg",
     alt: "Rate Intelligence view showing total excess spend versus market with verified savings opportunities",
   },
   {
-    name: "Contract Structures & Fees",
-    body: "Your plan is graded contract by contract: what's above market, what's renewing, and how much negotiation room you actually have — with broker compensation pulled from public filings.",
+    name: "Contract & fee agents",
+    body: "Your plan is graded contract by contract: what's above market, what's renewing, and how much negotiation room you have — recalculated whenever a contract, fee, or filing changes.",
     image: "/screenshots/platform-contracts.jpg",
     alt: "Contract Structures view showing total annual contract spend, plan grade, and estimated negotiation room",
   },
   {
-    name: "Billing Issues & Mistakes",
-    body: "Every claim is reviewed — 100% audit coverage, not sampling. Flagged dollars, open findings, and recoveries are tracked so your payment integrity vendor has nowhere to hide.",
+    name: "Billing review agents",
+    body: "Every claim is reviewed as it lands — 100% audit coverage, not sampling. Findings are flagged, documented, and pushed toward resolution around the clock, so your payment integrity vendor has nowhere to hide.",
     image: "/screenshots/platform-billing.jpg",
     alt: "Billing Issues view showing flagged spend, recovered dollars, open findings, and full audit coverage",
   },
@@ -34,7 +34,7 @@ export default function PlatformShowcase() {
         />
         <figcaption className="bg-white text-ink/70 px-6 py-4 text-sm">
           The employer home screen: spend, forecast, variance to budget, fiduciary status, and
-          estimated savings — the whole plan on one page, updated as claims land.
+          estimated savings — live, updated as agents process each claim. Not a quarterly deck.
         </figcaption>
       </figure>
       <div className="grid gap-8 md:grid-cols-3">

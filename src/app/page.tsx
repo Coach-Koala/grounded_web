@@ -1,42 +1,53 @@
 import Link from "next/link";
+import FiveActs from "@/components/FiveActs";
+import IncentiveTable from "@/components/IncentiveTable";
 import LeadForm from "@/components/LeadForm";
-import OfferLadder from "@/components/OfferLadder";
 import PlatformShowcase from "@/components/PlatformShowcase";
 import StatBand from "@/components/StatBand";
 import Team from "@/components/Team";
 import { Section } from "@/components/Section";
 
-const CFO_CARDS = [
+const CALENDLY_URL = "https://calendly.com/alyssasr";
+
+const FINDINGS = [
   {
-    name: "Add dollars to your EPS",
-    body: "Savings from your health plan need no new revenue and no headcount cuts. Waste you stop paying drops straight to operating income — and for public companies, straight into earnings per share.",
+    name: "Fees nobody itemized",
+    body: "One employer was paying $2,700 per employee per year in broker fees alone. Another found $800K in annual commissions it didn't know existed — in its own filings.",
   },
   {
-    name: "Manage it like any other cost center",
-    body: "You'd never run cloud spend or logistics on a once-a-year renewal deck. Grounded gives healthcare the same treatment: live spend, forecast, variance to budget, and a named owner.",
+    name: "Billing that doesn't match the contract",
+    body: "Duplicate billing, out-of-network claims paid as in-network, procedures billed above contracted rates, upcoding patterns that quietly compound year over year.",
   },
   {
-    name: "Hold every vendor to their number",
-    body: "TPA, PBM, broker, point solutions — and yes, your payment integrity provider. We don't replace them. We measure what each one returns for what you pay, so renewals become decisions instead of defaults.",
+    name: "Vendors not delivering",
+    body: "Point solutions paid on promised engagement and savings that nobody independently verified. We check the contract against reality before your renewal, so the negotiation is yours.",
   },
 ] as const;
 
-const ANALYZE = [
+const CARE_FINDINGS = [
   {
-    name: "Claims & pharmacy spend",
-    body: "Where the money actually goes — 100% of claims reviewed, not sampled, for errors and patterns your TPA reports won't show you.",
+    name: "Acute early warning",
+    body: "“Three members are trending toward catastrophic-cost episodes, and your stop-loss notice deadlines hit in six weeks.” The CFO avoids the year-end surprise; HR gets case management engaged while it can still change the outcome — for the budget and the family.",
   },
   {
-    name: "Vendor & provider performance",
-    body: "Every entity touching your plan gets scored on what it delivers — including the vendors you hired to watch the others.",
+    name: "Chronic care gaps",
+    body: "“128 pre-diabetic members aren't enrolled in the diabetes program you already pay for.” Close the gap now, or pay for the diabetes — and the vendor — later. This is how a benefits program proves it works.",
   },
   {
-    name: "Contract terms & fees",
-    body: "Problematic language, above-market pricing, and compensation structures flagged before renewal — while you can still act.",
+    name: "Billed vs. delivered",
+    body: "“One hospital system codes postpartum hemorrhage at three times the national rate.” Mothers didn't change; the billing did. We flag where the clinical record and the invoice tell different stories.",
   },
   {
-    name: "Rates & benchmarks",
-    body: "Your negotiated rates against what comparable employers pay in your market, built from federally mandated public pricing data.",
+    name: "Provider quality in your network",
+    body: "“The surgical group your employees use most has a repeat-procedure rate double the regional benchmark.” In-network doesn't mean good. Your people deserve the care you think you're buying — we verify they're getting it.",
+  },
+  {
+    name: "Your population vs. national norms",
+    body: "“Your musculoskeletal spend runs 40% above industry peers — consistent with your workforce — but you're the only peer without a PT-first pathway.” Know how your people differ, and build the plan around who they actually are.",
+  },
+  {
+    name: "Prevention & screening",
+    body: "“Cancer-screening completion is 22 points below benchmark.” Stage-one is treatable and affordable; stage-three is neither. Catching this early is the rare finding that's simultaneously the right thing and the cheap thing.",
   },
 ] as const;
 
@@ -45,23 +56,35 @@ export default function HomePage() {
     <>
       <section className="bg-spruce">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="eyebrow mb-4 text-white">For self-insured employers</p>
+          <p className="eyebrow mb-4 text-white">Quality control for the healthcare you buy</p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white uppercase md:text-6xl">
-            See where your health plan is leaking money.
+            Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white md:text-xl">
-            Healthcare is roughly 30% of your direct employee cost — and usually the least-managed
-            number on the P&amp;L. Grounded gives you an independent view of claims, contracts,
-            rates, and vendors, and turns the waste into contribution margin.
+            Health benefits are your second-biggest expense — and the only one with no independent
+            oversight. Every opinion you get on whether it&apos;s working comes from someone paid
+            out of that spend. Grounded Health is the independent check: a platform whose agents
+            find the overcharges, the errors, the vendors not delivering — and verify that your
+            people are actually getting the good care you&apos;re paying for.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/#scorecard"
               className="bg-white text-spruce hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
-              Get your free scorecard
+              See what you&apos;re overpaying — free
+            </Link>
+            <Link
+              href="/#how"
+              className="hover:bg-spruce-dark inline-block rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white"
+            >
+              How it works
             </Link>
           </div>
+          <p className="mt-5 text-sm text-white/80">
+            Built from public filings and price-transparency data. No claims data, no commitments,
+            nothing to install.
+          </p>
         </div>
       </section>
 
@@ -69,78 +92,205 @@ export default function HomePage() {
         <StatBand />
       </Section>
 
-      <Section eyebrow="For the CFO" title="This is a margin conversation." tone="mist">
-        <div className="grid gap-8 md:grid-cols-3">
-          {CFO_CARDS.map((card) => (
-            <div key={card.name} className="bg-white rounded-lg p-8 shadow-sm">
-              <h3 className="text-ink text-xl font-bold">{card.name}</h3>
-              <p className="text-ink/90 mt-2">{card.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section eyebrow="How it works" title="One platform, three ways to engage." tone="bone">
-        <OfferLadder />
+      <Section
+        eyebrow="The problem"
+        title="Everyone in your health plan is paid more when you spend more."
+        tone="mist"
+      >
+        <p className="text-ink/80 max-w-3xl text-lg">
+          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Which is why
+          costs rise 9–10% a year, why data arrives months late, and why no one in the chain
+          volunteers to check the bills.
+        </p>
+        <IncentiveTable />
       </Section>
 
       <Section
         eyebrow="The platform"
-        title="Not a report. A system your team logs into."
-        tone="mist"
+        title="A team of agents, working your plan around the clock."
+        tone="bone"
       >
-        <PlatformShowcase />
+        <p className="text-ink/80 max-w-3xl text-lg">
+          Grounded isn&apos;t a report you commission once a year. It&apos;s a platform: specialized
+          agents review every claim as it lands, check bills against contracts, watch your rates
+          against the market, track renewals, and score every vendor — 24/7, whether or not
+          anyone&apos;s logged in. The scorecards and findings below are what the platform surfaces;
+          the system that produces them never stops running.
+        </p>
+        <div className="mt-10">
+          <PlatformShowcase />
+        </div>
       </Section>
 
-      <Section eyebrow="What we analyze" title="Everything your plan touches." tone="bone">
-        <div className="grid gap-8 md:grid-cols-2">
-          {ANALYZE.map((item) => (
-            <div key={item.name} className="border-sage border-l-2 pl-6">
-              <h3 className="text-ink text-xl font-bold">{item.name}</h3>
-              <p className="text-ink/90 mt-2">{item.body}</p>
+      <Section
+        id="how"
+        eyebrow="How it works"
+        title="Five acts. You always know what you get for what you share."
+        tone="mist"
+      >
+        <p className="text-ink/80 max-w-3xl text-lg">
+          Trust is earned one step at a time. Data depth only ever increases — and every act
+          delivers standalone value before you&apos;re asked for more.
+        </p>
+        <FiveActs />
+      </Section>
+
+      <Section eyebrow="How we're paid" tone="spruce">
+        <blockquote className="max-w-3xl text-3xl font-bold tracking-tight text-white md:text-4xl">
+          &ldquo;The referee doesn&apos;t bet on the game.&rdquo;
+        </blockquote>
+        <p className="mt-6 max-w-3xl text-white/90">
+          Grounded Health works for a flat fee. Not a percentage of premiums, not a share of
+          savings, not a commission from any vendor we evaluate. When a recovery partner earns a
+          contingency getting your money back, we don&apos;t touch it. It&apos;s the only fee
+          structure that lets you trust the numbers — and it&apos;s the reason we can put our name
+          on them.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          {[
+            "Flat fee, agreed up front",
+            "No commissions, ever",
+            "No cut of recoveries",
+            "You keep every dollar found",
+          ].map((rule) => (
+            <p key={rule} className="text-sm font-semibold text-white">
+              <span className="text-sage" aria-hidden="true">
+                ✓{" "}
+              </span>
+              {rule}
+            </p>
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="What we find" title="Real money, hiding in plain sight." tone="bone">
+        <div className="grid gap-6 md:grid-cols-3">
+          {FINDINGS.map((finding) => (
+            <div
+              key={finding.name}
+              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
+            >
+              <h3 className="text-spruce text-xl font-bold">{finding.name}</h3>
+              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section eyebrow="Why Grounded" title="An auditor on your side of the table." tone="spruce">
-        <div className="grid gap-8 md:grid-cols-3">
+      <Section eyebrow="Act 5, up close" title="Is the care itself any good?" tone="mist">
+        <p className="text-ink/80 max-w-3xl text-lg">
+          The deepest check nobody runs: matching what you paid for against the clinical picture of
+          what actually happened. Aggregate, de-identified, and in near real time — agents watching
+          continuously, so you see issues while you can still act on them, not in a broker deck 14
+          months later.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {CARE_FINDINGS.map((finding) => (
+            <div
+              key={finding.name}
+              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
+            >
+              <h3 className="text-spruce text-lg font-bold">{finding.name}</h3>
+              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Why it matters to you"
+        title="The answer instead of the apology."
+        tone="bone"
+      >
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="bg-white rounded-lg p-8 shadow-sm">
+            <h3 className="text-ink text-xl font-bold">If you lead HR or benefits</h3>
+            <p className="text-ink/80 mt-3">
+              You&apos;re accountable for a program you can&apos;t see into, judged on costs you
+              don&apos;t control, and one bad renewal or one employee&apos;s care horror story away
+              from a very hard meeting. We change what you walk in with: real-time answers when the
+              CFO asks why costs moved, independent proof your program works, early warning before
+              anything becomes an escalation — and a care-quality story you can proudly tell
+              employees, because &ldquo;we verify you&apos;re getting good care&rdquo; is a benefit,
+              not a cut.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-8 shadow-sm">
+            <h3 className="text-ink text-xl font-bold">If you&apos;re the CFO</h3>
+            <p className="text-ink/80 mt-3">
+              Healthcare is the only major line item you sign without controls, an audit trail, or a
+              forecast you&apos;d defend to the board. We give it all three: recovered dollars
+              straight to EBITDA without touching benefits, no more shock claims at year-end, and a
+              documented record of independent oversight — which matters now that fiduciary lawsuits
+              name officers, not just companies.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section eyebrow="Why trust us" title="Independent by structure, not by promise." tone="mist">
+        <div className="border-spruce bg-white rounded-lg border-2 p-8">
+          <h3 className="text-spruce text-xl font-bold">
+            We&apos;re a public benefit corporation — on purpose, in the charter.
+          </h3>
+          <p className="text-ink/80 mt-3">
+            Most vendors promise alignment; we made it legally binding. As a PBC, Grounded Health is
+            chartered to serve the people who depend on employer health plans — not to maximize
+            extraction from them. Our directors are legally obligated to weigh that mission in every
+            decision. Combined with flat-fee pricing and zero ownership by any broker, carrier, TPA,
+            or vendor, independence isn&apos;t our positioning. It&apos;s our corporate structure.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div>
-            <h3 className="text-xl font-bold">Independent</h3>
-            <p className="mt-2 text-white/90">
-              We don&apos;t sell insurance, take vendor commissions, or answer to a carrier. Our
-              only client is you.
+            <h3 className="text-ink text-lg font-bold">Your data never leaves your building</h3>
+            <p className="text-ink/80 mt-2 text-sm">
+              Claims analysis runs inside your own cloud environment. Only aggregated, de-identified
+              results come out. Your security team stays in control, and contracting takes weeks —
+              not quarters.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold">Evidence-led</h3>
-            <p className="mt-2 text-white/90">
-              Every finding ties back to your actual claims, contracts, and public filings — not
-              actuarial guesses.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold">Lightweight</h3>
-            <p className="mt-2 text-white/90">
-              Reporting lands in your inbox, not another dashboard your team has to manage. Fire and
-              forget.
+            <h3 className="text-ink text-lg font-bold">Value before access</h3>
+            <p className="text-ink/80 mt-2 text-sm">
+              We show you real findings from public data before you sign anything. If the free
+              scorecard isn&apos;t compelling, stop there — no meetings to survive, no sunk cost.
             </p>
           </div>
         </div>
       </Section>
 
       <Section eyebrow="The team" title="Built by people who've seen the inside." tone="bone">
+        <p className="text-ink/80 mb-8 max-w-3xl">
+          Health-plan leadership, enterprise AI, and decades of data engineering. We know where the
+          numbers hide because we&apos;ve worked where they&apos;re made.
+        </p>
         <Team />
       </Section>
 
-      <Section id="scorecard" eyebrow="Start here" title="Get your free scorecard." tone="mist">
+      <Section id="scorecard" eyebrow="Start here" title="See your scorecard." tone="mist">
         <div className="grid gap-10 md:grid-cols-2">
           <div className="space-y-4">
             <p className="text-ink text-lg">
-              A high-level read on your plan, built from its own public filings: how your costs
-              compare, where the critical findings are, and what savings look plausible.
+              Tell us your company name. The platform builds your health plan scorecard from public
+              data — what&apos;s working, what&apos;s overpriced, and what it&apos;s worth fixing.
             </p>
-            <p className="text-ink/80">Free. Two minutes. No claims data required to start.</p>
+            <p className="text-ink/80">
+              Free. Built from public data. No claims data required, nothing to install, no
+              obligation.
+            </p>
+            <p className="text-ink/80">
+              Prefer to talk it through?{" "}
+              <a
+                href={CALENDLY_URL}
+                className="text-spruce font-semibold underline"
+                rel="noopener"
+                target="_blank"
+              >
+                Book 20 minutes
+              </a>{" "}
+              and we&apos;ll walk you through it live.
+            </p>
           </div>
           <LeadForm />
         </div>
