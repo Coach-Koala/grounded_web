@@ -26,13 +26,6 @@ const SLIDES = [
     caption: "$554,188 in billing errors found — 100% audit coverage, not sampling.",
   },
   {
-    src: "/screenshots/platform-care-navigation.png",
-    width: 1368,
-    height: 962,
-    alt: "Care Navigation outlier view: a high-cost oncology member with an AI health snapshot, clinical timeline, and ranked intervention recommendations with estimated savings",
-    caption: "High-cost cases caught early — the case, the plan, and the savings math.",
-  },
-  {
     src: "/screenshots/platform-population-health.png",
     width: 1224,
     height: 1123,
@@ -45,13 +38,6 @@ const SLIDES = [
     height: 979,
     alt: "Spend & Leverage view: $2.9M–$4.7M/yr you can return to the plan, fiduciary monitoring scores, and a renewal negotiation window",
     caption: "$2.9M–$4.7M/yr you can return to the plan, with sourced evidence.",
-  },
-  {
-    src: "/screenshots/platform-provider-rates.png",
-    width: 1361,
-    height: 957,
-    alt: "Provider Rates view: $118K in provider overpayments versus the SF metro market, with a per-service table of what you pay vs. the market median",
-    caption: "$118K in provider overpayments vs. market — same care, same doctors.",
   },
 ] as const;
 

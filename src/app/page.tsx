@@ -270,27 +270,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-
-        <div className="bg-ink mt-16 grid gap-8 rounded-2xl p-8 md:grid-cols-[1fr_320px] md:p-12">
-          <div>
-            <blockquote className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-snug">
-              One employer had <span className="text-sage">$2,300 less per employee per year</span>,
-              with better benefits. When the acquiring company moved 2,500 employees onto that plan,
-              the change created{" "}
-              <span className="text-sage">more than a quarter billion dollars of equity value</span>{" "}
-              that had not been priced in.
-            </blockquote>
-            <p className="text-mist mt-6 text-sm">Lee Lewis, Health Transformation Alliance</p>
-          </div>
-          <div className="border-spruce/50 self-center rounded-xl border p-6 text-center">
-            <p className="eyebrow text-sage">The math</p>
-            <p className="mt-2 text-4xl font-bold text-white md:text-5xl">$250M+</p>
-            <p className="text-mist mt-3 text-sm">
-              A claims-spend delta can compound into enterprise value when the plan is large enough
-              — and nobody has priced the waste correctly.
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section id="scorecard" eyebrow="Start here" title="See your scorecard." tone="mist">
