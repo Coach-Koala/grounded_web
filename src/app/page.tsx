@@ -81,10 +81,6 @@ export default function HomePage() {
               How it works
             </Link>
           </div>
-          <p className="mt-5 text-sm text-white/80">
-            Built from public filings and price-transparency data. No claims data, no commitments,
-            nothing to install.
-          </p>
         </div>
       </section>
 
@@ -125,13 +121,9 @@ export default function HomePage() {
       <Section
         id="how"
         eyebrow="How it works"
-        title="Five acts. You always know what you get for what you share."
+        title="Five components, from a free scorecard to continuous assurance."
         tone="mist"
       >
-        <p className="text-ink/80 max-w-3xl text-lg">
-          Trust is earned one step at a time. Data depth only ever increases — and every act
-          delivers standalone value before you&apos;re asked for more.
-        </p>
         <FiveActs />
       </Section>
 
@@ -177,7 +169,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Act 5, up close" title="Is the care itself any good?" tone="mist">
+      <Section eyebrow="Component 5, up close" title="Is the care itself any good?" tone="mist">
         <p className="text-ink/80 max-w-3xl text-lg">
           The deepest check nobody runs: matching what you paid for against the clinical picture of
           what actually happened. Aggregate, de-identified, and in near real time — agents watching

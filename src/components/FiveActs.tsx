@@ -1,6 +1,6 @@
 const ACTS = [
   {
-    badge: "Act 1",
+    badge: "Component 1",
     name: "Health Plan Scorecard",
     chips: [{ label: "Free", solid: true }, { label: "Same day" }],
     meter: 1,
@@ -12,7 +12,7 @@ const ACTS = [
     featured: false,
   },
   {
-    badge: "Act 2 · Start here",
+    badge: "Component 2 · Start here",
     name: "Health Plan X-ray",
     chips: [{ label: "Flat fee", solid: true }, { label: "Findings in 2–3 wks" }],
     meter: 3,
@@ -25,7 +25,7 @@ const ACTS = [
     featured: true,
   },
   {
-    badge: "Act 3",
+    badge: "Component 3",
     name: "Recovery",
     chips: [
       { label: "Partner's contingency — we take $0", outline: true },
@@ -41,7 +41,7 @@ const ACTS = [
     featured: false,
   },
   {
-    badge: "Act 4",
+    badge: "Component 4",
     name: "Assurance",
     chips: [{ label: "Flat annual", solid: true }, { label: "Continuous" }],
     meter: 4,
@@ -54,7 +54,7 @@ const ACTS = [
     featured: false,
   },
   {
-    badge: "Act 5",
+    badge: "Component 5",
     name: "Care Quality Verification",
     chips: [{ label: "Assurance add-on", solid: true }, { label: "Continuous" }],
     meter: 5,
@@ -127,8 +127,9 @@ export default function FiveActs() {
         </div>
       ))}
       <p className="text-ink/60 px-7 text-sm">
-        Data depth meter: public data → documents → claims (in your cloud) → ongoing feed →
-        clinical. It only moves right when the last act earned it.
+        The meter shows how much data each component uses: public data → documents → claims (in your
+        cloud) → ongoing feed → clinical. It only moves right once the previous component has earned
+        it.
       </p>
     </div>
   );
