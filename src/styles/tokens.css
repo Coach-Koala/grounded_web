@@ -1,55 +1,41 @@
 /*
- * Grounded Health design tokens — the ONLY file where color values may
+ * Grounded Health brand tokens — the ONLY file where color hex values may
  * appear (enforced by scripts/content-gates.sh).
  *
- * Source of truth: the LIGHT theme of the product design system at
- * demo.getgroundedhealth.com/design-system.html (css/design-system.css).
- * Its rule: ONE accent — spruce (--hippo-teal = #355726). Sage is the
- * logo color, never a UI action.
+ * Source of truth: the live design system in hippo-health
+ * (src/priv/static/brand.html + css/design-system.css, June 2026) — the
+ * moss-green-on-paper palette. This supersedes the teal palette in the
+ * April 2026 "Hippo Health - Branding Guide.md" draft, which predates it.
  */
 
 @theme {
-  /* Surfaces */
-  --color-bone: #f6f3ee; /* --ds-bg: page background */
-  --color-white: #ffffff; /* --ds-surface: cards, sheets */
-  --color-mist: #efeae0; /* --ds-surface-2: raised / hover fill */
+  /* Primary palette */
+  --color-spruce: #355726; /* Deep Spruce — primary: CTAs, accents, labels */
+  --color-spruce-dark: #2a4720; /* primary hover */
+  --color-ink: #1a1a18; /* primary text, big-number stats */
+  --color-bone: #f6f3ee; /* default surface */
+  --color-mist: #ece7dd; /* alternate surface — panels, table rows */
+  --color-white: #ffffff;
 
-  /* Text */
-  --color-ink: #1a1a18; /* --ds-text */
-  --color-muted: rgba(64, 59, 53, 0.72); /* --ds-text-muted */
-  --color-subtle: rgba(64, 59, 53, 0.55); /* --ds-text-subtle */
+  /* Secondary / accents */
+  --color-sage: #90bd53; /* secondary accent, borders, quiet dividers */
+  --color-chart-sage: #a9c56d; /* data-viz neutral, secondary series */
 
-  /* Borders */
-  --color-line: rgba(64, 59, 53, 0.16); /* --ds-border */
-  --color-line-strong: rgba(64, 59, 53, 0.3); /* --ds-border-strong */
-  --color-divider: rgba(64, 59, 53, 0.1); /* --ds-divider */
+  /* Functional / data palette */
+  --color-positive: #16a34a; /* Savings */
+  --color-amber: #d97706; /* Attention */
+  --color-critical: #dc2626; /* Overpay */
 
-  /* The one accent */
-  --color-spruce: #355726; /* --ds-primary / --hippo-teal */
-  --color-spruce-dark: #2a4720; /* --ds-primary-hover */
-  --color-spruce-soft: rgba(53, 87, 38, 0.1); /* --ds-primary-soft / info-soft */
-
-  /* Semantic */
-  --color-positive: #0f7034; /* --ds-success */
-  --color-positive-soft: rgba(22, 163, 74, 0.12); /* --ds-success-soft */
-  --color-amber: #92400e; /* --ds-warning (text) */
-  --color-amber-soft: rgba(217, 119, 6, 0.14); /* --ds-warning-soft */
-  --color-critical: #b91c1c; /* --ds-danger */
-  --color-critical-soft: rgba(220, 38, 38, 0.12); /* --ds-danger-soft */
-
-  /* Logo color only — never a UI action (design-system rule) */
-  --color-sage: #90bd53;
-
-  /* Typography — Inter (display/body) + JetBrains Mono (labels) */
+  /* Typography — Inter (display/body) + JetBrains Mono (eyebrows/labels) */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
 /*
- * Band surface for hero / featured sections: primary → primary-hover.
- * Stays inside the one-accent system (the app's #145E63 band gradients
- * are hardcoded legacy that predate the design system).
+ * The signature band surface: a Deep Spruce (moss) gradient for the
+ * hero/feature bands, consistent with the rest of the brand chrome.
+ * White text only on this surface.
  */
 .band-wash {
-  background: linear-gradient(135deg, #355726 0%, #2a4720 100%);
+  background: linear-gradient(135deg, #3d6329 0%, #355726 100%);
 }

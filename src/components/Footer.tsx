@@ -23,37 +23,42 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <p className="eyebrow text-white/60 mb-4">Company</p>
+          <p className="eyebrow text-sage mb-4">Company</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/employers/" className="hover:text-white">
+              <Link href="/employers/" className="hover:text-sage">
                 For employers
               </Link>
             </li>
             <li>
-              <Link href="/advisors/" className="hover:text-white">
+              <Link href="/advisors/" className="hover:text-sage">
                 For advisors
               </Link>
             </li>
             <li>
-              <Link href="/insights/" className="hover:text-white">
-                Insights
+              <Link href="/proof/" className="hover:text-sage">
+                Proof
+              </Link>
+            </li>
+            <li>
+              <Link href="/about/" className="hover:text-sage">
+                About
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="eyebrow text-white/60 mb-4">Start</p>
+          <p className="eyebrow text-sage mb-4">Start</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/#scorecard" className="hover:text-white">
+              <Link href="/#scorecard" className="hover:text-sage">
                 Get your free scorecard
               </Link>
             </li>
             <li>
               <a
-                href={process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}
-                className="hover:text-white"
+                href={`${process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com"}/login`}
+                className="hover:text-sage"
               >
                 Log in
               </a>
@@ -61,8 +66,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-white/15 border-t">
-        <p className="text-white/50 mx-auto max-w-6xl px-6 py-6 text-xs">
+      <div className="border-spruce border-t">
+        <p className="text-chart-sage mx-auto max-w-6xl px-6 py-6 text-xs">
           © {new Date().getFullYear()} Grounded Health · A public benefit corporation. All rights
           reserved.
         </p>
