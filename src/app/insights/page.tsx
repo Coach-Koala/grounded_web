@@ -13,9 +13,9 @@ export default function InsightsPage() {
   return (
     <Section eyebrow="Insights" title="Evidence-led. Sourced. Short." tone="bone">
       {insights.length === 0 ? (
-        <div className="bg-mist max-w-2xl rounded-lg p-8">
+        <div className="bg-mist max-w-2xl rounded-xl p-8">
           <p className="text-ink text-lg font-semibold">Nothing published yet.</p>
-          <p className="text-ink/80 mt-2">
+          <p className="text-muted mt-2">
             We&apos;re writing. In the meantime,{" "}
             <Link href="/#scorecard" className="text-spruce font-semibold hover:underline">
               get your free scorecard
@@ -26,14 +26,14 @@ export default function InsightsPage() {
       ) : (
         <ul className="max-w-3xl space-y-8">
           {insights.map((insight) => (
-            <li key={insight.slug} className="border-sage border-b pb-8">
+            <li key={insight.slug} className="border-line border-b pb-8">
               <p className="eyebrow text-spruce">{insight.date}</p>
               <Link href={`/insights/${insight.slug}/`}>
                 <h3 className="text-ink hover:text-spruce mt-1 text-2xl font-bold">
                   {insight.title}
                 </h3>
               </Link>
-              <p className="text-ink/80 mt-2">{insight.summary}</p>
+              <p className="text-muted mt-2">{insight.summary}</p>
             </li>
           ))}
         </ul>

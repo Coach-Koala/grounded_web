@@ -19,11 +19,11 @@ const ROWS = [
 
 export default function IncentiveTable() {
   return (
-    <div className="border-sage/40 mt-10 overflow-hidden rounded-lg border bg-white">
+    <div className="border-line mt-10 overflow-hidden rounded-xl border bg-white">
       {ROWS.map((row) => (
-        <div key={row.who} className="border-sage/30 grid border-b sm:grid-cols-[200px_1fr]">
+        <div key={row.who} className="border-line grid border-b sm:grid-cols-[200px_1fr]">
           <p className="bg-mist text-ink px-6 py-4 text-sm font-semibold">{row.who}</p>
-          <p className="text-ink/70 px-6 py-4 text-sm">{row.how}</p>
+          <p className="text-muted px-6 py-4 text-sm">{row.how}</p>
         </div>
       ))}
       <div className="grid sm:grid-cols-[200px_1fr]">

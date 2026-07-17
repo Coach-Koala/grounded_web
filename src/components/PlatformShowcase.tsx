@@ -24,7 +24,7 @@ const FEATURES = [
 export default function PlatformShowcase() {
   return (
     <div className="space-y-12">
-      <figure className="overflow-hidden rounded-lg shadow-md">
+      <figure className="overflow-hidden rounded-xl shadow-md">
         <Image
           src="/screenshots/platform-healthcare-savings.jpg"
           alt="Grounded Health employer dashboard: year-to-date spend, end-of-year forecast, variance to budget, fiduciary status, total estimated savings, and where healthcare dollars go"
@@ -32,7 +32,7 @@ export default function PlatformShowcase() {
           height={813}
           className="w-full"
         />
-        <figcaption className="bg-white text-ink/70 px-6 py-4 text-sm">
+        <figcaption className="bg-white text-muted px-6 py-4 text-sm">
           The employer home screen: spend, forecast, variance to budget, fiduciary status, and
           estimated savings — live, updated as agents process each claim. Not a quarterly deck.
         </figcaption>
@@ -41,7 +41,7 @@ export default function PlatformShowcase() {
         {FEATURES.map((feature) => (
           <div
             key={feature.name}
-            className="bg-white flex flex-col overflow-hidden rounded-lg shadow-sm"
+            className="bg-white flex flex-col overflow-hidden rounded-xl shadow-sm"
           >
             <Image
               src={feature.image}
@@ -52,7 +52,7 @@ export default function PlatformShowcase() {
             />
             <div className="flex-1 p-6">
               <h3 className="text-ink text-lg font-bold">{feature.name}</h3>
-              <p className="text-ink/90 mt-2 text-sm">{feature.body}</p>
+              <p className="text-ink mt-2 text-sm">{feature.body}</p>
             </div>
           </div>
         ))}

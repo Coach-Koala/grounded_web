@@ -70,13 +70,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/#scorecard"
-              className="text-teal-deep bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
+              className="text-spruce bg-white hover:bg-mist inline-block rounded-lg px-8 py-4 text-lg font-semibold"
             >
               See what you&apos;re overpaying — free
             </Link>
             <Link
               href="/#how"
-              className="inline-block rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
+              className="inline-block rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
             >
               How it works
             </Link>
@@ -93,7 +93,7 @@ export default function HomePage() {
         title="Everyone in your health plan is paid more when you spend more."
         tone="mist"
       >
-        <p className="text-ink/80 max-w-3xl text-lg">
+        <p className="text-muted max-w-3xl text-lg">
           That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Which is why
           costs rise 9–10% a year, why data arrives months late, and why no one in the chain
           volunteers to check the bills.
@@ -106,7 +106,7 @@ export default function HomePage() {
         title="A team of agents, working your plan around the clock."
         tone="bone"
       >
-        <p className="text-ink/80 max-w-3xl text-lg">
+        <p className="text-muted max-w-3xl text-lg">
           Grounded isn&apos;t a report you commission once a year. It&apos;s a platform: specialized
           agents review every claim as it lands, check bills against contracts, watch your rates
           against the market, track renewals, and score every vendor — 24/7, whether or not
@@ -146,7 +146,7 @@ export default function HomePage() {
             "You keep every dollar found",
           ].map((rule) => (
             <p key={rule} className="text-sm font-semibold text-white">
-              <span className="text-sage" aria-hidden="true">
+              <span className="text-white" aria-hidden="true">
                 ✓{" "}
               </span>
               {rule}
@@ -160,17 +160,17 @@ export default function HomePage() {
           {FINDINGS.map((finding) => (
             <div
               key={finding.name}
-              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
+              className="bg-white border-l-spruce rounded-xl border-l-4 p-6 shadow-sm"
             >
               <h3 className="text-spruce text-xl font-bold">{finding.name}</h3>
-              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
+              <p className="text-muted mt-2 text-sm">{finding.body}</p>
             </div>
           ))}
         </div>
       </Section>
 
       <Section eyebrow="Component 5, up close" title="Is the care itself any good?" tone="mist">
-        <p className="text-ink/80 max-w-3xl text-lg">
+        <p className="text-muted max-w-3xl text-lg">
           The deepest check nobody runs: matching what you paid for against the clinical picture of
           what actually happened. Aggregate, de-identified, and in near real time — agents watching
           continuously, so you see issues while you can still act on them, not in a broker deck 14
@@ -180,10 +180,10 @@ export default function HomePage() {
           {CARE_FINDINGS.map((finding) => (
             <div
               key={finding.name}
-              className="bg-white border-l-sage rounded-lg border-l-4 p-6 shadow-sm"
+              className="bg-white border-l-spruce rounded-xl border-l-4 p-6 shadow-sm"
             >
               <h3 className="text-spruce text-lg font-bold">{finding.name}</h3>
-              <p className="text-ink/80 mt-2 text-sm">{finding.body}</p>
+              <p className="text-muted mt-2 text-sm">{finding.body}</p>
             </div>
           ))}
         </div>
@@ -195,9 +195,9 @@ export default function HomePage() {
         tone="bone"
       >
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="bg-white rounded-lg p-8 shadow-sm">
+          <div className="bg-white rounded-xl p-8 shadow-sm">
             <h3 className="text-ink text-xl font-bold">If you lead HR or benefits</h3>
-            <p className="text-ink/80 mt-3">
+            <p className="text-muted mt-3">
               You&apos;re accountable for a program you can&apos;t see into, judged on costs you
               don&apos;t control, and one bad renewal or one employee&apos;s care horror story away
               from a very hard meeting. We change what you walk in with: real-time answers when the
@@ -207,9 +207,9 @@ export default function HomePage() {
               not a cut.
             </p>
           </div>
-          <div className="bg-white rounded-lg p-8 shadow-sm">
+          <div className="bg-white rounded-xl p-8 shadow-sm">
             <h3 className="text-ink text-xl font-bold">If you&apos;re the CFO</h3>
-            <p className="text-ink/80 mt-3">
+            <p className="text-muted mt-3">
               Healthcare is the only major line item you sign without controls, an audit trail, or a
               forecast you&apos;d defend to the board. We give it all three: recovered dollars
               straight to EBITDA without touching benefits, no more shock claims at year-end, and a
@@ -221,11 +221,11 @@ export default function HomePage() {
       </Section>
 
       <Section eyebrow="Why trust us" title="Independent by structure, not by promise." tone="mist">
-        <div className="border-spruce bg-white rounded-lg border-2 p-8">
+        <div className="border-spruce bg-white rounded-xl border-2 p-8">
           <h3 className="text-spruce text-xl font-bold">
             We&apos;re a public benefit corporation — on purpose, in the charter.
           </h3>
-          <p className="text-ink/80 mt-3">
+          <p className="text-muted mt-3">
             Most vendors promise alignment; we made it legally binding. As a PBC, Grounded Health is
             chartered to serve the people who depend on employer health plans — not to maximize
             extraction from them. Our directors are legally obligated to weigh that mission in every
@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="text-ink text-lg font-bold">Your data never leaves your building</h3>
-            <p className="text-ink/80 mt-2 text-sm">
+            <p className="text-muted mt-2 text-sm">
               Claims analysis runs inside your own cloud environment. Only aggregated, de-identified
               results come out. Your security team stays in control, and contracting takes weeks —
               not quarters.
@@ -244,7 +244,7 @@ export default function HomePage() {
           </div>
           <div>
             <h3 className="text-ink text-lg font-bold">Value before access</h3>
-            <p className="text-ink/80 mt-2 text-sm">
+            <p className="text-muted mt-2 text-sm">
               We show you real findings from public data before you sign anything. If the free
               scorecard isn&apos;t compelling, stop there — no meetings to survive, no sunk cost.
             </p>
@@ -253,7 +253,7 @@ export default function HomePage() {
       </Section>
 
       <Section eyebrow="The team" title="Built by people who've seen the inside." tone="bone">
-        <p className="text-ink/80 mb-8 max-w-3xl">
+        <p className="text-muted mb-8 max-w-3xl">
           Health-plan leadership, enterprise AI, and decades of data engineering. We know where the
           numbers hide because we&apos;ve worked where they&apos;re made.
         </p>
@@ -267,11 +267,11 @@ export default function HomePage() {
               Tell us your company name. The platform builds your health plan scorecard from public
               data — what&apos;s working, what&apos;s overpriced, and what it&apos;s worth fixing.
             </p>
-            <p className="text-ink/80">
+            <p className="text-muted">
               Free. Built from public data. No claims data required, nothing to install, no
               obligation.
             </p>
-            <p className="text-ink/80">
+            <p className="text-muted">
               Prefer to talk it through?{" "}
               <a
                 href={CALENDLY_URL}

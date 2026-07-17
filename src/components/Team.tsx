@@ -36,7 +36,7 @@ export default function Team() {
         <a
           key={person.name}
           href={person.linkedin}
-          className="bg-white group flex flex-col rounded-lg p-6 shadow-sm"
+          className="bg-white group flex flex-col rounded-xl p-6 shadow-sm"
         >
           <span
             aria-hidden="true"
@@ -46,7 +46,7 @@ export default function Team() {
           </span>
           <h3 className="text-ink group-hover:text-spruce mt-4 text-lg font-bold">{person.name}</h3>
           <p className="eyebrow text-spruce mt-1">{person.role}</p>
-          <p className="text-ink/80 mt-2 flex-1 text-sm">{person.blurb}</p>
+          <p className="text-muted mt-2 flex-1 text-sm">{person.blurb}</p>
           <span className="text-spruce mt-4 text-sm font-semibold group-hover:underline">
             LinkedIn →
           </span>
