@@ -32,11 +32,6 @@ export default function PlatformShowcase() {
           height={969}
           className="w-full"
         />
-        <figcaption className="bg-white text-ink/70 px-6 py-4 text-sm">
-          The employer home screen: your plan&apos;s trend vs. the market, the reinvestment fund
-          that actively managing quality frees up, and what you could do with it — live, updated as
-          agents process each claim. Not a quarterly deck.
-        </figcaption>
       </figure>
       <div className="grid gap-8 md:grid-cols-3">
         {FEATURES.map((feature) => (
