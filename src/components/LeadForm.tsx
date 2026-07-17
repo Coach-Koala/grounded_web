@@ -33,11 +33,9 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
         headers: { "Content-Type": "application/json" },
         signal: AbortSignal.timeout(10_000),
         body: JSON.stringify({
-          name: data.get("name"),
           email: data.get("email"),
           company: data.get("company"),
           audience: data.get("audience"),
-          message: data.get("message"),
         }),
       });
       if (!response.ok) {
@@ -80,16 +78,6 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="eyebrow text-spruce">Name</span>
-          <input
-            name="name"
-            type="text"
-            required
-            autoComplete="name"
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
-          />
-        </label>
-        <label className="block">
           <span className="eyebrow text-spruce">Work email</span>
           <input
             name="email"
@@ -99,8 +87,6 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
             className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           />
         </label>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="eyebrow text-spruce">Company</span>
           <input
@@ -111,26 +97,8 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
             className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
           />
         </label>
-        <label className="block">
-          <span className="eyebrow text-spruce">I am</span>
-          <select
-            name="audience"
-            defaultValue={defaultAudience}
-            className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
-          >
-            <option value="employer">A self-insured employer</option>
-            <option value="advisor">A benefits advisor</option>
-          </select>
-        </label>
       </div>
-      <label className="block">
-        <span className="eyebrow text-spruce">Anything specific? (optional)</span>
-        <textarea
-          name="message"
-          rows={3}
-          className="border-sage focus:border-spruce mt-1 w-full rounded-md border bg-white p-3 outline-none"
-        />
-      </label>
+      <input type="hidden" name="audience" defaultValue={defaultAudience} />
 
       {/* Honeypot — hidden from real users, attractive to bots. */}
       <label aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
@@ -146,7 +114,8 @@ export default function LeadForm({ defaultAudience = "employer" }: { defaultAudi
         {status === "submitting" ? "Sending…" : "Get your free scorecard"}
       </button>
       <p className="text-ink/70 text-xs">
-        No sales sequence. One email to kick off your scorecard, nothing else.
+        No sales junk email or marketing sequence — your scorecard in your inbox in minutes. Nothing
+        else.
       </p>
     </form>
   );
