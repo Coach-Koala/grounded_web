@@ -220,8 +220,7 @@ export default function ProofPage() {
       >
         <p className="text-ink/80 mb-8 max-w-3xl">
           These are results from employers who adopted transparent, fiduciary-aligned health plans
-          through the Health Rosetta community — <strong>not Grounded clients</strong>. Median
-          savings run 20–40% per capita. It&apos;s the approach we build on.
+          and have spoken publicly. Median savings run 20–40% per capita.
         </p>
         <div className="border-sage/40 overflow-x-auto rounded-lg border">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm">
