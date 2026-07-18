@@ -165,13 +165,6 @@ export default function HomePage() {
           the chain earns more when your costs go up. We&apos;re the only one that doesn&apos;t.
         </p>
         <WhoProfitsChart />
-        <p className="text-ink mt-8 max-w-3xl text-xl font-bold">
-          The referee doesn&apos;t bet on the game.{" "}
-          <span className="text-ink/70 text-lg font-normal">
-            Flat fee — no commissions, no percentage of spend, no cut of recoveries. The only
-            structure that lets you trust the numbers.
-          </span>
-        </p>
       </Section>
 
       <Section
@@ -193,7 +186,7 @@ export default function HomePage() {
       <Section
         id="how"
         eyebrow="How it works"
-        title="Four components, from a free scorecard to clinical care verification."
+        title="Start with easiest savings, mature to continuous oversight and automatic optimization."
         tone="white"
       >
         <FiveActs />
@@ -201,35 +194,35 @@ export default function HomePage() {
 
       <Section
         eyebrow="The questions we answer"
-        title="Four questions about your plan. Nobody answers them. We do."
+        title="What you've always wanted to know. Delivered."
         tone="mist"
       >
-        <p className="text-ink/70 max-w-xl text-lg">
+        <p className="text-ink/70 max-w-xl">
           Not a list of features — the things you&apos;d actually want to know if you could see
           inside your own health plan.
         </p>
-        <div className="border-sage/30 mt-12 border-t">
+        <div className="border-sage/30 mt-8 border-t">
           {QUESTIONS.map((item) => (
             <div
               key={item.q}
-              className="border-sage/30 grid gap-5 border-b py-8 md:grid-cols-[1fr_300px] md:gap-12"
+              className="border-sage/30 grid gap-3 border-b py-5 md:grid-cols-[1fr_300px] md:gap-10"
             >
               <div>
-                <h3 className="text-ink text-xl font-bold md:text-2xl">{item.q}</h3>
-                <p className="text-ink/70 mt-2 max-w-md text-sm">{item.also}</p>
+                <h3 className="text-ink text-lg font-bold">{item.q}</h3>
+                <p className="text-ink/70 mt-1.5 max-w-md text-sm">{item.also}</p>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {item.proofs.map((p) => (
                   <div key={p.stat} className="border-spruce border-l-2 pl-4">
                     <p
                       className={`text-spruce font-bold tracking-tight ${
-                        item.proofs.length > 1 ? "text-lg" : "text-2xl"
+                        item.proofs.length > 1 ? "text-base" : "text-xl"
                       }`}
                     >
                       {p.stat}
                     </p>
-                    <p className="text-ink/70 mt-1 text-sm">{p.cap}</p>
-                    {p.src ? <p className="text-spruce mt-1 text-xs italic">{p.src}</p> : null}
+                    <p className="text-ink/70 mt-0.5 text-sm">{p.cap}</p>
+                    {p.src ? <p className="text-spruce mt-0.5 text-xs italic">{p.src}</p> : null}
                   </div>
                 ))}
               </div>
@@ -238,45 +231,33 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Why it matters" title="The answer instead of the apology." tone="white">
-        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-          <div className="border-sage/40 border-t pt-5">
-            <p className="eyebrow text-spruce mb-3">If you lead HR or benefits</p>
-            <p className="text-ink text-lg font-bold">
-              Real-time answers when the CFO asks why costs moved — and independent proof your
-              program actually works.
-            </p>
-            <p className="text-ink/70 mt-3 text-sm">
-              Plus a care-quality story you can tell employees, because &ldquo;we verify you&apos;re
-              getting good care&rdquo; is a benefit, not a cut.
+      <Section eyebrow="Why it matters" title="Know before they ask." tone="white">
+        <div className="grid gap-12 md:grid-cols-2">
+          <div>
+            <p className="eyebrow text-spruce mb-3">For CFOs</p>
+            <p className="text-ink text-lg">
+              Controls, an audit trail, and recovered dollars straight to EBITDA — on the one line
+              item that has none of them today.
             </p>
           </div>
-          <div className="border-sage/40 border-t pt-5">
-            <p className="eyebrow text-spruce mb-3">If you&apos;re the CFO</p>
-            <p className="text-ink text-lg font-bold">
-              Controls, an audit trail, and a forecast on your largest line item that has none of
-              them today.
-            </p>
-            <p className="text-ink/70 mt-3 text-sm">
-              Recovered dollars straight to EBITDA without touching benefits — and documented
-              oversight, now that fiduciary suits name officers, not just companies.
+          <div>
+            <p className="eyebrow text-spruce mb-3">For HR</p>
+            <p className="text-ink text-lg">
+              Real-time answers when costs move, proof your program works, and a care-quality story
+              that&apos;s a benefit — not a cut.
             </p>
           </div>
         </div>
 
-        <div className="bg-spruce mt-14 rounded-2xl p-8 md:p-12">
-          <h3 className="max-w-2xl text-2xl font-bold tracking-tight text-white md:text-3xl">
+        <div className="border-sage mt-12 border-t-2 pt-7">
+          <h3 className="text-ink max-w-2xl text-2xl font-bold tracking-tight">
             It isn&apos;t about cutting. It&apos;s about what you get to reinvest.
           </h3>
-          <p className="mt-3 max-w-2xl text-white/80">
-            Every dollar of error and waste we help you avoid is capital you put back into your
-            people — the win, and the story worth telling.
-          </p>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
+          <div className="mt-9 grid gap-7 md:grid-cols-3">
             {REINVEST.map((item) => (
-              <div key={item.name} className="border-t border-white/20 pt-4">
-                <h4 className="font-bold text-white">{item.name}</h4>
-                <p className="mt-2 text-sm text-white/70">{item.body}</p>
+              <div key={item.name}>
+                <h4 className="text-spruce font-bold">{item.name}</h4>
+                <p className="text-ink/70 mt-1 text-sm">{item.body}</p>
               </div>
             ))}
           </div>

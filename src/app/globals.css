@@ -9,3 +9,25 @@ body {
 .eyebrow {
   @apply font-mono text-sm font-medium uppercase tracking-[0.08em];
 }
+
+/* Employer logo marquee: seamless infinite horizontal scroll */
+@keyframes gh-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.gh-marquee-track {
+  animation: gh-marquee 55s linear infinite;
+}
+.logo-marquee:hover .gh-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gh-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
