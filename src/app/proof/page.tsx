@@ -104,90 +104,55 @@ const REACTIONS = [
   },
 ] as const;
 
-const PARTNERS = [
+const ALLIES = [
   {
+    kind: "Partner",
     name: "Nautilus Health",
     desc: "Independent, fiduciary-aligned Contract X-ray scoring for PBM contracts — the methodology behind our contract review.",
     href: "https://www.contractxray.com",
   },
   {
+    kind: "Partner",
     name: "Turquoise Health",
     desc: "Price-transparency data: real negotiated rates, provider by provider — the market benchmark behind our rate intelligence.",
     href: "https://turquoise.health/",
   },
   {
+    kind: "Partner",
     name: "Avelis Health",
     desc: "AI plus clinician review that audits medical claims and recovers overpayments — reducing plan spend 2–7%.",
     href: "https://www.avelishealth.com/",
   },
   {
+    kind: "Partner",
     name: "Orderly Health",
     desc: "Automated provider-data and roster accuracy. First Choice Health cleared a six-month backlog and lifted throughput 750%+.",
     href: "https://orderlyhealth.com/customer-stories/from-backlog-to-breakthrough-first-choice-healths-success-story/",
   },
   {
+    kind: "Partner",
     name: "Health Rosetta",
     desc: "The open methodology and advisor community proving transparent, fiduciary-aligned health plans at scale. The case studies above come from its network.",
     href: "https://www.healthrosetta.org",
   },
-] as const;
-
-const RHV_EPISODES = [
   {
-    ep: "EP372",
-    title: "Step One for Employers: Get Your Data",
-    guest: "Cora Opsahl, 32BJ Health Fund",
-    takeaway:
-      "You can't fix what you can't see — the first move for any self-funded employer is owning its own claims data.",
-    href: "https://relentlesshealthvalue.com/blog/transcript-for-encore-ep372-step-one-for-employers-and-unionsget-your-data-with-cora-opsahl",
-  },
-  {
-    ep: "EP397",
-    title: "The PBM Contract Minefield",
-    guest: "Paul Holmes",
-    takeaway:
-      "PBM contracts are a minefield of definitions written against the plan sponsor — the case for reading every clause.",
-    href: "https://relentlesshealthvalue.com/blog/transcript-of-encore-ep397-with-paul-holmes",
-  },
-  {
-    ep: "EP379",
-    title: "Broker & Consultant Compensation",
-    guest: "A. J. Loiacono",
-    takeaway: "How broker and consultant pay quietly misaligns with the employer footing the bill.",
-    href: "https://relentlesshealthvalue.com/blog/transcript-for-ep379",
-  },
-  {
-    ep: "EP418",
-    title: "Advice for Self-Insured Employers",
-    guest: "Mark Cuban & Ferrin Williams",
-    takeaway: "Cut out the middlemen, demand transparency, and act on your own data.",
-    href: "https://relentlesshealthvalue.com/blog/transcript-for-encore-ep418-with-mark-cuban-and-ferrin-williams",
-  },
-  {
-    ep: "EP415",
-    title: "How Jumbo Employers Save",
-    guest: "Rob Andrews, Health Transformation Alliance",
-    takeaway:
-      "Large employers get better outcomes and real savings by pooling and acting on their data.",
-    href: "https://relentlesshealthvalue.com/blog/transcript-for-encore-ep415-with-rob-andrews",
-  },
-] as const;
-
-const RESOURCES = [
-  {
+    kind: "Resource",
     name: "KFF — 2025 Employer Health Benefits Survey",
     desc: "The definitive annual data on what employers pay for coverage.",
     href: "https://www.kff.org/health-costs/2025-employer-health-benefits-survey/",
   },
   {
+    kind: "Resource",
     name: "Health Transformation Alliance",
     desc: "A coalition of large employers pooling data and buying power to fix healthcare.",
     href: "https://www.htahealth.com",
   },
   {
+    kind: "Resource",
     name: "Relentless Health Value",
     desc: "The full podcast archive — start anywhere.",
     href: "https://relentlesshealthvalue.com",
+    cta: "Listen →",
   },
 ] as const;
 
@@ -321,56 +286,19 @@ export default function ProofPage() {
           voices we build alongside, learn from, and recommend.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          {PARTNERS.map((p) => (
+          {ALLIES.map((a) => (
             <a
-              key={p.name}
-              href={p.href}
+              key={a.name}
+              href={a.href}
               target="_blank"
               rel="noopener"
               className="border-sage/30 bg-white group flex flex-col rounded-lg border p-6 shadow-sm"
             >
-              <h3 className="text-ink group-hover:text-spruce text-lg font-bold">{p.name}</h3>
-              <p className="text-ink/80 mt-2 flex-1 text-sm">{p.desc}</p>
+              <p className="eyebrow text-ink/50 mb-2 text-[11px]">{a.kind}</p>
+              <h3 className="text-ink group-hover:text-spruce text-lg font-bold">{a.name}</h3>
+              <p className="text-ink/80 mt-2 flex-1 text-sm">{a.desc}</p>
               <span className="text-spruce mt-4 text-sm font-semibold group-hover:underline">
-                Visit →
-              </span>
-            </a>
-          ))}
-        </div>
-
-        <p className="eyebrow text-ink/70 mt-12 mb-4">Worth your time</p>
-        <div className="border-sage/30 divide-sage/30 divide-y overflow-hidden rounded-lg border bg-white">
-          {RESOURCES.map((r) => (
-            <a
-              key={r.name}
-              href={r.href}
-              target="_blank"
-              rel="noopener"
-              className="group grid gap-1 p-4 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
-            >
-              <div>
-                <p className="text-ink group-hover:text-spruce font-semibold">{r.name}</p>
-                <p className="text-ink/70 mt-0.5 text-sm">{r.desc}</p>
-              </div>
-              <span className="text-spruce text-sm font-semibold group-hover:underline">
-                Visit →
-              </span>
-            </a>
-          ))}
-          {RHV_EPISODES.map((e) => (
-            <a
-              key={e.ep}
-              href={e.href}
-              target="_blank"
-              rel="noopener"
-              className="group flex items-center justify-between gap-4 p-4"
-            >
-              <p className="text-ink group-hover:text-spruce text-sm">
-                <span className="text-spruce font-semibold">Relentless Health Value {e.ep}</span> ·{" "}
-                {e.title} <span className="text-ink/60">— {e.guest}</span>
-              </p>
-              <span className="text-spruce shrink-0 text-sm font-semibold group-hover:underline">
-                Listen →
+                {"cta" in a ? a.cta : "Visit →"}
               </span>
             </a>
           ))}
