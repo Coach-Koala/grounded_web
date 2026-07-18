@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LogoMarquee from "@/components/LogoMarquee";
 import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -199,16 +200,18 @@ export default function ProofPage() {
         tone="band"
       >
         <p className="max-w-3xl text-lg text-white/90">
-          Transparent, fiduciary-aligned health plans aren&apos;t a theory. Hundreds of employers
-          have already cut costs 20–40% per capita with this methodology — years before us. Grounded
-          stands on that work and makes it easier to run, with AI.
-        </p>
-        <p className="mt-6 max-w-3xl text-white/80">
-          Below: the methodology&apos;s track record, the economic case, early reactions to what
-          we&apos;re building, and the people we build alongside. The results here belong to the
-          employers and advisors who earned them — not to us.
+          Transparent, fiduciary-aligned health plans aren&apos;t a theory — hundreds of employers
+          have already cut costs 20–40% per capita this way, years before us. The results here
+          belong to the employers and advisors who earned them, not to us.
         </p>
       </Section>
+
+      <section className="border-sage/20 border-y bg-white py-10">
+        <p className="eyebrow text-ink/70 mx-auto mb-6 max-w-6xl px-6 text-center">
+          Employers already running transparent, fiduciary-aligned plans
+        </p>
+        <LogoMarquee />
+      </section>
 
       <Section
         eyebrow="The track record"
@@ -310,76 +313,13 @@ export default function ProofPage() {
       </Section>
 
       <Section
-        eyebrow="Recommended resources"
-        title="The playbook, in the words of the people who wrote it."
+        eyebrow="Better together"
+        title="Fixing American healthcare isn't a one-company job."
         tone="bone"
       >
         <p className="text-ink/80 mb-8 max-w-3xl">
-          We didn&apos;t invent this thinking.{" "}
-          <a
-            href="https://relentlesshealthvalue.com"
-            className="text-spruce font-semibold underline"
-            target="_blank"
-            rel="noopener"
-          >
-            Relentless Health Value
-          </a>{" "}
-          — the sharpest podcast on how US healthcare actually works — has documented it for years.
-          A few episodes that map straight to what Grounded does:
-        </p>
-        <div className="border-sage/30 divide-sage/30 divide-y overflow-hidden rounded-lg border bg-white">
-          {RHV_EPISODES.map((e) => (
-            <a
-              key={e.ep}
-              href={e.href}
-              target="_blank"
-              rel="noopener"
-              className="group grid gap-2 p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
-            >
-              <div>
-                <p className="text-ink group-hover:text-spruce font-semibold">
-                  <span className="text-spruce">{e.ep}</span> · {e.title}
-                </p>
-                <p className="text-ink/50 mt-0.5 text-sm">{e.guest}</p>
-                <p className="text-ink/80 mt-2 text-sm">{e.takeaway}</p>
-              </div>
-              <span className="text-spruce text-sm font-semibold group-hover:underline">
-                Listen →
-              </span>
-            </a>
-          ))}
-        </div>
-
-        <p className="eyebrow text-ink/50 mt-10 mb-4">Also worth your time</p>
-        <div className="border-sage/30 divide-sage/30 divide-y overflow-hidden rounded-lg border bg-white">
-          {RESOURCES.map((r) => (
-            <a
-              key={r.name}
-              href={r.href}
-              target="_blank"
-              rel="noopener"
-              className="group grid gap-1 p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
-            >
-              <div>
-                <p className="text-ink group-hover:text-spruce font-semibold">{r.name}</p>
-                <p className="text-ink/70 mt-0.5 text-sm">{r.desc}</p>
-              </div>
-              <span className="text-spruce text-sm font-semibold group-hover:underline">
-                Visit →
-              </span>
-            </a>
-          ))}
-        </div>
-      </Section>
-
-      <Section
-        eyebrow="Better together"
-        title="Fixing American healthcare isn't a one-company job."
-        tone="mist"
-      >
-        <p className="text-ink/80 mb-8 max-w-3xl">
           No single company un-breaks US healthcare. These are the partners, methodologies, and
-          communities we build alongside, learn from, and recommend.
+          voices we build alongside, learn from, and recommend.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {PARTNERS.map((p) => (
@@ -394,6 +334,44 @@ export default function ProofPage() {
               <p className="text-ink/80 mt-2 flex-1 text-sm">{p.desc}</p>
               <span className="text-spruce mt-4 text-sm font-semibold group-hover:underline">
                 Visit →
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <p className="eyebrow text-ink/70 mt-12 mb-4">Worth your time</p>
+        <div className="border-sage/30 divide-sage/30 divide-y overflow-hidden rounded-lg border bg-white">
+          {RESOURCES.map((r) => (
+            <a
+              key={r.name}
+              href={r.href}
+              target="_blank"
+              rel="noopener"
+              className="group grid gap-1 p-4 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
+            >
+              <div>
+                <p className="text-ink group-hover:text-spruce font-semibold">{r.name}</p>
+                <p className="text-ink/70 mt-0.5 text-sm">{r.desc}</p>
+              </div>
+              <span className="text-spruce text-sm font-semibold group-hover:underline">
+                Visit →
+              </span>
+            </a>
+          ))}
+          {RHV_EPISODES.map((e) => (
+            <a
+              key={e.ep}
+              href={e.href}
+              target="_blank"
+              rel="noopener"
+              className="group flex items-center justify-between gap-4 p-4"
+            >
+              <p className="text-ink group-hover:text-spruce text-sm">
+                <span className="text-spruce font-semibold">Relentless Health Value {e.ep}</span> ·{" "}
+                {e.title} <span className="text-ink/60">— {e.guest}</span>
+              </p>
+              <span className="text-spruce shrink-0 text-sm font-semibold group-hover:underline">
+                Listen →
               </span>
             </a>
           ))}
