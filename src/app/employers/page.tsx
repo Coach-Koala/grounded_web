@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Section } from "@/components/Section";
+
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 export const metadata: Metadata = {
   title: "For employers",
@@ -60,12 +61,12 @@ export default function EmployersPage() {
             The scorecard opens inside Grounded Health and gives your team a fast first read on plan
             signals worth investigating.
           </p>
-          <Link
-            href="/scorecard/"
+          <a
+            href={SCORECARD_URL}
             className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
           >
             Open free scorecard
-          </Link>
+          </a>
         </div>
       </Section>
     </>

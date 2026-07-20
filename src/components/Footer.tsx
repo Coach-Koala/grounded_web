@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
+
 export default function Footer() {
   return (
     <footer className="bg-ink text-white">
@@ -51,9 +53,9 @@ export default function Footer() {
           <p className="eyebrow text-sage mb-4">Start</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/scorecard/" className="hover:text-sage">
+              <a href={SCORECARD_URL} className="hover:text-sage">
                 Get your free scorecard
-              </Link>
+              </a>
             </li>
             <li>
               <a

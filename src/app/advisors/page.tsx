@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Section } from "@/components/Section";
+
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 export const metadata: Metadata = {
   title: "For advisors",
@@ -64,12 +65,12 @@ export default function AdvisorsPage() {
             Use the public-data scorecard as a first-pass conversation starter: employer search,
             filing signals, and plan-level issues your client can understand before deeper access.
           </p>
-          <Link
-            href="/scorecard/"
+          <a
+            href={SCORECARD_URL}
             className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
           >
             Open client scorecard
-          </Link>
+          </a>
         </div>
       </Section>
     </>

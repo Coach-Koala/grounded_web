@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://demo.getgroundedhealth.com";
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 export default function Header() {
   return (
@@ -23,12 +24,12 @@ export default function Header() {
           <a href={`${appUrl}/login`} className="text-spruce hover:text-spruce font-semibold">
             Log in
           </a>
-          <Link
-            href="/scorecard/"
+          <a
+            href={SCORECARD_URL}
             className="bg-spruce hover:bg-spruce rounded-md px-4 py-2 font-semibold text-white"
           >
             Get your free scorecard
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

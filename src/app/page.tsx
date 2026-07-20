@@ -5,6 +5,7 @@ import WhoProfitsChart from "@/components/WhoProfitsChart";
 import { Section } from "@/components/Section";
 
 const CALENDLY_URL = "https://calendly.com/alyssasr";
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 const MACHINE_STATS = [
   {
@@ -113,12 +114,12 @@ export default function HomePage() {
             Health is the quality and accountability layer for self-funded health plans.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/scorecard/"
+            <a
+              href={SCORECARD_URL}
               className="text-spruce bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
               See what you&apos;re overpaying — free
-            </Link>
+            </a>
             <Link
               href="/#how"
               className="inline-block rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
@@ -293,12 +294,12 @@ export default function HomePage() {
               Open the Grounded Health scorecard experience to search by employer and review plan
               signals from public filings.
             </p>
-            <Link
-              href="/scorecard/"
+            <a
+              href={SCORECARD_URL}
               className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
             >
               Open free scorecard
-            </Link>
+            </a>
           </div>
         </div>
       </Section>
