@@ -15,9 +15,6 @@ export default function Header() {
           </span>
         </Link>
         <nav className="flex items-center gap-6">
-          <Link href="/proof/" className="text-ink hover:text-spruce hidden font-medium sm:block">
-            Proof
-          </Link>
           <Link href="/about/" className="text-ink hover:text-spruce hidden font-medium sm:block">
             About
           </Link>
