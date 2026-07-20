@@ -24,7 +24,7 @@ export default function Header() {
             Log in
           </a>
           <Link
-            href="/#scorecard"
+            href="/scorecard/"
             className="bg-spruce hover:bg-spruce rounded-md px-4 py-2 font-semibold text-white"
           >
             Get your free scorecard

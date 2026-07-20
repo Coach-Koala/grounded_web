@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LeadForm from "@/components/LeadForm";
+import Link from "next/link";
 import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -54,8 +54,18 @@ export default function EmployersPage() {
       </Section>
 
       <Section id="scorecard" eyebrow="Start here" title="Get your free scorecard." tone="bone">
-        <div className="max-w-2xl">
-          <LeadForm defaultAudience="employer" />
+        <div className="max-w-2xl rounded-xl bg-white p-8 shadow-sm">
+          <p className="text-muted text-lg">
+            Start with public Form 5500 data before you share claims, contracts, or renewal files.
+            The scorecard opens inside Grounded Health and gives your team a fast first read on plan
+            signals worth investigating.
+          </p>
+          <Link
+            href="/scorecard/"
+            className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
+          >
+            Open free scorecard
+          </Link>
         </div>
       </Section>
     </>

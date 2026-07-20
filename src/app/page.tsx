@@ -1,6 +1,5 @@
 import Link from "next/link";
 import FiveActs from "@/components/FiveActs";
-import LeadForm from "@/components/LeadForm";
 import PlatformCarousel from "@/components/PlatformCarousel";
 import WhoProfitsChart from "@/components/WhoProfitsChart";
 import { Section } from "@/components/Section";
@@ -115,7 +114,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/#scorecard"
+              href="/scorecard/"
               className="text-spruce bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
               See what you&apos;re overpaying — free
@@ -265,11 +264,11 @@ export default function HomePage() {
       </Section>
 
       <Section id="scorecard" eyebrow="Start here" title="See your scorecard." tone="mist">
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-4">
             <p className="text-ink text-lg">
-              Tell us your company name. The platform builds your health plan scorecard from public
-              data — what&apos;s working, what&apos;s overpriced, and what it&apos;s worth fixing.
+              Search public Form 5500 data for an early view of what&apos;s working, what&apos;s
+              overpriced, and what deserves a closer look before renewal.
             </p>
             <p className="text-ink/80">
               Free. Built from public data. No claims data required, nothing to install, no
@@ -288,7 +287,19 @@ export default function HomePage() {
               and we&apos;ll walk you through it live.
             </p>
           </div>
-          <LeadForm />
+          <div className="bg-white rounded-xl p-8 shadow-sm">
+            <h3 className="text-ink text-xl font-bold">Run the public-data scorecard</h3>
+            <p className="text-muted mt-3">
+              Open the Grounded Health scorecard experience to search by employer and review plan
+              signals from public filings.
+            </p>
+            <Link
+              href="/scorecard/"
+              className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
+            >
+              Open free scorecard
+            </Link>
+          </div>
         </div>
       </Section>
     </>

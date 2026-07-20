@@ -51,7 +51,7 @@ export default function Footer() {
           <p className="eyebrow text-sage mb-4">Start</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/#scorecard" className="hover:text-sage">
+              <Link href="/scorecard/" className="hover:text-sage">
                 Get your free scorecard
               </Link>
             </li>
