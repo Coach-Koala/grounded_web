@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LeadForm from "@/components/LeadForm";
+import Link from "next/link";
 import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -59,8 +59,17 @@ export default function AdvisorsPage() {
         title="Run a scorecard for a client."
         tone="bone"
       >
-        <div className="max-w-2xl">
-          <LeadForm defaultAudience="advisor" />
+        <div className="max-w-2xl rounded-xl bg-white p-8 shadow-sm">
+          <p className="text-muted text-lg">
+            Use the public-data scorecard as a first-pass conversation starter: employer search,
+            filing signals, and plan-level issues your client can understand before deeper access.
+          </p>
+          <Link
+            href="/scorecard/"
+            className="bg-spruce hover:bg-spruce-dark mt-6 inline-block rounded-lg px-6 py-3 font-semibold text-white"
+          >
+            Open client scorecard
+          </Link>
         </div>
       </Section>
     </>
