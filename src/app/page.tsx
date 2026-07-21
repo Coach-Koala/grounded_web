@@ -34,21 +34,21 @@ const MACHINE_STATS = [
 const PROOF_QUOTES = [
   {
     quote:
-      "If you can save me a million to two million of EBITDA, that gets my attention — I can take that straight to the board.",
-    name: "CEO",
-    title: "~800-person direct-to-consumer retail company",
+      "I didn't even think this was possible — we've all had this apathy of thinking we don't have any control over any of it. And I've never been able to get data that's actually actionable around this.",
+    name: "CHRO",
+    title: "Private-equity-backed healthcare company",
   },
   {
     quote:
-      "It gives you visibility into the black box — exactly what you need to start having real conversations with your carrier.",
-    name: "Head of Benefits",
-    title: "Fortune 500 software company",
+      "Relying on your broker to check this is kind of like letting the fox guard the henhouse.",
+    name: "SVP",
+    title: "Fortune 500 payments company",
   },
   {
     quote:
-      "Most CEOs have never read their own health plan filing. Once you see it, you can change it — and Grounded shows you.",
-    name: "Independent health-plan advisor",
-    title: "Board member, benefits advisory firm",
+      "After five years in healthcare, this is the problem Alyssa has finally cracked — real visibility into what enterprises are actually paying their brokers.",
+    name: "Health-plan advisor and author",
+    title: "Former benefits executive",
   },
 ] as const;
 
