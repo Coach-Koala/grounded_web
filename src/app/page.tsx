@@ -162,7 +162,7 @@ export default function HomePage() {
       >
         <p className="text-ink/80 max-w-3xl text-lg">
           That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Every party in
-          the chain earns more when your costs go up. We&apos;re the only one that doesn&apos;t.
+          the chain earns more when your costs go up. We don&apos;t.
         </p>
         <WhoProfitsChart />
       </Section>
@@ -173,10 +173,9 @@ export default function HomePage() {
         tone="mist"
       >
         <p className="text-ink/80 max-w-3xl text-lg">
-          Grounded isn&apos;t a report you commission once a year. It&apos;s a platform: specialized
-          agents review every claim as it lands, check bills against contracts, watch your rates
-          against the market, track renewals, and score every vendor — 24/7, whether or not
-          anyone&apos;s logged in.
+          Grounded Health is a platform: specialized agents review every claim as it lands, check
+          bills against contracts, watch your rates against the market, track renewals, and score
+          every vendor — 24/7, whether or not anyone&apos;s logged in.
         </p>
         <div className="mt-10">
           <PlatformCarousel />
