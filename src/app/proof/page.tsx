@@ -203,6 +203,67 @@ export default function ProofPage() {
         <LogoMarquee />
       </section>
 
+      <Section eyebrow="Invitation-only beta" title="Who we're working with now." tone="bone">
+        <p className="text-ink/80 mb-8 max-w-3xl">
+          We&apos;re working with a hand-selected group of early beta customers — invitation only.
+          Here are some of the people we&apos;re partnering with right now, and what they&apos;re
+          saying as they put the platform to work. Anonymized to role to protect privacy.
+        </p>
+        <div className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
+          {REACTIONS.map((r) => (
+            <figure
+              key={r.name + r.quote}
+              className="border-sage/30 bg-white flex w-[300px] shrink-0 snap-start flex-col rounded-lg border p-6 shadow-sm"
+            >
+              <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
+              <figcaption className="mt-4">
+                <p className="text-ink font-semibold">{r.name}</p>
+                <p className="text-ink/60 text-sm">{r.title}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="It's all public"
+        title="Every employer files it. Almost none of them read it."
+        tone="mist"
+      >
+        <p className="text-ink/80 mb-8 max-w-3xl text-lg">
+          These employers self-fund — they pay their own claims. Their Form 5500 discloses the fees
+          flowing to the brokers, TPAs, and consultants who run the plan, right there in the public
+          record. Here&apos;s what a few large self-funded employers&apos; most recent filings show.
+        </p>
+        <div className="grid gap-6 md:grid-cols-3">
+          {OVERPAYERS.map((o) => (
+            <div key={o.employer} className="border-critical/30 bg-white rounded-lg border p-6">
+              <p className="text-ink text-lg font-bold">{o.employer}</p>
+              <p className="text-critical mt-3 text-3xl font-bold tracking-tight">{o.spend}</p>
+              <p className="text-ink/70 mt-1 text-sm">{o.detail}</p>
+              <p className="text-ink/60 mt-3 text-sm font-medium">{o.context}</p>
+              <p className="text-ink/40 mt-3 text-xs italic">
+                Source: IRS Form 5500, Schedule C (public record)
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="border-sage mt-10 border-t-2 pt-7">
+          <h3 className="text-ink max-w-2xl text-2xl font-bold tracking-tight">
+            Wondering where your plan lands?
+          </h3>
+          <p className="text-ink/70 mt-2 max-w-2xl">
+            Your filing is public too. We&apos;ll show you in minutes — free, no obligation.
+          </p>
+          <a
+            href="https://scorecard.getgroundedhealth.com"
+            className="bg-spruce hover:bg-spruce-dark mt-5 inline-block rounded-lg px-6 py-3 font-semibold text-white"
+          >
+            See your scorecard — free
+          </a>
+        </div>
+      </Section>
+
       <Section
         eyebrow="The track record"
         title="Employers already running this playbook."
@@ -251,67 +312,6 @@ export default function ProofPage() {
           — 26 documented cases; advisors operate under Health Rosetta&apos;s transparent
           compensation model.
         </p>
-      </Section>
-
-      <Section
-        eyebrow="It's all public"
-        title="Every employer files it. Almost none of them read it."
-        tone="mist"
-      >
-        <p className="text-ink/80 mb-8 max-w-3xl text-lg">
-          These employers self-fund — they pay their own claims. Their Form 5500 discloses the fees
-          flowing to the brokers, TPAs, and consultants who run the plan, right there in the public
-          record. Here&apos;s what a few large self-funded employers&apos; most recent filings show.
-        </p>
-        <div className="grid gap-6 md:grid-cols-3">
-          {OVERPAYERS.map((o) => (
-            <div key={o.employer} className="border-critical/30 bg-white rounded-lg border p-6">
-              <p className="text-ink text-lg font-bold">{o.employer}</p>
-              <p className="text-critical mt-3 text-3xl font-bold tracking-tight">{o.spend}</p>
-              <p className="text-ink/70 mt-1 text-sm">{o.detail}</p>
-              <p className="text-ink/60 mt-3 text-sm font-medium">{o.context}</p>
-              <p className="text-ink/40 mt-3 text-xs italic">
-                Source: IRS Form 5500, Schedule C (public record)
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="border-sage mt-10 border-t-2 pt-7">
-          <h3 className="text-ink max-w-2xl text-2xl font-bold tracking-tight">
-            Wondering where your plan lands?
-          </h3>
-          <p className="text-ink/70 mt-2 max-w-2xl">
-            Your filing is public too. We&apos;ll show you in minutes — free, no obligation.
-          </p>
-          <a
-            href="https://scorecard.getgroundedhealth.com"
-            className="bg-spruce hover:bg-spruce-dark mt-5 inline-block rounded-lg px-6 py-3 font-semibold text-white"
-          >
-            See your scorecard — free
-          </a>
-        </div>
-      </Section>
-
-      <Section eyebrow="Invitation-only beta" title="Who we're working with now." tone="bone">
-        <p className="text-ink/80 mb-8 max-w-3xl">
-          We&apos;re working with a hand-selected group of early beta customers — invitation only.
-          Here are some of the people we&apos;re partnering with right now, and what they&apos;re
-          saying as they put the platform to work. Anonymized to role to protect privacy.
-        </p>
-        <div className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
-          {REACTIONS.map((r) => (
-            <figure
-              key={r.name + r.quote}
-              className="border-sage/30 bg-white flex w-[300px] shrink-0 snap-start flex-col rounded-lg border p-6 shadow-sm"
-            >
-              <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
-              <figcaption className="mt-4">
-                <p className="text-ink font-semibold">{r.name}</p>
-                <p className="text-ink/60 text-sm">{r.title}</p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
       </Section>
 
       <Section
