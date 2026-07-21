@@ -71,36 +71,36 @@ const REACTIONS = [
   {
     quote:
       "It gives you visibility into the black box. Information is exactly what you need to start having real conversations with your carrier.",
-    name: "Benefits Leader",
-    title: "Fortune 500 cybersecurity company",
+    name: "Head of Benefits",
+    title: "Fortune 500 software company",
   },
   {
     quote:
       "The claims and up-coding piece is the most interesting part — that's what got me excited. You're heading in exactly the right direction.",
     name: "Head of Benefits",
-    title: "Large enterprise cybersecurity company",
+    title: "Large enterprise technology company",
   },
   {
     quote: "This is the kind of transparency the market's been missing.",
-    name: "Dan Iantorno",
-    title: "Founder, Clear Harbor Advisors · former CIO, Village Medical",
+    name: "Founder",
+    title: "Healthcare advisory firm · former hospital-group CIO",
   },
   {
     quote:
       "Most CEOs have never read their own health plan filing. Once you see it, you can change it — and Grounded shows you.",
-    name: "Steve Ditto",
-    title: "Board Member, Nautilus Health · Health Rosetta advisor",
+    name: "Independent health-plan advisor",
+    title: "Board member, benefits advisory firm",
   },
   {
     quote: "You're speaking my language. It starts with exactly what you're doing — transparency.",
-    name: "Dr. Huzaifah Salat",
-    title: "Physician & health-tech advisor",
+    name: "Physician",
+    title: "Health-tech advisor",
   },
   {
     quote:
       "That's compelling. If you can save me a million to two million of EBITDA, that gets my attention — I can take that straight to the board.",
-    name: "Joe Megibow",
-    title: "CEO, cpap.com · former CEO, Purple",
+    name: "CEO",
+    title: "~800-person direct-to-consumer retail company",
   },
 ] as const;
 
@@ -277,7 +277,9 @@ export default function ProofPage() {
               <span className="text-sage">more than a quarter billion dollars of equity value</span>{" "}
               that had not been priced in.
             </blockquote>
-            <p className="text-mist mt-6 text-sm">Lee Lewis, Health Transformation Alliance</p>
+            <p className="text-mist mt-6 text-sm">
+              Benefits strategy lead, large-employer purchasing coalition
+            </p>
           </div>
           <div className="border-spruce/50 self-center rounded-xl border p-6 text-center">
             <p className="eyebrow text-sage">The math</p>
@@ -293,8 +295,8 @@ export default function ProofPage() {
       <Section eyebrow="Early reactions" title="What people say when they see it." tone="bone">
         <p className="text-ink/80 mb-8 max-w-3xl">
           Grounded is early. These are reactions from benefits leaders and advisors who&apos;ve seen
-          the platform — lightly polished from live conversations for clarity, attributed where
-          shared and anonymized where asked.
+          the platform — lightly polished from live conversations for clarity, anonymized to role to
+          protect privacy.
         </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {REACTIONS.map((r) => (
