@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
-const CALENDLY_URL = "https://calendly.com/alyssasr";
+const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
 
 export default function Footer() {
   return (

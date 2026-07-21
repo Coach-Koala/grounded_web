@@ -3,7 +3,7 @@ import Team from "@/components/Team";
 import { Section } from "@/components/Section";
 
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
-const CALENDLY_URL = "https://calendly.com/alyssasr";
+const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
 
 export const metadata: Metadata = {
   title: "About",

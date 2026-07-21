@@ -4,7 +4,7 @@ import PlatformCarousel from "@/components/PlatformCarousel";
 import WhoProfitsChart from "@/components/WhoProfitsChart";
 import { Section } from "@/components/Section";
 
-const CALENDLY_URL = "https://calendly.com/alyssasr";
+const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 const MACHINE_STATS = [
