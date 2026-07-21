@@ -72,13 +72,6 @@ export default function AboutPage() {
             </strong>
           </p>
           <p>
-            Your health plan is your second-biggest expense and the only one with no independent
-            oversight. Every opinion you get on whether it&apos;s working comes from someone paid
-            out of that same spend. The broker earns on premiums. The carrier earns on claims. The
-            vendors grade their own homework. And now AI writes the notes, codes the claims, and
-            prices the care — billing your plan more, at scale, faster than anyone is checking.
-          </p>
-          <p>
             That&apos;s the work we do:{" "}
             <strong className="text-ink font-semibold">
               making the plan visible, and making the incentives honest.
