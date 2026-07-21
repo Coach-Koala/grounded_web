@@ -9,13 +9,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo/grounded-mark-64.png"
-              alt=""
-              width={28}
-              height={28}
-              className="invert"
-            />
+            <Image src="/logo/grounded-mark.svg" alt="" width={28} height={28} />
             <span className="font-bold tracking-tight uppercase">Grounded Health</span>
           </div>
           <p className="text-mist max-w-xs text-sm">

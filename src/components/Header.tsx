@@ -9,7 +9,7 @@ export default function Header() {
     <header className="border-sage/40 bg-bone sticky top-0 z-10 border-b">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo/grounded-mark-64.png" alt="" width={32} height={32} priority />
+          <Image src="/logo/grounded-mark.svg" alt="" width={32} height={32} priority />
           <span className="text-ink text-lg font-bold tracking-tight uppercase">
             Grounded Health
           </span>
