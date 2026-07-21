@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
+const CALENDLY_URL = "https://calendly.com/alyssasr";
 
 export default function Footer() {
   return (
@@ -13,23 +14,23 @@ export default function Footer() {
             <span className="font-bold tracking-tight uppercase">Grounded Health</span>
           </div>
           <p className="text-mist max-w-xs text-sm">
-            Grounded Health is the commercial technology layer for reformed employer healthcare —
-            AI-native benefit design, real-world clinical data, and a direct payment rail built on
-            the Health Rosetta methodology.
+            Grounded Health is the independent check on your health plan. We tell you whether the
+            money you spend on employee health is actually working — and where to reinvest what
+            isn&apos;t.
           </p>
         </div>
         <div>
           <p className="eyebrow text-sage mb-4">Company</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/employers/" className="hover:text-sage">
-                For employers
+              <Link href="/#how" className="hover:text-sage">
+                How it works
               </Link>
             </li>
             <li>
-              <Link href="/advisors/" className="hover:text-sage">
-                For advisors
-              </Link>
+              <a href={SCORECARD_URL} className="hover:text-sage">
+                The Scorecard
+              </a>
             </li>
             <li>
               <Link href="/about/" className="hover:text-sage">
@@ -44,6 +45,11 @@ export default function Footer() {
             <li>
               <a href={SCORECARD_URL} className="hover:text-sage">
                 Get your free scorecard
+              </a>
+            </li>
+            <li>
+              <a href={CALENDLY_URL} className="hover:text-sage">
+                Book a call
               </a>
             </li>
             <li>
