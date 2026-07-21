@@ -30,6 +30,28 @@ const MACHINE_STATS = [
   },
 ] as const;
 
+// Role-abstracted reactions to Grounded. No names — see global rule.
+const PROOF_QUOTES = [
+  {
+    quote:
+      "If you can save me a million to two million of EBITDA, that gets my attention — I can take that straight to the board.",
+    name: "CEO",
+    title: "~800-person direct-to-consumer retail company",
+  },
+  {
+    quote:
+      "It gives you visibility into the black box — exactly what you need to start having real conversations with your carrier.",
+    name: "Head of Benefits",
+    title: "Fortune 500 software company",
+  },
+  {
+    quote:
+      "Most CEOs have never read their own health plan filing. Once you see it, you can change it — and Grounded shows you.",
+    name: "Independent health-plan advisor",
+    title: "Board member, benefits advisory firm",
+  },
+] as const;
+
 const REINVEST = [
   {
     name: "Give it back",
@@ -233,6 +255,37 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </Section>
+
+      {/* PROOF — role-abstracted reactions + honest "playbook works" framing. */}
+      <Section eyebrow="Proof" title="We're new. The playbook isn't." tone="bone">
+        <p className="text-ink/80 max-w-3xl text-lg">
+          The transparent, fiduciary-aligned approach Grounded runs on has already cut costs 20–40%
+          per capita for hundreds of employers — years before us. Here&apos;s what people say when
+          they see it applied to their own plan.
+        </p>
+        <div className="mt-9 grid gap-6 md:grid-cols-3">
+          {PROOF_QUOTES.map((r) => (
+            <figure
+              key={r.name + r.quote}
+              className="border-sage/30 bg-white flex flex-col rounded-lg border p-6 shadow-sm"
+            >
+              <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
+              <figcaption className="mt-4">
+                <p className="text-ink font-semibold">{r.name}</p>
+                <p className="text-ink/60 text-sm">{r.title}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="text-ink/60 mt-6 max-w-3xl text-sm">
+          The 20–40% results belong to employers running transparent plans through the Health
+          Rosetta community — <strong>not Grounded clients</strong>. It&apos;s the approach we build
+          on.{" "}
+          <Link href="/proof/" className="text-spruce font-semibold underline">
+            See the full track record →
+          </Link>
+        </p>
       </Section>
 
       <Section eyebrow="Why it matters" title="Know before they ask." tone="white">
