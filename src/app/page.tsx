@@ -110,15 +110,17 @@ export default function HomePage() {
             Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white md:text-xl">
-            Your second-biggest expense — and the only one nobody independently checks. Grounded
-            Health is the quality and accountability layer for self-funded health plans.
+            It&apos;s your second-biggest expense — and the only one no independent party ever
+            checks. Grounded Health is the quality layer for self-funded plans: we confirm the care
+            you paid for was real and priced right — and what we find, you get to reinvest in your
+            people.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={SCORECARD_URL}
               className="text-spruce bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
-              See what you&apos;re overpaying — free
+              See what your plan is really doing — free
             </a>
             <Link
               href="/#how"
@@ -127,6 +129,9 @@ export default function HomePage() {
               How it works
             </Link>
           </div>
+          <p className="mt-6 max-w-2xl text-sm text-white/70">
+            Free scorecard from public data · no claims data, nothing to install, no obligation.
+          </p>
         </div>
       </section>
 
