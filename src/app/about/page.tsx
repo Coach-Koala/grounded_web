@@ -11,25 +11,6 @@ export const metadata: Metadata = {
     "Grounded Health is a public benefit corporation building the independent check on employer healthcare — by people who have lived the problem from the inside. Flat fee, no commissions, no cut of your spend.",
 };
 
-const WHO_PAYS = [
-  {
-    who: "Your broker",
-    how: "Earns commissions tied to premiums. Premiums go up, they earn more.",
-  },
-  {
-    who: "Your carrier & TPA",
-    how: "Earn fees on claims flow — some even charge a percentage to fix their own billing errors.",
-  },
-  {
-    who: "Providers",
-    how: "Bill more, and increasingly bill with AI. Coding errors overwhelmingly favor the biller.",
-  },
-  {
-    who: "Point-solution vendors",
-    how: "Grade their own homework. Engagement and ROI numbers come from the vendor being measured.",
-  },
-] as const;
-
 const PRINCIPLES = [
   {
     n: "01",
@@ -119,33 +100,6 @@ export default function AboutPage() {
             party at your table with nothing riding on your costs going up. It&apos;s the reason we
             can put our name on the numbers.
           </p>
-        </div>
-      </Section>
-
-      <Section
-        eyebrow="What we believe"
-        title="Everyone in your health plan is paid more when you spend more."
-        tone="white"
-      >
-        <p className="text-ink/80 max-w-3xl md:text-lg">
-          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Which is why
-          costs rise 6–10% a year, data arrives months late, and no one in the chain volunteers to
-          check the bills. We built Grounded to be the exception.
-        </p>
-        <div className="border-sage/40 mt-10 max-w-3xl overflow-hidden rounded-xl border">
-          {WHO_PAYS.map((row) => (
-            <div key={row.who} className="border-sage/30 grid border-b sm:grid-cols-[220px_1fr]">
-              <div className="bg-mist text-ink px-5 py-4 font-semibold">{row.who}</div>
-              <div className="text-ink/80 px-5 py-4 text-sm sm:text-base">{row.how}</div>
-            </div>
-          ))}
-          <div className="border-spruce grid border-t-2 sm:grid-cols-[220px_1fr]">
-            <div className="bg-spruce px-5 py-4 font-semibold text-white">Grounded Health</div>
-            <div className="bg-spruce/5 text-ink px-5 py-4 text-sm font-medium sm:text-base">
-              Flat fee. No commissions, no percentage of spend, no cut of recoveries. The only party
-              with nothing to gain from your costs rising.
-            </div>
-          </div>
         </div>
       </Section>
 
