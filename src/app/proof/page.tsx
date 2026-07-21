@@ -70,9 +70,21 @@ const CASE_STUDIES = [
 const REACTIONS = [
   {
     quote:
-      "I didn't even think this was possible — it wasn't something I was wishing for. We've all had this apathy of thinking we don't have any control over any of it. I've never been able to get data that's actually actionable around this.",
+      "I didn't even think this was possible — it wasn't something I was wishing for. We've all had this apathy of thinking we don't have any control over any of it. And I've never been able to get data that's actually actionable around this.",
     name: "CHRO",
     title: "Private-equity-backed healthcare company",
+  },
+  {
+    quote:
+      "Relying on your broker to check this is kind of like letting the fox guard the henhouse.",
+    name: "SVP",
+    title: "Fortune 500 payments company",
+  },
+  {
+    quote:
+      "After five years in healthcare, this is the problem Alyssa has finally cracked — a powerful capability for giving enterprises real visibility into what they're actually paying their brokers.",
+    name: "Health-plan advisor and author",
+    title: "Former benefits executive",
   },
   {
     quote:
@@ -82,26 +94,15 @@ const REACTIONS = [
   },
   {
     quote:
+      "Part of what this does is empower employers to stop feeling like victims of the system — which is exactly where they are right now.",
+    name: "C-suite connector and benefits advisor",
+    title: "Executive network",
+  },
+  {
+    quote:
       "It's amazing how much data you've accumulated to support decision-making. I've always believed the person with the most data wins — and I like what I'm seeing.",
     name: "Third-generation benefits broker",
     title: "Independent brokerage",
-  },
-  {
-    quote:
-      "There's a huge asset here — and a real moat. It's a white knight for a lot of people; it helps everyone. Once everyone has the information, it's all over.",
-    name: "Investor and operator",
-    title: "Introduced through a mutual advisor",
-  },
-  {
-    quote:
-      "I think this is brilliant. If you get a little buzz around it, you could unplug some serious demand.",
-    name: "Advisor and angel investor",
-    title: "Health and benefits",
-  },
-  {
-    quote: "I'm a bit mind-blown. I'm really impressed — this is game-changing.",
-    name: "Author and workplace-wellbeing founder",
-    title: "Former wellbeing-tech founder",
   },
 ] as const;
 
