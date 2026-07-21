@@ -118,6 +118,11 @@ const PARTNERS = [
     href: "https://turquoise.health/",
   },
   {
+    name: "Cost Plus Drugs",
+    desc: "Mark Cuban's transparent pharmacy: generics sold at true cost plus a flat 15% markup and a small pharmacy fee — no PBM spread, no rebate games. Proof that honest drug pricing works.",
+    href: "https://www.markcubancostplusdrugcompany.com",
+  },
+  {
     name: "Avelis Health",
     desc: "AI plus clinician review that audits medical claims and recovers overpayments — reducing plan spend 2–7%.",
     href: "https://www.avelishealth.com/",
