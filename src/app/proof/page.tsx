@@ -95,8 +95,8 @@ const REACTIONS = [
   {
     quote:
       "Part of what this does is empower employers to stop feeling like victims of the system — which is exactly where they are right now.",
-    name: "C-suite connector and benefits advisor",
-    title: "Executive network",
+    name: "Benefits advisor & connector",
+    title: "Independent advisory network",
   },
   {
     quote:
@@ -292,16 +292,17 @@ export default function ProofPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Early reactions" title="What people say when they see it." tone="bone">
+      <Section eyebrow="Invitation-only beta" title="Who we're working with now." tone="bone">
         <p className="text-ink/80 mb-8 max-w-3xl">
-          Grounded is early. These are real reactions from benefits leaders, brokers, and advisors
-          who&apos;ve seen the platform — anonymized to role to protect privacy.
+          We&apos;re working with a hand-selected group of early beta customers — invitation only.
+          Here are some of the people we&apos;re partnering with right now, and what they&apos;re
+          saying as they put the platform to work. Anonymized to role to protect privacy.
         </p>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
           {REACTIONS.map((r) => (
             <figure
               key={r.name + r.quote}
-              className="border-sage/30 bg-white flex flex-col rounded-lg border p-6 shadow-sm"
+              className="border-sage/30 bg-white flex w-[300px] shrink-0 snap-start flex-col rounded-lg border p-6 shadow-sm"
             >
               <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
               <figcaption className="mt-4">
