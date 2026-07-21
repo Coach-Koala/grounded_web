@@ -148,30 +148,30 @@ const PARTNERS = [
   },
 ] as const;
 
-// Verified from the live IRS_5500 database (Metabase), 2026-07-21. Each figure
-// is total broker commissions & fees as filed on the employer's Form 5500
-// Schedule A, cross-checked as a sane share of premiums/charges paid
-// (DaVita 7.8%, Tesla 2.5%, Darden 2.8%). Fully-insured medical plans only.
-// Public record — but confirm these three names with the founder before any
-// production publish.
+// Verified from the live IRS_5500 database (Metabase), 2026-07-21. All three are
+// SELF-FUNDED medical plans; the figure is Schedule C service-provider direct
+// compensation (fees to the brokers, TPAs & consultants that run the plan) as
+// filed on their Form 5500. Per-participant fees cross-check as plausible
+// ($613 / $840 / $439 per life). Public record — but confirm these three names
+// with the founder before any production publish.
 const OVERPAYERS = [
   {
-    employer: "DaVita Inc.",
-    spend: "$9.7M",
-    detail: "in broker commissions & fees on its health-plan filing",
-    context: "57,028 covered lives · plan year 2024",
+    employer: "Delta Air Lines, Inc.",
+    spend: "$2.7M",
+    detail: "in disclosed fees to plan service providers — brokers, TPAs & consultants",
+    context: "4,402 covered lives · self-funded · plan year 2025",
   },
   {
-    employer: "Tesla, Inc.",
-    spend: "$7.6M",
-    detail: "in broker commissions & fees on its health-plan filing",
-    context: "73,107 covered lives · plan year 2024",
+    employer: "Emerson Electric Company",
+    spend: "$9.3M",
+    detail: "in disclosed fees to plan service providers — brokers, TPAs & consultants",
+    context: "11,113 covered lives · self-funded · plan year 2024",
   },
   {
-    employer: "Darden Restaurants, Inc.",
-    spend: "$4.5M",
-    detail: "in broker commissions & fees on its health-plan filing",
-    context: "24,332 covered lives · plan year 2025",
+    employer: "U-Haul Holding Company",
+    spend: "$5.5M",
+    detail: "in disclosed fees to plan service providers — brokers, TPAs & consultants",
+    context: "12,467 covered lives · self-funded · plan year 2024",
   },
 ] as const;
 
@@ -253,9 +253,9 @@ export default function ProofPage() {
         tone="mist"
       >
         <p className="text-ink/80 mb-8 max-w-3xl text-lg">
-          Every employer with a health plan files a Form 5500 — a public document that lays out what
-          their plan pays, and to whom. The commissions and fees paid to brokers are right there in
-          the filing. Here&apos;s what a few large employers&apos; most recent filings show.
+          These employers self-fund — they pay their own claims. Their Form 5500 discloses the fees
+          flowing to the brokers, TPAs, and consultants who run the plan, right there in the public
+          record. Here&apos;s what a few large self-funded employers&apos; most recent filings show.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {OVERPAYERS.map((o) => (
@@ -265,7 +265,7 @@ export default function ProofPage() {
               <p className="text-ink/70 mt-1 text-sm">{o.detail}</p>
               <p className="text-ink/60 mt-3 text-sm font-medium">{o.context}</p>
               <p className="text-ink/40 mt-3 text-xs italic">
-                Source: IRS Form 5500, Schedule A (public record)
+                Source: IRS Form 5500, Schedule C (public record)
               </p>
             </div>
           ))}
