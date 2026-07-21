@@ -2,54 +2,164 @@ import type { Metadata } from "next";
 import Team from "@/components/Team";
 import { Section } from "@/components/Section";
 
+const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
+const CALENDLY_URL = "https://calendly.com/alyssasr";
+
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Grounded Health is a public benefit corporation building the independent check on employer healthcare — by people who have lived the problem from the inside.",
+    "Grounded Health is a public benefit corporation building the independent check on employer healthcare — by people who have lived the problem from the inside. Flat fee, no commissions, no cut of your spend.",
 };
 
-const BELIEFS = [
-  "We do work we're proud to stand behind — ethically, practically, and over time.",
-  "We care about outcomes, not optics. If it doesn't create real value, it doesn't matter.",
-  "We believe AI should make people more effective, not more replaceable.",
-  "We prioritize clarity over complexity, and honesty over comfort.",
-];
+const WHO_PAYS = [
+  {
+    who: "Your broker",
+    how: "Earns commissions tied to premiums. Premiums go up, they earn more.",
+  },
+  {
+    who: "Your carrier & TPA",
+    how: "Earn fees on claims flow — some even charge a percentage to fix their own billing errors.",
+  },
+  {
+    who: "Providers",
+    how: "Bill more, and increasingly bill with AI. Coding errors overwhelmingly favor the biller.",
+  },
+  {
+    who: "Point-solution vendors",
+    how: "Grade their own homework. Engagement and ROI numbers come from the vendor being measured.",
+  },
+] as const;
+
+const PRINCIPLES = [
+  {
+    n: "01",
+    h: "Independence, by structure",
+    p: "Not a promise — a design. Flat fee, zero ownership by any broker, carrier, TPA, or PBM. Our judgment isn't for sale because our revenue never depends on the answer.",
+  },
+  {
+    n: "02",
+    h: "Outcomes over optics",
+    p: "We care what actually changes on your plan, not how the dashboard looks. If it doesn't create real value you can measure, it doesn't matter.",
+  },
+  {
+    n: "03",
+    h: "Clarity over complexity",
+    p: "The system stays confusing on purpose. We name the counterparties, show the math, and say the uncomfortable thing plainly — honesty over comfort.",
+  },
+  {
+    n: "04",
+    h: "AI that makes people sharper",
+    p: "The same technology now billing your plan more should be the one checking it. We build AI that makes people more effective — not more replaceable.",
+  },
+] as const;
+
+const PBC_RULES = [
+  "Flat fee only",
+  "No commissions",
+  "No cut of your spend",
+  "No cut of recoveries",
+  "Zero broker/carrier/PBM ownership",
+] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <Section eyebrow="About us" title="Solving hard problems together." tone="band">
+      <Section eyebrow="About us" title="We're the check nobody else was paid to run." tone="band">
         <p className="max-w-3xl text-lg text-white/90">
-          We&apos;ve spent our careers at the intersection of technology, transformation, and
-          real-world impact. And we&apos;ve each lived this particular problem from the inside — as
-          the employee blindsided by a bill, the parent fighting a denied claim, the leader signing
-          a renewal we couldn&apos;t fully see inside.
-        </p>
-        <p className="mt-8 max-w-3xl text-2xl font-bold text-white md:text-3xl">
-          The hardest problems in healthcare aren&apos;t technical — they&apos;re human.
-        </p>
-        <p className="mt-8 max-w-3xl text-white/90">
-          Employers don&apos;t overspend because they lack tools. They overspend because aligning
-          people, incentives, data, and vendors is messy in the real world — and nearly everyone in
-          the chain is paid to keep it that way. That&apos;s the work we do: making the plan
-          visible, and making the incentives honest.
+          Grounded Health is the independent quality and accountability layer for employer health
+          plans. We were built by people who&apos;ve sat on every side of this problem — the
+          employee blindsided by a bill, the parent fighting a denied claim, the leader signing a
+          renewal they couldn&apos;t fully see inside.{" "}
+          <strong className="font-semibold text-white">
+            We started the company that would have helped us.
+          </strong>
         </p>
       </Section>
 
-      <Section eyebrow="The standards behind the work" title="What we believe." tone="bone">
-        <div className="grid gap-4 md:grid-cols-2">
-          {BELIEFS.map((belief) => (
-            <div
-              key={belief}
-              className="border-sage/30 bg-white flex gap-3 rounded-lg border p-5 shadow-sm"
-            >
-              <span
-                aria-hidden="true"
-                className="bg-spruce mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
-              >
-                ✓
-              </span>
-              <p className="text-ink text-sm md:text-base">{belief}</p>
+      <Section
+        eyebrow="Why we exist"
+        title="The hardest problems in healthcare aren't technical. They're human."
+        tone="bone"
+      >
+        <div className="text-ink/80 max-w-3xl space-y-5 md:text-lg">
+          <p>
+            Employers don&apos;t overspend on health benefits because they lack tools. They
+            overspend because aligning people, incentives, data, and vendors is messy in the real
+            world — and{" "}
+            <strong className="text-ink font-semibold">
+              nearly everyone in the chain is paid to keep it that way.
+            </strong>
+          </p>
+          <p>
+            Your health plan is your second-biggest expense and the only one with no independent
+            oversight. Every opinion you get on whether it&apos;s working comes from someone paid
+            out of that same spend. The broker earns on premiums. The carrier earns on claims. The
+            vendors grade their own homework. And now AI writes the notes, codes the claims, and
+            prices the care — billing your plan more, at scale, faster than anyone is checking.
+          </p>
+          <p>
+            That&apos;s the work we do:{" "}
+            <strong className="text-ink font-semibold">
+              making the plan visible, and making the incentives honest.
+            </strong>{" "}
+            We find the overcharges, the errors, and the vendors that aren&apos;t delivering — and
+            we verify that your people are actually getting the good care you&apos;re paying for.
+          </p>
+        </div>
+      </Section>
+
+      <Section tone="mist">
+        <div className="border-sage max-w-3xl border-l-4 pl-6">
+          <blockquote className="text-spruce text-3xl font-bold tracking-tight md:text-4xl">
+            A referee doesn&apos;t bet on the game.
+          </blockquote>
+          <p className="text-ink/80 mt-6 max-w-2xl">
+            We charge a <strong className="text-ink font-semibold">flat fee</strong> — no
+            commissions, no percentage of your spend, no cut of what we recover. We&apos;re the only
+            party at your table with nothing riding on your costs going up. It&apos;s the reason we
+            can put our name on the numbers.
+          </p>
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="What we believe"
+        title="Everyone in your health plan is paid more when you spend more."
+        tone="white"
+      >
+        <p className="text-ink/80 max-w-3xl md:text-lg">
+          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Which is why
+          costs rise 6–10% a year, data arrives months late, and no one in the chain volunteers to
+          check the bills. We built Grounded to be the exception.
+        </p>
+        <div className="border-sage/40 mt-10 max-w-3xl overflow-hidden rounded-xl border">
+          {WHO_PAYS.map((row) => (
+            <div key={row.who} className="border-sage/30 grid border-b sm:grid-cols-[220px_1fr]">
+              <div className="bg-mist text-ink px-5 py-4 font-semibold">{row.who}</div>
+              <div className="text-ink/80 px-5 py-4 text-sm sm:text-base">{row.how}</div>
+            </div>
+          ))}
+          <div className="border-spruce grid border-t-2 sm:grid-cols-[220px_1fr]">
+            <div className="bg-spruce px-5 py-4 font-semibold text-white">Grounded Health</div>
+            <div className="bg-spruce/5 text-ink px-5 py-4 text-sm font-medium sm:text-base">
+              Flat fee. No commissions, no percentage of spend, no cut of recoveries. The only party
+              with nothing to gain from your costs rising.
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="The standards behind the work"
+        title="What we hold ourselves to."
+        tone="bone"
+      >
+        <div className="grid gap-5 sm:grid-cols-2">
+          {PRINCIPLES.map((pr) => (
+            <div key={pr.n} className="border-sage/30 rounded-xl border bg-white p-7 shadow-sm">
+              <div className="eyebrow text-spruce mb-3">{pr.n}</div>
+              <h3 className="text-ink text-lg font-bold">{pr.h}</h3>
+              <p className="text-ink/80 mt-2 text-sm">{pr.p}</p>
             </div>
           ))}
         </div>
@@ -66,22 +176,65 @@ export default function AboutPage() {
       <Section
         eyebrow="How we're built"
         title="A public benefit corporation — by charter, not by press release."
-        tone="bone"
+        tone="spruce"
       >
-        <div className="border-spruce bg-white max-w-3xl rounded-lg border-2 p-8">
-          <p className="text-ink/80">
+        <div className="max-w-3xl space-y-5 text-white/85 md:text-lg">
+          <p>
             Grounded Health is incorporated as a public benefit corporation. Our charter legally
             binds our directors to weigh the interests of the people who depend on employer health
-            plans — patients, plan members, and the employers who sponsor them — alongside those of
-            shareholders.
+            plans —{" "}
+            <strong className="font-semibold text-white">
+              patients, plan members, and the employers who sponsor them
+            </strong>{" "}
+            — alongside those of shareholders.
           </p>
-          <p className="text-ink/80 mt-4">
+          <p>
             Most healthcare vendors promise alignment. We made it a duty written into our founding
             documents. Combined with flat-fee pricing and zero ownership by any broker, carrier,
-            TPA, or PBM, our independence isn&apos;t a marketing claim — it&apos;s our corporate
-            structure. It&apos;s the reason we can put our name on the numbers.
+            TPA, or PBM, our independence isn&apos;t a marketing claim —{" "}
+            <strong className="font-semibold text-white">it&apos;s our corporate structure.</strong>{" "}
+            It&apos;s the reason we can put our name on the numbers.
           </p>
         </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {PBC_RULES.map((rule) => (
+            <span
+              key={rule}
+              className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+            >
+              <span aria-hidden="true" className="text-sage">
+                ✓{" "}
+              </span>
+              {rule}
+            </span>
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="Start here" title="See what an independent check finds." tone="bone">
+        <p className="text-ink/80 max-w-2xl">
+          Tell us your company name. We&apos;ll build your health plan scorecard from public data —
+          what&apos;s working, what&apos;s overpriced, and what it&apos;s worth fixing. Free, no
+          claims data, no obligation.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <a
+            href={SCORECARD_URL}
+            className="bg-spruce hover:bg-spruce-dark rounded-md px-6 py-3 font-semibold text-white transition"
+          >
+            Get your free scorecard
+          </a>
+          <a
+            href={CALENDLY_URL}
+            className="border-spruce text-spruce hover:bg-spruce rounded-md border-2 px-6 py-3 font-semibold transition hover:text-white"
+          >
+            Book 20 minutes
+          </a>
+        </div>
+        <p className="text-ink/60 mt-5 text-sm">
+          Built from public filings and price-transparency data. Your scorecard in your inbox in
+          minutes — nothing else.
+        </p>
       </Section>
     </>
   );
