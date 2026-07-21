@@ -148,27 +148,30 @@ const PARTNERS = [
   },
 ] as const;
 
-// ⚠️ PLACEHOLDER DATA — every figure and company name must be pulled from the
-// employer's actual Form 5500 and verified before publishing. Do not invent.
-// Blocker: the IRS_5500 Metabase connector auth failed, so these are stand-ins.
+// Verified from the live IRS_5500 database (Metabase), 2026-07-21. Each figure
+// is total broker commissions & fees as filed on the employer's Form 5500
+// Schedule A, cross-checked as a sane share of premiums/charges paid
+// (DaVita 7.8%, Tesla 2.5%, Darden 2.8%). Fully-insured medical plans only.
+// Public record — but confirm these three names with the founder before any
+// production publish.
 const OVERPAYERS = [
   {
-    employer: "REPLACE — verified employer #1",
-    spend: "$XX.XM",
-    detail: "in broker/admin/premium fees last year",
-    vsMedian: "XX% above the median for their size",
+    employer: "DaVita Inc.",
+    spend: "$9.7M",
+    detail: "in broker commissions & fees on its health-plan filing",
+    context: "57,028 covered lives · plan year 2024",
   },
   {
-    employer: "REPLACE — verified employer #2",
-    spend: "$XX.XM",
-    detail: "in broker/admin/premium fees last year",
-    vsMedian: "XX% above the median for their size",
+    employer: "Tesla, Inc.",
+    spend: "$7.6M",
+    detail: "in broker commissions & fees on its health-plan filing",
+    context: "73,107 covered lives · plan year 2024",
   },
   {
-    employer: "REPLACE — verified employer #3",
-    spend: "$XX.XM",
-    detail: "in broker/admin/premium fees last year",
-    vsMedian: "XX% above the median for their size",
+    employer: "Darden Restaurants, Inc.",
+    spend: "$4.5M",
+    detail: "in broker commissions & fees on its health-plan filing",
+    context: "24,332 covered lives · plan year 2025",
   },
 ] as const;
 
@@ -250,9 +253,9 @@ export default function ProofPage() {
         tone="mist"
       >
         <p className="text-ink/80 mb-8 max-w-3xl text-lg">
-          Every self-funded employer files a Form 5500 — a public document that lays out what their
-          plan pays and to whom. We read them so you don&apos;t have to. The gaps are hiding in
-          plain sight.
+          Every employer with a health plan files a Form 5500 — a public document that lays out what
+          their plan pays, and to whom. The commissions and fees paid to brokers are right there in
+          the filing. Here&apos;s what a few large employers&apos; most recent filings show.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {OVERPAYERS.map((o) => (
@@ -260,8 +263,10 @@ export default function ProofPage() {
               <p className="text-ink text-lg font-bold">{o.employer}</p>
               <p className="text-critical mt-3 text-3xl font-bold tracking-tight">{o.spend}</p>
               <p className="text-ink/70 mt-1 text-sm">{o.detail}</p>
-              <p className="text-critical mt-3 text-sm font-semibold">{o.vsMedian}</p>
-              <p className="text-ink/40 mt-3 text-xs italic">Source: Form 5500, plan year 20XX</p>
+              <p className="text-ink/60 mt-3 text-sm font-medium">{o.context}</p>
+              <p className="text-ink/40 mt-3 text-xs italic">
+                Source: IRS Form 5500, Schedule A (public record)
+              </p>
             </div>
           ))}
         </div>
