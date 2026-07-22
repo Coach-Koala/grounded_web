@@ -273,12 +273,12 @@ export default function HomePage() {
               <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
               <figcaption className="mt-4">
                 <p className="text-ink font-semibold">{r.name}</p>
-                <p className="text-ink/60 text-sm">{r.title}</p>
+                <p className="text-ink/70 text-sm">{r.title}</p>
               </figcaption>
             </figure>
           ))}
         </div>
-        <p className="text-ink/60 mt-6 max-w-3xl text-sm">
+        <p className="text-ink/70 mt-6 max-w-3xl text-sm">
           The 20–40% results belong to employers running transparent plans through the Health
           Rosetta community — <strong>not Grounded clients</strong>. It&apos;s the approach we build
           on.{" "}

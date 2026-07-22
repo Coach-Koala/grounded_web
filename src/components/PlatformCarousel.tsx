@@ -120,7 +120,7 @@ export default function PlatformCarousel() {
       <div className="mt-4 flex items-center justify-between gap-4">
         <p className="text-ink/70 text-sm">{slide.caption}</p>
         {count > 1 && (
-          <div className="flex shrink-0 gap-2">
+          <div className="flex shrink-0 gap-0.5">
             {SLIDES.map((s, i) => (
               <button
                 key={s.src}
@@ -128,10 +128,14 @@ export default function PlatformCarousel() {
                 onClick={() => go(i)}
                 aria-label={`Go to screen ${i + 1}`}
                 aria-current={i === index}
-                className={`h-2.5 w-2.5 rounded-full ${
-                  i === index ? "bg-spruce" : "bg-sage/40 hover:bg-sage"
-                }`}
-              />
+                className="group flex h-6 w-6 items-center justify-center"
+              >
+                <span
+                  className={`h-2.5 w-2.5 rounded-full ${
+                    i === index ? "bg-spruce" : "bg-sage/40 group-hover:bg-sage"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}

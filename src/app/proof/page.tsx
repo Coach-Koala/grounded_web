@@ -209,16 +209,16 @@ export default function ProofPage() {
           Here are some of the people we&apos;re partnering with right now, and what they&apos;re
           saying as they put the platform to work. Anonymized to role to protect privacy.
         </p>
-        <div className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4">
+        <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
           {REACTIONS.map((r) => (
             <figure
               key={r.name + r.quote}
-              className="border-sage/30 bg-white flex w-[300px] shrink-0 snap-start flex-col rounded-lg border p-6 shadow-sm"
+              className="border-sage/30 bg-white flex w-80 shrink-0 snap-start flex-col rounded-lg border p-6 shadow-sm"
             >
               <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
               <figcaption className="mt-4">
                 <p className="text-ink font-semibold">{r.name}</p>
-                <p className="text-ink/60 text-sm">{r.title}</p>
+                <p className="text-ink/70 text-sm">{r.title}</p>
               </figcaption>
             </figure>
           ))}
@@ -241,7 +241,7 @@ export default function ProofPage() {
               <p className="text-ink text-lg font-bold">{o.employer}</p>
               <p className="text-critical mt-3 text-3xl font-bold tracking-tight">{o.spend}</p>
               <p className="text-ink/70 mt-1 text-sm">{o.detail}</p>
-              <p className="text-ink/60 mt-3 text-sm font-medium">{o.context}</p>
+              <p className="text-ink/70 mt-3 text-sm font-medium">{o.context}</p>
               <p className="text-ink/40 mt-3 text-xs italic">
                 Source: IRS Form 5500, Schedule C (public record)
               </p>
@@ -292,7 +292,7 @@ export default function ProofPage() {
                   <td className="text-ink/70 px-4 py-3">{c.industry}</td>
                   <td className="px-4 py-3">
                     <span className="text-spruce font-bold">{c.metric}</span>{" "}
-                    <span className="text-ink/60">· {c.note}</span>
+                    <span className="text-ink/70">· {c.note}</span>
                   </td>
                 </tr>
               ))}
@@ -317,7 +317,7 @@ export default function ProofPage() {
       <Section
         eyebrow="Better together"
         title="Fixing American healthcare isn't a one-company job."
-        tone="bone"
+        tone="mist"
       >
         <p className="text-ink/80 mb-8 max-w-3xl">
           No single company un-breaks US healthcare. These are the partners, methodologies, and
