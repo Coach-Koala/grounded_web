@@ -30,6 +30,28 @@ const MACHINE_STATS = [
   },
 ] as const;
 
+// Role-abstracted reactions to Grounded. No names — see global rule.
+const PROOF_QUOTES = [
+  {
+    quote:
+      "I didn't even think this was possible — we've all had this apathy of thinking we don't have any control over any of it. And I've never been able to get data that's actually actionable around this.",
+    name: "CHRO",
+    title: "Private-equity-backed healthcare company",
+  },
+  {
+    quote:
+      "Relying on your broker to check this is kind of like letting the fox guard the henhouse.",
+    name: "SVP",
+    title: "Fortune 500 payments company",
+  },
+  {
+    quote:
+      "After five years in healthcare, this is the problem Alyssa has finally cracked — real visibility into what enterprises are actually paying their brokers.",
+    name: "Health-plan advisor and author",
+    title: "Former benefits executive",
+  },
+] as const;
+
 const REINVEST = [
   {
     name: "Give it back",
@@ -110,15 +132,17 @@ export default function HomePage() {
             Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white md:text-xl">
-            Your second-biggest expense — and the only one nobody independently checks. Grounded
-            Health is the quality and accountability layer for self-funded health plans.
+            It&apos;s your second-biggest expense — and the only one no independent party ever
+            checks. Grounded Health is the quality layer for self-funded plans: we confirm the care
+            you paid for was real and priced right — and what we find, you get to reinvest in your
+            people.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={SCORECARD_URL}
               className="text-spruce bg-white hover:bg-mist inline-block rounded-md px-8 py-4 text-lg font-semibold"
             >
-              See what you&apos;re overpaying — free
+              See what your plan is really doing — free
             </a>
             <Link
               href="/#how"
@@ -127,6 +151,9 @@ export default function HomePage() {
               How it works
             </Link>
           </div>
+          <p className="mt-6 max-w-2xl text-sm text-white/70">
+            Free scorecard from public data · no claims data, nothing to install, no obligation.
+          </p>
         </div>
       </section>
 
@@ -228,6 +255,37 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </Section>
+
+      {/* PROOF — role-abstracted reactions + honest "playbook works" framing. */}
+      <Section eyebrow="Proof" title="We're new. The playbook isn't." tone="bone">
+        <p className="text-ink/80 max-w-3xl text-lg">
+          The transparent, fiduciary-aligned approach Grounded runs on has already cut costs 20–40%
+          per capita for hundreds of employers — years before us. Here&apos;s what people say when
+          they see it applied to their own plan.
+        </p>
+        <div className="mt-9 grid gap-6 md:grid-cols-3">
+          {PROOF_QUOTES.map((r) => (
+            <figure
+              key={r.name + r.quote}
+              className="border-sage/30 bg-white flex flex-col rounded-lg border p-6 shadow-sm"
+            >
+              <blockquote className="text-ink flex-1 text-base">&ldquo;{r.quote}&rdquo;</blockquote>
+              <figcaption className="mt-4">
+                <p className="text-ink font-semibold">{r.name}</p>
+                <p className="text-ink/70 text-sm">{r.title}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="text-ink/70 mt-6 max-w-3xl text-sm">
+          The 20–40% results belong to employers running transparent plans through the Health
+          Rosetta community — <strong>not Grounded clients</strong>. It&apos;s the approach we build
+          on.{" "}
+          <Link href="/proof/" className="text-spruce font-semibold underline">
+            See the full track record →
+          </Link>
+        </p>
       </Section>
 
       <Section eyebrow="Why it matters" title="Know before they ask." tone="white">
