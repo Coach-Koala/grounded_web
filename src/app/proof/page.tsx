@@ -191,17 +191,9 @@ export default function ProofPage() {
       >
         <p className="max-w-3xl text-lg text-white/90">
           Transparent, fiduciary-aligned health plans aren&apos;t a theory — hundreds of employers
-          have already cut costs 20–40% per capita this way, years before us. The results here
-          belong to the employers and advisors who earned them, not to us.
+          have already cut costs 20–40% per capita this way, years before us.
         </p>
       </Section>
-
-      <section className="border-sage/20 border-y bg-white py-10">
-        <p className="eyebrow text-ink/70 mx-auto mb-6 max-w-6xl px-6 text-center">
-          Employers already running transparent, fiduciary-aligned plans
-        </p>
-        <LogoMarquee />
-      </section>
 
       <Section eyebrow="Invitation-only beta" title="Who we're working with now." tone="bone">
         <p className="text-ink/80 mb-8 max-w-3xl">
@@ -264,6 +256,13 @@ export default function ProofPage() {
         </div>
       </Section>
 
+      <section className="border-sage/20 border-y bg-white py-10">
+        <p className="eyebrow text-ink/70 mx-auto mb-6 max-w-6xl px-6 text-center">
+          Employers already running transparent, fiduciary-aligned plans
+        </p>
+        <LogoMarquee />
+      </section>
+
       <Section
         eyebrow="The track record"
         title="Employers already running this playbook."
@@ -272,7 +271,8 @@ export default function ProofPage() {
         <p className="text-ink/80 mb-8 max-w-3xl">
           These are results from employers who adopted transparent, fiduciary-aligned health plans
           through the Health Rosetta community — <strong>not Grounded clients</strong>. Median
-          savings run 20–40% per capita. It&apos;s the approach we build on.
+          savings run 20–40% per capita. It&apos;s the approach we build on. The results here belong
+          to the employers and advisors who earned them, not to us.
         </p>
         <div className="border-sage/40 overflow-x-auto rounded-lg border">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm">
