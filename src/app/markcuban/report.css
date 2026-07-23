@@ -1,0 +1,335 @@
+/*
+ * Scoped styles for the /markcuban report. Every selector is nested under
+ * .mcr so this editorial treatment never leaks into the rest of the site.
+ * Light-only: the surrounding site has no dark mode.
+ */
+.mcr {
+  --paper: #f6f7f8;
+  --raise: #ffffff;
+  --ink: #13171c;
+  --ink-2: #3d4650;
+  --ink-3: #6b7681;
+  --rule: #dde1e5;
+  --rule-2: #eaedf0;
+  --accent: #9e2b32;
+  --accent-soft: #f2e4e4;
+  --warn: #8a6410;
+  --warn-soft: #f6edd9;
+  --c-carrier: #9e2b32;
+  --c-chronic: #3f6b78;
+  --c-broker: #8a6410;
+  --c-wage: #5d5470;
+
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    400 16px/1.6 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mcr * {
+  box-sizing: border-box;
+}
+
+.mcr .serif {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+.mcr .mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.mcr .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.mcr .narrow {
+  max-width: 68ch;
+}
+
+/* ---- masthead ---- */
+.mcr .masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 56px 0 28px;
+}
+.mcr .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 20px;
+}
+.mcr h1 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-weight: 400;
+  font-size: clamp(32px, 5.2vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+  max-width: 19ch;
+}
+.mcr h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.mcr .dek {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.mcr section {
+  padding: 44px 0;
+}
+.mcr h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+.mcr h3 {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 30px 0 10px;
+}
+.mcr .sub {
+  color: var(--ink-3);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+.mcr p {
+  margin: 0 0 15px;
+}
+
+/* ---- limitation panel ---- */
+.mcr .caution {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  background: var(--raise);
+  padding: 26px 28px;
+}
+.mcr .caution h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.mcr .caution p:last-child {
+  margin-bottom: 0;
+}
+.mcr .formula {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--ink);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+/* ---- composition ---- */
+.mcr .cbar {
+  display: flex;
+  height: 34px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.mcr .cbar-seg {
+  min-width: 2px;
+}
+.mcr .s-d_carrier {
+  background: var(--c-carrier);
+}
+.mcr .s-d_chronic {
+  background: var(--c-chronic);
+}
+.mcr .s-d_broker {
+  background: var(--c-broker);
+}
+.mcr .s-d_wage {
+  background: var(--c-wage);
+}
+.mcr .ckey {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 10px 24px;
+}
+.mcr .ckey li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 13px;
+}
+.mcr .ckey b {
+  font-weight: 600;
+}
+.mcr .dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  transform: translateY(1px);
+}
+.mcr .cnum {
+  margin-left: auto;
+  color: var(--ink-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- table ---- */
+.mcr .tablewrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--raise);
+}
+.mcr table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 920px;
+  font-size: 14px;
+}
+.mcr th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 600;
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--raise);
+  white-space: nowrap;
+}
+.mcr th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.mcr th.sortable:hover {
+  color: var(--ink);
+}
+.mcr th.sortable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.mcr th .arw {
+  opacity: 0;
+  margin-left: 4px;
+}
+.mcr th[aria-sort] .arw {
+  opacity: 1;
+  color: var(--accent);
+}
+.mcr td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--rule-2);
+  vertical-align: top;
+}
+.mcr tbody tr:hover {
+  background: var(--paper);
+}
+.mcr .num {
+  text-align: right;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mcr .rk {
+  color: var(--ink-3);
+  font-family: ui-monospace, Menlo, monospace;
+  width: 38px;
+}
+.mcr .nm {
+  font-weight: 600;
+  line-height: 1.35;
+}
+.mcr .rowmeta {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-top: 2px;
+}
+.mcr .tot {
+  font-weight: 600;
+}
+.mcr .driver {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.mcr .rail {
+  display: inline-block;
+  width: 3px;
+  height: 1.05em;
+  margin-right: 8px;
+  transform: translateY(2px);
+}
+.mcr .gr {
+  display: inline-block;
+  min-width: 2.4em;
+  text-align: center;
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  font-size: 12px;
+  font-family: ui-monospace, Menlo, monospace;
+}
+.mcr .gr-D {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mcr .gr-C {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+.mcr .flag {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--warn);
+  background: var(--warn-soft);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+.mcr .mix {
+  display: flex;
+  height: 7px;
+  width: 96px;
+  overflow: hidden;
+}
+.mcr .mix span {
+  min-width: 1px;
+}
+
+.mcr .colophon {
+  border-top: 2px solid var(--ink);
+  padding: 32px 0 64px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.mcr .colophon p {
+  max-width: 74ch;
+}
+.mcr code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--rule-2);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+.mcr ul.plain {
+  padding-left: 19px;
+}
+.mcr ul.plain li {
+  margin-bottom: 9px;
+}
