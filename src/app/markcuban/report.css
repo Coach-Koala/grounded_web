@@ -196,7 +196,7 @@
 .mcr table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 920px;
+  min-width: 620px;
   font-size: 14px;
 }
 .mcr th {
@@ -263,33 +263,12 @@
 .mcr .tot {
   font-weight: 600;
 }
-.mcr .driver {
-  font-size: 12.5px;
-  color: var(--ink-2);
-}
 .mcr .rail {
   display: inline-block;
   width: 3px;
   height: 1.05em;
   margin-right: 8px;
   transform: translateY(2px);
-}
-.mcr .gr {
-  display: inline-block;
-  min-width: 2.4em;
-  text-align: center;
-  padding: 2px 6px;
-  border: 1px solid var(--rule);
-  font-size: 12px;
-  font-family: ui-monospace, Menlo, monospace;
-}
-.mcr .gr-D {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.mcr .gr-C {
-  border-color: var(--warn);
-  color: var(--warn);
 }
 .mcr .flag {
   display: inline-block;
@@ -301,16 +280,6 @@
   padding: 3px 7px;
   border-radius: 2px;
 }
-.mcr .mix {
-  display: flex;
-  height: 7px;
-  width: 96px;
-  overflow: hidden;
-}
-.mcr .mix span {
-  min-width: 1px;
-}
-
 .mcr .colophon {
   border-top: 2px solid var(--ink);
   padding: 32px 0 64px;
