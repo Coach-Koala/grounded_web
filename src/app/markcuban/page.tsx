@@ -155,11 +155,12 @@ export default function MarkCubanPage() {
 
         <h3>How to read a row</h3>
         <p>
-          Grades come from the plan scorecard (0&#8211;100, banded by employer size), computed
-          independently of the dollar figures. Employee counts are Form 5500 participants: enrolled
-          employees plus retirees receiving benefits — not total headcount, which is why $/employee
-          runs high for plans covering a subset of the workforce. Rows carrying a structural
-          qualifier are flagged inline.
+          Employee counts are Form 5500 participants: enrolled employees plus retirees receiving
+          benefits — not total headcount, which is why $/employee runs high for plans covering a
+          subset of the workforce. &ldquo;At stake&rdquo; is the sum of that employer&rsquo;s
+          findings across the four categories above; the split between categories is shown in
+          aggregate under <em>Where the money sits</em>, not employer by employer. Rows carrying a
+          structural qualifier are flagged inline, under the employer name.
         </p>
 
         <h3>Sources</h3>
