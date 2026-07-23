@@ -1,28 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ROWS, type Part, type Row } from "./data";
+import { ROWS, type Row } from "./data";
 
-const PARTS: Part[] = ["d_carrier", "d_chronic", "d_broker", "d_wage"];
-
-type SortKey = "name" | "emp" | "total" | "pe" | "score";
+type SortKey = "name" | "emp" | "total" | "pe";
 
 const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: "name", label: "Employer", numeric: false },
   { key: "emp", label: "Employees", numeric: true },
   { key: "total", label: "At stake", numeric: true },
   { key: "pe", label: "$/employee", numeric: true },
-  { key: "score", label: "Grade", numeric: true },
 ];
 
 function money(n: number): string {
   return n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : `$${n.toLocaleString()}`;
-}
-
-function driver(r: Row): string {
-  if (r.dom === "d_carrier" && r.carrier) return `${r.domLabel} · ${r.carrier} ${r.vsm}×`;
-  if (r.dom === "d_broker" && r.broker) return `${r.domLabel} · ${r.broker}`;
-  return r.domLabel;
 }
 
 function flags(r: Row): string[] {
@@ -81,8 +72,6 @@ export default function ReportTable() {
                 </th>
               );
             })}
-            <th>Composition</th>
-            <th>Primary driver</th>
           </tr>
         </thead>
         <tbody>
@@ -104,19 +93,6 @@ export default function ReportTable() {
               <td className="num">{r.emp.toLocaleString()}</td>
               <td className="num tot">{money(r.total)}</td>
               <td className="num">${r.pe.toLocaleString()}</td>
-              <td className="num">
-                <span className={`gr gr-${r.grade}`}>
-                  {r.grade} {r.score}
-                </span>
-              </td>
-              <td>
-                <div className="mix">
-                  {PARTS.filter((k) => r.parts[k] > 0).map((k) => (
-                    <span key={k} className={`s-${k}`} style={{ flex: r.parts[k] }} />
-                  ))}
-                </div>
-              </td>
-              <td className="driver">{driver(r)}</td>
             </tr>
           ))}
         </tbody>
