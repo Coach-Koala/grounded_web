@@ -4,9 +4,7 @@ import PlatformCarousel from "@/components/PlatformCarousel";
 import WhoProfitsChart from "@/components/WhoProfitsChart";
 import { Section } from "@/components/Section";
 
-// Google Calendar appointment scheduling page (replaced Calendly).
-const CALENDLY_URL =
-  "https://calendar.google.com/calendar/appointments/AcZssZ0aK-pIlLqmpklzMikYeROuY7sNhDjfk1s21Zg=?gv=true";
+const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 const MACHINE_STATS = [
