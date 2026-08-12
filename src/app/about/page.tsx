@@ -3,7 +3,9 @@ import Team from "@/components/Team";
 import { Section } from "@/components/Section";
 
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
-const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
+// Google Calendar appointment scheduling page (replaced Calendly).
+const CALENDLY_URL =
+  "https://calendar.google.com/calendar/appointments/AcZssZ0aK-pIlLqmpklzMikYeROuY7sNhDjfk1s21Zg=?gv=true";
 
 export const metadata: Metadata = {
   title: "About",
@@ -175,7 +177,7 @@ export default function AboutPage() {
             href={CALENDLY_URL}
             className="border-spruce text-spruce hover:bg-spruce rounded-md border-2 px-6 py-3 font-semibold transition hover:text-white"
           >
-            Book 20 minutes
+            Book a quick call
           </a>
         </div>
         <p className="text-ink/60 mt-5 text-sm">

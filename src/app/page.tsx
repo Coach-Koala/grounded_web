@@ -4,7 +4,9 @@ import PlatformCarousel from "@/components/PlatformCarousel";
 import WhoProfitsChart from "@/components/WhoProfitsChart";
 import { Section } from "@/components/Section";
 
-const CALENDLY_URL = "https://calendly.com/alyssasr/grounded-health-report";
+// Google Calendar appointment scheduling page (replaced Calendly).
+const CALENDLY_URL =
+  "https://calendar.google.com/calendar/appointments/AcZssZ0aK-pIlLqmpklzMikYeROuY7sNhDjfk1s21Zg=?gv=true";
 const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 const MACHINE_STATS = [
@@ -408,7 +410,7 @@ export default function HomePage() {
                 rel="noopener"
                 target="_blank"
               >
-                Book 20 minutes
+                Book a quick call
               </a>{" "}
               and we&apos;ll walk you through it live.
             </p>
