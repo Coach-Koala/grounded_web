@@ -5,8 +5,11 @@ import { Section } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Proof",
   description:
-    "The methodology already works: hundreds of employers have cut health costs 20–40% per capita. Here's their track record, the economic case, early reactions to Grounded, and the people we build alongside.",
+    "The methodology already works: hundreds of employers have cut health costs 20–40% per capita. Here's their track record, the economic case, what Mark Cuban and Peter Long said on the record, early reactions to Grounded, and the people we build alongside.",
 };
+
+const CUBAN_TWEET_URL = "https://x.com/mcuban/status/2081504839792836691";
+const PETER_LONG_LINKEDIN = "https://www.linkedin.com/in/peterlong1/";
 
 const CASE_STUDIES = [
   {
@@ -193,6 +196,60 @@ export default function ProofPage() {
           Transparent, fiduciary-aligned health plans aren&apos;t a theory — hundreds of employers
           have already cut costs 20–40% per capita this way, years before us.
         </p>
+      </Section>
+
+      <Section eyebrow="In the wild" tone="white">
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+          <figure className="border-sage border-l-4 pl-6">
+            <blockquote className="text-spruce text-2xl font-bold tracking-tight md:text-3xl">
+              &ldquo;If you care about healthcare costs, read this.&rdquo;
+            </blockquote>
+            <figcaption className="mt-6">
+              <p className="text-ink font-semibold">
+                <a
+                  href={CUBAN_TWEET_URL}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-spruce underline"
+                >
+                  Mark Cuban
+                </a>
+              </p>
+              <p className="text-ink/70 mt-1 text-sm">
+                Co-founder, Cost Plus Drugs · posting @mcuban on X, linking to Grounded Health
+              </p>
+              <p className="text-ink/40 mt-3 text-xs italic">
+                July 26, 2026 · 200.4K views ·{" "}
+                <a href={CUBAN_TWEET_URL} target="_blank" rel="noopener" className="underline">
+                  see the post
+                </a>
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure className="border-sage border-l-4 pl-6">
+            <blockquote className="text-spruce text-2xl font-bold tracking-tight md:text-3xl">
+              &ldquo;The analytical sophistication is exceptional. Grounded Health is asking
+              important questions and providing clear answers.&rdquo;
+            </blockquote>
+            <figcaption className="mt-6">
+              <p className="text-ink font-semibold">
+                <a
+                  href={PETER_LONG_LINKEDIN}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-spruce underline"
+                >
+                  Peter Long
+                </a>
+              </p>
+              <p className="text-ink/70 mt-1 text-sm">
+                Professor, UCLA · Board Member, Blue Cross Blue Shield of Massachusetts · National
+                Academy of Medicine Leadership Consortium
+              </p>
+            </figcaption>
+          </figure>
+        </div>
       </Section>
 
       <Section eyebrow="Invitation-only beta" title="Who we're working with now." tone="bone">

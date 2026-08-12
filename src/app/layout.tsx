@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s — Grounded Health",
   },
   description:
-    "Grounded Health is the independent check on employer health plans — a platform whose agents review claims, contracts, rates, and vendors continuously. Flat fee, no commissions, no cut of your spend. Start with a free scorecard built entirely from public data.",
+    "Grounded Health is the quality & accountability layer for self-funded health plans — a software & analytics company, not a broker and not a carrier. Our agents review claims, contracts, rates, and vendors continuously. Flat fee, no commissions, no cut of your spend. Start with a free scorecard built entirely from public data.",
   openGraph: {
     siteName: "Grounded Health",
     type: "website",
