@@ -9,9 +9,15 @@ const SCORECARD_URL = "https://scorecard.getgroundedhealth.com";
 
 const MACHINE_STATS = [
   {
-    value: "$20B+",
-    label: "AI revenue-cycle industry built to bill more — growing 24% a year.",
-    source: "Grand View Research",
+    value: "+9%",
+    label: "projected 2026 cost increase for large employers — the steepest in over a decade.",
+    source: "Business Group on Health, 2026 Employer Health Care Strategy Survey",
+  },
+  {
+    value: "25%",
+    label:
+      "of every U.S. health-care dollar is wasted — more than $1 trillion a year that employers help fund but never see.",
+    source: "Peter G. Peterson Foundation, 2025",
   },
   {
     value: "1.7%",
@@ -22,11 +28,6 @@ const MACHINE_STATS = [
     value: "49%",
     label: "of plans took a $1M+ claim last year — up from 23%.",
     source: "Aegis Risk, 2025",
-  },
-  {
-    value: "79%",
-    label: "of one employer's $4.08M claim went to administrators, not care.",
-    source: "U.S. Senate testimony, 2025",
   },
 ] as const;
 
@@ -49,6 +50,22 @@ const PROOF_QUOTES = [
       "After five years in healthcare, this is the problem Alyssa has finally cracked — real visibility into what enterprises are actually paying their brokers.",
     name: "Health-plan advisor and author",
     title: "Former benefits executive",
+  },
+] as const;
+
+// The three value pillars, verbatim from the July 2026 pitch deck (slide 5).
+const PILLARS = [
+  {
+    name: "Flag Overpayments and Billing Errors",
+    body: "Independent QA on every claim, to catch billing and coding errors.",
+  },
+  {
+    name: "Proactive Major Claim Management",
+    body: "Hold the care-management vendor you already pay accountable, with automated care-management QA.",
+  },
+  {
+    name: "Industry Benchmarking Intelligence",
+    body: "See what you pay for care and services compared to your peers — broker, stop-loss, carrier, and down to the cost of individual procedures.",
   },
 ] as const;
 
@@ -127,7 +144,9 @@ export default function HomePage() {
     <>
       <section className="band-wash">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="eyebrow mb-4 text-white">Quality &amp; accountability in the age of AI</p>
+          <p className="eyebrow mb-4 text-white">
+            The quality &amp; accountability layer for self-funded health plans
+          </p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white uppercase md:text-6xl">
             Your company spent millions on healthcare last year. Nobody checked the bills.
           </h1>
@@ -157,16 +176,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-mist border-sage/30 border-b">
+        <Link
+          href="/proof/"
+          className="text-ink hover:text-spruce mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-6 py-4 text-center text-sm"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="h-4 w-4 shrink-0 fill-current"
+            focusable="false"
+          >
+            <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.22-6.82-5.96 6.82H1.68l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z" />
+          </svg>
+          <span className="font-semibold">
+            &ldquo;If you care about healthcare costs, read this.&rdquo;
+          </span>
+          <span className="text-ink/70">— Mark Cuban on X, seen 200K+ times →</span>
+        </Link>
+      </section>
+
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <p className="eyebrow text-amber mb-3">The reality</p>
+          <p className="eyebrow text-amber mb-3">The problem</p>
           <h2 className="mb-3 max-w-3xl text-3xl font-bold tracking-tight md:text-4xl">
-            The system is broken — and getting worse.
+            Health costs are out of control.
           </h2>
           <p className="mb-10 max-w-3xl text-lg text-white/70">
-            Family premiums hit $26,993 this year and are rising 6.5–10% into 2026 — the steepest
-            jump in 15 years. And now AI writes the notes, codes the claims, and prices the care,
-            billing your plan more at scale.
+            Costs are climbing faster than they have in a generation, and a quarter of every dollar
+            never becomes care. Now AI writes the notes, codes the claims, and prices the care —
+            billing your plan more, at scale.
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {MACHINE_STATS.map((stat) => (
@@ -183,27 +222,52 @@ export default function HomePage() {
       </section>
 
       <Section
-        eyebrow="The problem"
-        title="Everyone in your health plan is paid more when you spend more."
+        eyebrow="Why you can't see it"
+        title="The system as designed keeps you in the dark."
         tone="white"
       >
         <p className="text-ink/80 max-w-3xl text-lg">
-          That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Every party in
-          the chain earns more when your costs go up. We don&apos;t.
+          Your plan is run by the same brokers, TPAs, PBMs, and carriers who earn more when spend
+          goes up. That isn&apos;t a conspiracy — it&apos;s just how the incentives are wired. Every
+          party in the chain earns more when your costs go up. We don&apos;t.
         </p>
         <WhoProfitsChart />
+        {/*
+          SOURCE NEEDED BEFORE PUBLISH: transcribed from the July 2026 pitch deck (slide 4),
+          which cites only "Mark Cuban · May 2026" with no link. Could not locate the original
+          post. Every other claim on this site carries a source — add one here or pull the quote.
+        */}
+        <figure className="border-sage mt-12 max-w-3xl border-l-4 pl-6">
+          <blockquote className="text-ink text-xl font-medium md:text-2xl">
+            &ldquo;Insurance companies and PBMs have departments of people and AI to find new ways
+            to downcode, add fees, mark up, deny, underpay and more. Employers cannot even get
+            claims data reliably. And that is by design.&rdquo;
+          </blockquote>
+          <figcaption className="text-ink/70 mt-4 text-sm">
+            <span className="text-ink font-semibold">Mark Cuban</span> · May 2026
+          </figcaption>
+        </figure>
       </Section>
 
       <Section
-        eyebrow="The platform"
-        title="A team of agents, working your plan around the clock."
+        eyebrow="How we create value"
+        title="Grounded Health turns the lights on."
         tone="mist"
       >
         <p className="text-ink/80 max-w-3xl text-lg">
           Grounded Health is a platform: specialized agents review every claim as it lands, check
           bills against contracts, watch your rates against the market, track renewals, and score
-          every vendor — 24/7, whether or not anyone&apos;s logged in.
+          every vendor — 24/7, whether or not anyone&apos;s logged in. From reactive healthcare
+          spending to proactive financial management.
         </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {PILLARS.map((p) => (
+            <div key={p.name} className="border-sage/30 bg-white rounded-lg border p-6 shadow-sm">
+              <h3 className="text-ink text-lg font-bold">{p.name}</h3>
+              <p className="text-ink/80 mt-2 text-sm">{p.body}</p>
+            </div>
+          ))}
+        </div>
         <div className="mt-10">
           <PlatformCarousel />
         </div>
@@ -215,6 +279,10 @@ export default function HomePage() {
         title="Start with easiest savings, mature to continuous oversight and automatic optimization."
         tone="white"
       >
+        <p className="text-ink/80 mb-8 max-w-3xl text-lg">
+          Every step ends in a decision you control. Nothing material? Keep the report — we walk
+          away.
+        </p>
         <FiveActs />
       </Section>
 
